@@ -7,3 +7,6 @@ C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Basti
 C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.csproj.GenerateResource.Cache
 C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.exe
 C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.pdb
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\Bastion.exe.config
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.exe
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.pdb

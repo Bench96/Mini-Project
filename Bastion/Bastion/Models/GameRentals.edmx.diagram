@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67f8a7f680b34960b4c23cace10fbeb5" Name="Diagram1">
+        <EntityTypeShape EntityType="GameRentalsModel.Address" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.City" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Country" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Customer" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Developer" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Game" Width="1.5" PointX="12.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Genre" Width="1.5" PointX="15" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Inventory" Width="1.5" PointX="15" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Payment" Width="1.5" PointX="12.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Publisher" Width="1.5" PointX="15" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Rental" Width="1.5" PointX="15.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Staff" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GameRentalsModel.Store" Width="1.5" PointX="12.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="GameRentalsModel.fk_address_city" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_customer_address" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_staff_address" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_store_address" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_city_country" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_customer_store" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_payment_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_rental_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_inventory_game" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_inventory_store" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_rental_inventory" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_payment_rental" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_payment_staff" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_rental_staff" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_staff_store" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.fk_store_staff" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.GameDeveloper" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.GameGenre" ManuallyRouted="false" />
+        <AssociationConnector Association="GameRentalsModel.GamePublisher" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
