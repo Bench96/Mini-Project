@@ -1,0 +1,9 @@
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\bin\Debug\Bastion.exe.config
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\bin\Debug\Bastion.exe
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\bin\Debug\Bastion.pdb
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.csprojResolveAssemblyReference.cache
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.frmMain.resources
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.Properties.Resources.resources
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.csproj.GenerateResource.Cache
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.exe
+C:\Users\Justin\Documents\University\3rd Year\INF 354\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.pdb
