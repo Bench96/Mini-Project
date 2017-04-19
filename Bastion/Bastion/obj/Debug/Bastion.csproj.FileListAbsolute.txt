@@ -13,3 +13,13 @@ C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.pdb
 C:\Users\Justin\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\Bastion.exe.config
 C:\Users\Justin\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.exe
 C:\Users\Justin\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.pdb
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\Bastion.exe
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\Bastion.pdb
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\EntityFramework.dll
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\EntityFramework.xml
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.frmMain.resources
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.Properties.Resources.resources
+C:\Users\Ben\Source\Repos\Mini-Project\Bastion\Bastion\obj\Debug\Bastion.csproj.GenerateResource.Cache

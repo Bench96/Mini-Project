@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GameRentalsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.fk_address_city" FromRole="Address" ToRole="City" />
+    <NavigationProperty Name="Customers" Relationship="Self.fk_customer_address" FromRole="Address" ToRole="Customer" />
+    <NavigationProperty Name="Staffs" Relationship="Self.fk_staff_address" FromRole="Address" ToRole="Staff" />
+    <NavigationProperty Name="Stores" Relationship="Self.fk_store_address" FromRole="Address" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Addresses" Relationship="Self.fk_address_city" FromRole="City" ToRole="Address" />
+    <NavigationProperty Name="Country" Relationship="Self.fk_city_country" FromRole="City" ToRole="Country" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cities" Relationship="Self.fk_city_country" FromRole="Country" ToRole="City" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddressID" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Address" Relationship="Self.fk_customer_address" FromRole="Customer" ToRole="Address" />
+    <NavigationProperty Name="Store" Relationship="Self.fk_customer_store" FromRole="Customer" ToRole="Store" />
+    <NavigationProperty Name="Payments" Relationship="Self.fk_payment_customer" FromRole="Customer" ToRole="Payment" />
+    <NavigationProperty Name="Rentals" Relationship="Self.fk_rental_customer" FromRole="Customer" ToRole="Rental" />
+  </EntityType>
+  <EntityType Name="Developer">
+    <Key>
+      <PropertyRef Name="DeveloperID" />
+    </Key>
+    <Property Name="DeveloperID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Games" Relationship="Self.GameDeveloper" FromRole="Developer" ToRole="Game" />
+  </EntityType>
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReleaseYear" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="RentalRrate" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Inventories" Relationship="Self.fk_inventory_game" FromRole="Game" ToRole="Inventory" />
+    <NavigationProperty Name="Developers" Relationship="Self.GameDeveloper" FromRole="Game" ToRole="Developer" />
+    <NavigationProperty Name="Genres" Relationship="Self.GameGenre" FromRole="Game" ToRole="Genre" />
+    <NavigationProperty Name="Publishers" Relationship="Self.GamePublisher" FromRole="Game" ToRole="Publisher" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="GenreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Games" Relationship="Self.GameGenre" FromRole="Genre" ToRole="Game" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Game" Relationship="Self.fk_inventory_game" FromRole="Inventory" ToRole="Game" />
+    <NavigationProperty Name="Store" Relationship="Self.fk_inventory_store" FromRole="Inventory" ToRole="Store" />
+    <NavigationProperty Name="Rentals" Relationship="Self.fk_rental_inventory" FromRole="Inventory" ToRole="Rental" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="RentalID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="Self.fk_payment_customer" FromRole="Payment" ToRole="Customer" />
+    <NavigationProperty Name="Rental" Relationship="Self.fk_payment_rental" FromRole="Payment" ToRole="Rental" />
+    <NavigationProperty Name="Staff" Relationship="Self.fk_payment_staff" FromRole="Payment" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="PublisherID" />
+    </Key>
+    <Property Name="PublisherID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Games" Relationship="Self.GamePublisher" FromRole="Publisher" ToRole="Game" />
+  </EntityType>
+  <EntityType Name="Rental">
+    <Key>
+      <PropertyRef Name="RentalID" />
+    </Key>
+    <Property Name="RentalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RentalDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InventoryID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="0" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.fk_rental_customer" FromRole="Rental" ToRole="Customer" />
+    <NavigationProperty Name="Inventory" Relationship="Self.fk_rental_inventory" FromRole="Rental" ToRole="Inventory" />
+    <NavigationProperty Name="Payments" Relationship="Self.fk_payment_rental" FromRole="Rental" ToRole="Payment" />
+    <NavigationProperty Name="Staff" Relationship="Self.fk_rental_staff" FromRole="Rental" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddressID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="Self.fk_staff_address" FromRole="Staff" ToRole="Address" />
+    <NavigationProperty Name="Payments" Relationship="Self.fk_payment_staff" FromRole="Staff" ToRole="Payment" />
+    <NavigationProperty Name="Rentals" Relationship="Self.fk_rental_staff" FromRole="Staff" ToRole="Rental" />
+    <NavigationProperty Name="Store" Relationship="Self.fk_staff_store" FromRole="Staff" ToRole="Store" />
+    <NavigationProperty Name="Stores" Relationship="Self.fk_store_staff" FromRole="Staff" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManagerStaffID" Type="Int32" Nullable="false" />
+    <Property Name="AddressID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="Self.fk_store_address" FromRole="Store" ToRole="Address" />
+    <NavigationProperty Name="Customers" Relationship="Self.fk_customer_store" FromRole="Store" ToRole="Customer" />
+    <NavigationProperty Name="Inventories" Relationship="Self.fk_inventory_store" FromRole="Store" ToRole="Inventory" />
+    <NavigationProperty Name="Staffs" Relationship="Self.fk_staff_store" FromRole="Store" ToRole="Staff" />
+    <NavigationProperty Name="Staff" Relationship="Self.fk_store_staff" FromRole="Store" ToRole="Staff" />
+  </EntityType>
+  <Association Name="fk_address_city">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_customer_address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_staff_address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_store_address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_city_country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_customer_store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Rental">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inventory_game">
+    <End Role="Game" Type="Self.Game" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="GameID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inventory_store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_inventory">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="InventoryID" />
+      </Principal>
+      <Dependent Role="Rental">
+        <PropertyRef Name="InventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_rental">
+    <End Role="Rental" Type="Self.Rental" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rental">
+        <PropertyRef Name="RentalID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="RentalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Rental">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_staff_store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_store_staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="ManagerStaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GameDeveloper">
+    <End Role="Developer" Type="Self.Developer" Multiplicity="*" />
+    <End Role="Game" Type="Self.Game" Multiplicity="*" />
+  </Association>
+  <Association Name="GameGenre">
+    <End Role="Game" Type="Self.Game" Multiplicity="*" />
+    <End Role="Genre" Type="Self.Genre" Multiplicity="*" />
+  </Association>
+  <Association Name="GamePublisher">
+    <End Role="Game" Type="Self.Game" Multiplicity="*" />
+    <End Role="Publisher" Type="Self.Publisher" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="GameRentalsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Developers" EntityType="Self.Developer" />
+    <EntitySet Name="Games" EntityType="Self.Game" />
+    <EntitySet Name="Genres" EntityType="Self.Genre" />
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="Publishers" EntityType="Self.Publisher" />
+    <EntitySet Name="Rentals" EntityType="Self.Rental" />
+    <EntitySet Name="Staffs" EntityType="Self.Staff" />
+    <EntitySet Name="Stores" EntityType="Self.Store" />
+    <AssociationSet Name="fk_address_city" Association="Self.fk_address_city">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_customer_address" Association="Self.fk_customer_address">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_staff_address" Association="Self.fk_staff_address">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_store_address" Association="Self.fk_store_address">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="fk_city_country" Association="Self.fk_city_country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="fk_customer_store" Association="Self.fk_customer_store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_customer" Association="Self.fk_payment_customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_customer" Association="Self.fk_rental_customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Rental" EntitySet="Rentals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inventory_game" Association="Self.fk_inventory_game">
+      <End Role="Game" EntitySet="Games" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inventory_store" Association="Self.fk_inventory_store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_inventory" Association="Self.fk_rental_inventory">
+      <End Role="Inventory" EntitySet="Inventories" />
+      <End Role="Rental" EntitySet="Rentals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_rental" Association="Self.fk_payment_rental">
+      <End Role="Rental" EntitySet="Rentals" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_staff" Association="Self.fk_payment_staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_staff" Association="Self.fk_rental_staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Rental" EntitySet="Rentals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_staff_store" Association="Self.fk_staff_store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_store_staff" Association="Self.fk_store_staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="GameDeveloper" Association="Self.GameDeveloper">
+      <End Role="Developer" EntitySet="Developers" />
+      <End Role="Game" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="GameGenre" Association="Self.GameGenre">
+      <End Role="Game" EntitySet="Games" />
+      <End Role="Genre" EntitySet="Genres" />
+    </AssociationSet>
+    <AssociationSet Name="GamePublisher" Association="Self.GamePublisher">
+      <End Role="Game" EntitySet="Games" />
+      <End Role="Publisher" EntitySet="Publishers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

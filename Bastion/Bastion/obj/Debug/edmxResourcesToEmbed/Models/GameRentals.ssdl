@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GameRentalsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="District" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="AddressID" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Developer">
+    <Key>
+      <PropertyRef Name="DeveloperID" />
+    </Key>
+    <Property Name="DeveloperID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReleaseYear" Type="numeric" Precision="4" Scale="0" />
+    <Property Name="RentalRrate" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GameDeveloper">
+    <Key>
+      <PropertyRef Name="GameID" />
+      <PropertyRef Name="DeveloperID" />
+    </Key>
+    <Property Name="GameID" Type="int" Nullable="false" />
+    <Property Name="DeveloperID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GameGenre">
+    <Key>
+      <PropertyRef Name="GameID" />
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="GameID" Type="int" Nullable="false" />
+    <Property Name="GenreID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GamePublisher">
+    <Key>
+      <PropertyRef Name="GameID" />
+      <PropertyRef Name="PublisherID" />
+    </Key>
+    <Property Name="GameID" Type="int" Nullable="false" />
+    <Property Name="PublisherID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="GenreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="StaffID" Type="int" Nullable="false" />
+    <Property Name="RentalID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime2" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="PublisherID" />
+    </Key>
+    <Property Name="PublisherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rental">
+    <Key>
+      <PropertyRef Name="RentalID" />
+    </Key>
+    <Property Name="RentalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RentalDate" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="InventoryID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="ReturnDate" Type="datetime2" Precision="0" />
+    <Property Name="StaffID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddressID" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagerStaffID" Type="int" Nullable="false" />
+    <Property Name="AddressID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_address_city">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_city_country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_customer_address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_customer_store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_game_developer_developer">
+    <End Role="Developer" Type="Self.Developer" Multiplicity="1" />
+    <End Role="GameDeveloper" Type="Self.GameDeveloper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Developer">
+        <PropertyRef Name="DeveloperID" />
+      </Principal>
+      <Dependent Role="GameDeveloper">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_game_developer_game">
+    <End Role="Game" Type="Self.Game" Multiplicity="1" />
+    <End Role="GameDeveloper" Type="Self.GameDeveloper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="GameID" />
+      </Principal>
+      <Dependent Role="GameDeveloper">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_game_genre_game">
+    <End Role="Game" Type="Self.Game" Multiplicity="1" />
+    <End Role="GameGenre" Type="Self.GameGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="GameID" />
+      </Principal>
+      <Dependent Role="GameGenre">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_game_genre_genre">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+    <End Role="GameGenre" Type="Self.GameGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="GenreID" />
+      </Principal>
+      <Dependent Role="GameGenre">
+        <PropertyRef Name="GenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_game_publisher_game">
+    <End Role="Game" Type="Self.Game" Multiplicity="1" />
+    <End Role="GamePublisher" Type="Self.GamePublisher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="GameID" />
+      </Principal>
+      <Dependent Role="GamePublisher">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_game_publisher_publisher">
+    <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+    <End Role="GamePublisher" Type="Self.GamePublisher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="PublisherID" />
+      </Principal>
+      <Dependent Role="GamePublisher">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inventory_game">
+    <End Role="Game" Type="Self.Game" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="GameID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inventory_store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_rental">
+    <End Role="Rental" Type="Self.Rental" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rental">
+        <PropertyRef Name="RentalID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="RentalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Rental">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_inventory">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="InventoryID" />
+      </Principal>
+      <Dependent Role="Rental">
+        <PropertyRef Name="InventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Rental" Type="Self.Rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Rental">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_staff_address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_staff_store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_store_address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_store_staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="ManagerStaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GameRentalsModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Developer" EntityType="Self.Developer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameDeveloper" EntityType="Self.GameDeveloper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameGenre" EntityType="Self.GameGenre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GamePublisher" EntityType="Self.GamePublisher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rental" EntityType="Self.Rental" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_address_city" Association="Self.fk_address_city">
+      <End Role="City" EntitySet="City" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="fk_city_country" Association="Self.fk_city_country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="fk_customer_address" Association="Self.fk_customer_address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_customer_store" Association="Self.fk_customer_store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_game_developer_developer" Association="Self.fk_game_developer_developer">
+      <End Role="Developer" EntitySet="Developer" />
+      <End Role="GameDeveloper" EntitySet="GameDeveloper" />
+    </AssociationSet>
+    <AssociationSet Name="fk_game_developer_game" Association="Self.fk_game_developer_game">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="GameDeveloper" EntitySet="GameDeveloper" />
+    </AssociationSet>
+    <AssociationSet Name="fk_game_genre_game" Association="Self.fk_game_genre_game">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="GameGenre" EntitySet="GameGenre" />
+    </AssociationSet>
+    <AssociationSet Name="fk_game_genre_genre" Association="Self.fk_game_genre_genre">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="GameGenre" EntitySet="GameGenre" />
+    </AssociationSet>
+    <AssociationSet Name="fk_game_publisher_game" Association="Self.fk_game_publisher_game">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="GamePublisher" EntitySet="GamePublisher" />
+    </AssociationSet>
+    <AssociationSet Name="fk_game_publisher_publisher" Association="Self.fk_game_publisher_publisher">
+      <End Role="Publisher" EntitySet="Publisher" />
+      <End Role="GamePublisher" EntitySet="GamePublisher" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inventory_game" Association="Self.fk_inventory_game">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inventory_store" Association="Self.fk_inventory_store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_customer" Association="Self.fk_payment_customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_rental" Association="Self.fk_payment_rental">
+      <End Role="Rental" EntitySet="Rental" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_staff" Association="Self.fk_payment_staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_customer" Association="Self.fk_rental_customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Rental" EntitySet="Rental" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_inventory" Association="Self.fk_rental_inventory">
+      <End Role="Inventory" EntitySet="Inventory" />
+      <End Role="Rental" EntitySet="Rental" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_staff" Association="Self.fk_rental_staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Rental" EntitySet="Rental" />
+    </AssociationSet>
+    <AssociationSet Name="fk_staff_address" Association="Self.fk_staff_address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="fk_staff_store" Association="Self.fk_staff_store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="fk_store_address" Association="Self.fk_store_address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="fk_store_staff" Association="Self.fk_store_staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
