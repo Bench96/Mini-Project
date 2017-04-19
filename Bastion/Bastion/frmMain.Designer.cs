@@ -39,6 +39,25 @@
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.grpAddCustomer = new System.Windows.Forms.GroupBox();
+            this.grpUpdateCustomer = new System.Windows.Forms.GroupBox();
+            this.btnUpdateCustomerCancel = new System.Windows.Forms.Button();
+            this.txtUpdateCustomerCity = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerAddress2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerAddress1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnUpdateCustomerUpdateCustomer = new System.Windows.Forms.Button();
+            this.txtUpdateCustomerFName = new System.Windows.Forms.TextBox();
+            this.cmbUpdateCustomerCountry = new System.Windows.Forms.ComboBox();
+            this.txtUpdateCustomerLName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerEmail = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cmbUpdateCustomerStore = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.btnAddCustomerCancel = new System.Windows.Forms.Button();
             this.txtAddCustomerCity = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -63,7 +82,6 @@
             this.clearSearchResultsBTN = new System.Windows.Forms.Button();
             this.gameSearchTextBox = new System.Windows.Forms.TextBox();
             this.gameSearchBTN = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnDeleteGame = new System.Windows.Forms.Button();
             this.btnUpdateGame = new System.Windows.Forms.Button();
             this.btnAddGame = new System.Windows.Forms.Button();
@@ -84,33 +102,23 @@
             this.gameList = new System.Windows.Forms.DataGridView();
             this.tabBastion = new System.Windows.Forms.TabControl();
             this.tpgManagement = new System.Windows.Forms.TabPage();
-            this.grpUpdateCustomer = new System.Windows.Forms.GroupBox();
-            this.btnUpdateCustomerCancel = new System.Windows.Forms.Button();
-            this.txtUpdateCustomerCity = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtUpdateCustomerAddress2 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtUpdateCustomerAddress1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.btnUpdateCustomerUpdateCustomer = new System.Windows.Forms.Button();
-            this.txtUpdateCustomerFName = new System.Windows.Forms.TextBox();
-            this.cmbUpdateCustomerCountry = new System.Windows.Forms.ComboBox();
-            this.txtUpdateCustomerLName = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtUpdateCustomerEmail = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cmbUpdateCustomerStore = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.editGameGroup = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.updateGame = new System.Windows.Forms.Button();
+            this.editGameTitle = new System.Windows.Forms.TextBox();
+            this.editGameReleaseYear = new System.Windows.Forms.TextBox();
+            this.editGameRentalRate = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tpgCustomers.SuspendLayout();
             this.grpAddCustomer.SuspendLayout();
+            this.grpUpdateCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tpgGames.SuspendLayout();
             this.addGameGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).BeginInit();
             this.tabBastion.SuspendLayout();
-            this.grpUpdateCustomer.SuspendLayout();
+            this.editGameGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabImages
@@ -225,430 +233,6 @@
             this.grpAddCustomer.TabIndex = 31;
             this.grpAddCustomer.TabStop = false;
             this.grpAddCustomer.Text = "Add Customer";
-            // 
-            // btnAddCustomerCancel
-            // 
-            this.btnAddCustomerCancel.Location = new System.Drawing.Point(303, 355);
-            this.btnAddCustomerCancel.Name = "btnAddCustomerCancel";
-            this.btnAddCustomerCancel.Size = new System.Drawing.Size(175, 23);
-            this.btnAddCustomerCancel.TabIndex = 29;
-            this.btnAddCustomerCancel.Text = "Cancel";
-            this.btnAddCustomerCancel.UseVisualStyleBackColor = true;
-            this.btnAddCustomerCancel.Click += new System.EventHandler(this.btnAddCustomerCancel_Click);
-            // 
-            // txtAddCustomerCity
-            // 
-            this.txtAddCustomerCity.Location = new System.Drawing.Point(58, 306);
-            this.txtAddCustomerCity.Name = "txtAddCustomerCity";
-            this.txtAddCustomerCity.Size = new System.Drawing.Size(175, 20);
-            this.txtAddCustomerCity.TabIndex = 28;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(300, 190);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 13);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "Address Line 2";
-            // 
-            // txtAddCustomerAddress2
-            // 
-            this.txtAddCustomerAddress2.Location = new System.Drawing.Point(303, 206);
-            this.txtAddCustomerAddress2.Multiline = true;
-            this.txtAddCustomerAddress2.Name = "txtAddCustomerAddress2";
-            this.txtAddCustomerAddress2.Size = new System.Drawing.Size(175, 64);
-            this.txtAddCustomerAddress2.TabIndex = 26;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(55, 190);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 13);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Address Line 1";
-            // 
-            // txtAddCustomerAddress1
-            // 
-            this.txtAddCustomerAddress1.Location = new System.Drawing.Point(58, 206);
-            this.txtAddCustomerAddress1.Multiline = true;
-            this.txtAddCustomerAddress1.Name = "txtAddCustomerAddress1";
-            this.txtAddCustomerAddress1.Size = new System.Drawing.Size(175, 64);
-            this.txtAddCustomerAddress1.TabIndex = 24;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(55, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "First Name";
-            // 
-            // btnAddCustomerAddCustomer
-            // 
-            this.btnAddCustomerAddCustomer.Location = new System.Drawing.Point(58, 355);
-            this.btnAddCustomerAddCustomer.Name = "btnAddCustomerAddCustomer";
-            this.btnAddCustomerAddCustomer.Size = new System.Drawing.Size(175, 23);
-            this.btnAddCustomerAddCustomer.TabIndex = 23;
-            this.btnAddCustomerAddCustomer.Text = "Add Customer";
-            this.btnAddCustomerAddCustomer.UseVisualStyleBackColor = true;
-            this.btnAddCustomerAddCustomer.Click += new System.EventHandler(this.btnAddCustomerAddCustomer_Click);
-            // 
-            // txtAddCustomerFName
-            // 
-            this.txtAddCustomerFName.Location = new System.Drawing.Point(58, 34);
-            this.txtAddCustomerFName.Name = "txtAddCustomerFName";
-            this.txtAddCustomerFName.Size = new System.Drawing.Size(175, 20);
-            this.txtAddCustomerFName.TabIndex = 8;
-            // 
-            // cmbAddCustomerCountry
-            // 
-            this.cmbAddCustomerCountry.FormattingEnabled = true;
-            this.cmbAddCustomerCountry.Location = new System.Drawing.Point(303, 305);
-            this.cmbAddCustomerCountry.Name = "cmbAddCustomerCountry";
-            this.cmbAddCustomerCountry.Size = new System.Drawing.Size(175, 21);
-            this.cmbAddCustomerCountry.TabIndex = 22;
-            // 
-            // txtAddCustomerLName
-            // 
-            this.txtAddCustomerLName.Location = new System.Drawing.Point(303, 34);
-            this.txtAddCustomerLName.Name = "txtAddCustomerLName";
-            this.txtAddCustomerLName.Size = new System.Drawing.Size(175, 20);
-            this.txtAddCustomerLName.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(300, 290);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Country";
-            // 
-            // txtAddCustomerEmail
-            // 
-            this.txtAddCustomerEmail.Location = new System.Drawing.Point(58, 91);
-            this.txtAddCustomerEmail.Name = "txtAddCustomerEmail";
-            this.txtAddCustomerEmail.Size = new System.Drawing.Size(420, 20);
-            this.txtAddCustomerEmail.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(300, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Last Name";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(55, 290);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "City";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(55, 75);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Email Address";
-            // 
-            // cmbAddCustomerStore
-            // 
-            this.cmbAddCustomerStore.FormattingEnabled = true;
-            this.cmbAddCustomerStore.Location = new System.Drawing.Point(58, 146);
-            this.cmbAddCustomerStore.Name = "cmbAddCustomerStore";
-            this.cmbAddCustomerStore.Size = new System.Drawing.Size(420, 21);
-            this.cmbAddCustomerStore.TabIndex = 18;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(55, 131);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "Store";
-            // 
-            // dgvCustomer
-            // 
-            this.dgvCustomer.AllowUserToAddRows = false;
-            this.dgvCustomer.AllowUserToDeleteRows = false;
-            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.Location = new System.Drawing.Point(276, 77);
-            this.dgvCustomer.MultiSelect = false;
-            this.dgvCustomer.Name = "dgvCustomer";
-            this.dgvCustomer.Size = new System.Drawing.Size(868, 357);
-            this.dgvCustomer.TabIndex = 1;
-            this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
-            // 
-            // tpgRentals
-            // 
-            this.tpgRentals.ImageIndex = 1;
-            this.tpgRentals.Location = new System.Drawing.Point(4, 49);
-            this.tpgRentals.Name = "tpgRentals";
-            this.tpgRentals.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgRentals.Size = new System.Drawing.Size(1342, 676);
-            this.tpgRentals.TabIndex = 1;
-            this.tpgRentals.Text = "Rentals";
-            this.tpgRentals.UseVisualStyleBackColor = true;
-            // 
-            // tpgGames
-            // 
-            this.tpgGames.Controls.Add(this.clearSearchResultsBTN);
-            this.tpgGames.Controls.Add(this.gameSearchTextBox);
-            this.tpgGames.Controls.Add(this.gameSearchBTN);
-            this.tpgGames.Controls.Add(this.button4);
-            this.tpgGames.Controls.Add(this.btnDeleteGame);
-            this.tpgGames.Controls.Add(this.btnUpdateGame);
-            this.tpgGames.Controls.Add(this.btnAddGame);
-            this.tpgGames.Controls.Add(this.addGameGroup);
-            this.tpgGames.Controls.Add(this.gameList);
-            this.tpgGames.ImageIndex = 0;
-            this.tpgGames.Location = new System.Drawing.Point(4, 49);
-            this.tpgGames.Name = "tpgGames";
-            this.tpgGames.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgGames.Size = new System.Drawing.Size(1342, 676);
-            this.tpgGames.TabIndex = 0;
-            this.tpgGames.Text = "Games";
-            this.tpgGames.UseVisualStyleBackColor = true;
-            // 
-            // clearSearchResultsBTN
-            // 
-            this.clearSearchResultsBTN.Location = new System.Drawing.Point(604, 28);
-            this.clearSearchResultsBTN.Name = "clearSearchResultsBTN";
-            this.clearSearchResultsBTN.Size = new System.Drawing.Size(132, 23);
-            this.clearSearchResultsBTN.TabIndex = 7;
-            this.clearSearchResultsBTN.Text = "Clear Search Results";
-            this.clearSearchResultsBTN.UseVisualStyleBackColor = true;
-            this.clearSearchResultsBTN.Click += new System.EventHandler(this.clearSearchResultsBTN_Click);
-            // 
-            // gameSearchTextBox
-            // 
-            this.gameSearchTextBox.Location = new System.Drawing.Point(276, 31);
-            this.gameSearchTextBox.Name = "gameSearchTextBox";
-            this.gameSearchTextBox.Size = new System.Drawing.Size(175, 20);
-            this.gameSearchTextBox.TabIndex = 6;
-            // 
-            // gameSearchBTN
-            // 
-            this.gameSearchBTN.Location = new System.Drawing.Point(486, 28);
-            this.gameSearchBTN.Name = "gameSearchBTN";
-            this.gameSearchBTN.Size = new System.Drawing.Size(76, 23);
-            this.gameSearchBTN.TabIndex = 5;
-            this.gameSearchBTN.Text = "Search";
-            this.gameSearchBTN.UseVisualStyleBackColor = true;
-            this.gameSearchBTN.Click += new System.EventHandler(this.gameSearchBTN_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(8, 245);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(253, 50);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteGame
-            // 
-            this.btnDeleteGame.Location = new System.Drawing.Point(8, 189);
-            this.btnDeleteGame.Name = "btnDeleteGame";
-            this.btnDeleteGame.Size = new System.Drawing.Size(253, 50);
-            this.btnDeleteGame.TabIndex = 3;
-            this.btnDeleteGame.Text = "Delete Game";
-            this.btnDeleteGame.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateGame
-            // 
-            this.btnUpdateGame.Location = new System.Drawing.Point(8, 133);
-            this.btnUpdateGame.Name = "btnUpdateGame";
-            this.btnUpdateGame.Size = new System.Drawing.Size(253, 50);
-            this.btnUpdateGame.TabIndex = 2;
-            this.btnUpdateGame.Text = "Update Game";
-            this.btnUpdateGame.UseVisualStyleBackColor = true;
-            // 
-            // btnAddGame
-            // 
-            this.btnAddGame.Location = new System.Drawing.Point(8, 77);
-            this.btnAddGame.Name = "btnAddGame";
-            this.btnAddGame.Size = new System.Drawing.Size(253, 50);
-            this.btnAddGame.TabIndex = 1;
-            this.btnAddGame.Text = "Add Game";
-            this.btnAddGame.UseVisualStyleBackColor = true;
-            this.btnAddGame.Click += new System.EventHandler(this.btnAddGame_Click);
-            // 
-            // addGameGroup
-            // 
-            this.addGameGroup.Controls.Add(this.label1);
-            this.addGameGroup.Controls.Add(this.addGameBTN);
-            this.addGameGroup.Controls.Add(this.gameTitleTextBox);
-            this.addGameGroup.Controls.Add(this.gamePublisherComboBox);
-            this.addGameGroup.Controls.Add(this.gameReleaseYearTextBox);
-            this.addGameGroup.Controls.Add(this.label6);
-            this.addGameGroup.Controls.Add(this.gameRentalRateTextBox);
-            this.addGameGroup.Controls.Add(this.gameGenreComboBox);
-            this.addGameGroup.Controls.Add(this.label2);
-            this.addGameGroup.Controls.Add(this.label5);
-            this.addGameGroup.Controls.Add(this.label3);
-            this.addGameGroup.Controls.Add(this.gameDeveloperComboBox);
-            this.addGameGroup.Controls.Add(this.label4);
-            this.addGameGroup.Location = new System.Drawing.Point(301, 77);
-            this.addGameGroup.Name = "addGameGroup";
-            this.addGameGroup.Size = new System.Drawing.Size(303, 409);
-            this.addGameGroup.TabIndex = 24;
-            this.addGameGroup.TabStop = false;
-            this.addGameGroup.Text = "Add Game";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Title";
-            // 
-            // addGameBTN
-            // 
-            this.addGameBTN.Location = new System.Drawing.Point(58, 355);
-            this.addGameBTN.Name = "addGameBTN";
-            this.addGameBTN.Size = new System.Drawing.Size(75, 23);
-            this.addGameBTN.TabIndex = 23;
-            this.addGameBTN.Text = "Add Game";
-            this.addGameBTN.UseVisualStyleBackColor = true;
-            this.addGameBTN.Click += new System.EventHandler(this.addGameBTN_Click);
-            // 
-            // gameTitleTextBox
-            // 
-            this.gameTitleTextBox.Location = new System.Drawing.Point(58, 34);
-            this.gameTitleTextBox.Name = "gameTitleTextBox";
-            this.gameTitleTextBox.Size = new System.Drawing.Size(175, 20);
-            this.gameTitleTextBox.TabIndex = 8;
-            // 
-            // gamePublisherComboBox
-            // 
-            this.gamePublisherComboBox.FormattingEnabled = true;
-            this.gamePublisherComboBox.Location = new System.Drawing.Point(58, 317);
-            this.gamePublisherComboBox.Name = "gamePublisherComboBox";
-            this.gamePublisherComboBox.Size = new System.Drawing.Size(175, 21);
-            this.gamePublisherComboBox.TabIndex = 22;
-            // 
-            // gameReleaseYearTextBox
-            // 
-            this.gameReleaseYearTextBox.Location = new System.Drawing.Point(58, 90);
-            this.gameReleaseYearTextBox.Name = "gameReleaseYearTextBox";
-            this.gameReleaseYearTextBox.Size = new System.Drawing.Size(175, 20);
-            this.gameReleaseYearTextBox.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(55, 302);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Publisher";
-            // 
-            // gameRentalRateTextBox
-            // 
-            this.gameRentalRateTextBox.Location = new System.Drawing.Point(58, 146);
-            this.gameRentalRateTextBox.Name = "gameRentalRateTextBox";
-            this.gameRentalRateTextBox.Size = new System.Drawing.Size(175, 20);
-            this.gameRentalRateTextBox.TabIndex = 13;
-            // 
-            // gameGenreComboBox
-            // 
-            this.gameGenreComboBox.FormattingEnabled = true;
-            this.gameGenreComboBox.Location = new System.Drawing.Point(58, 258);
-            this.gameGenreComboBox.Name = "gameGenreComboBox";
-            this.gameGenreComboBox.Size = new System.Drawing.Size(175, 21);
-            this.gameGenreComboBox.TabIndex = 20;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Release Year";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(55, 243);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Genre";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Rental Rate";
-            // 
-            // gameDeveloperComboBox
-            // 
-            this.gameDeveloperComboBox.FormattingEnabled = true;
-            this.gameDeveloperComboBox.Location = new System.Drawing.Point(58, 202);
-            this.gameDeveloperComboBox.Name = "gameDeveloperComboBox";
-            this.gameDeveloperComboBox.Size = new System.Drawing.Size(175, 21);
-            this.gameDeveloperComboBox.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 187);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Developer";
-            // 
-            // gameList
-            // 
-            this.gameList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gameList.Location = new System.Drawing.Point(276, 77);
-            this.gameList.Name = "gameList";
-            this.gameList.Size = new System.Drawing.Size(868, 357);
-            this.gameList.TabIndex = 0;
-            // 
-            // tabBastion
-            // 
-            this.tabBastion.Controls.Add(this.tpgGames);
-            this.tabBastion.Controls.Add(this.tpgRentals);
-            this.tabBastion.Controls.Add(this.tpgCustomers);
-            this.tabBastion.Controls.Add(this.tpgManagement);
-            this.tabBastion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabBastion.ImageList = this.tabImages;
-            this.tabBastion.ItemSize = new System.Drawing.Size(83, 45);
-            this.tabBastion.Location = new System.Drawing.Point(0, 0);
-            this.tabBastion.Name = "tabBastion";
-            this.tabBastion.SelectedIndex = 0;
-            this.tabBastion.Size = new System.Drawing.Size(1350, 729);
-            this.tabBastion.TabIndex = 0;
-            // 
-            // tpgManagement
-            // 
-            this.tpgManagement.ImageIndex = 3;
-            this.tpgManagement.Location = new System.Drawing.Point(4, 49);
-            this.tpgManagement.Name = "tpgManagement";
-            this.tpgManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgManagement.Size = new System.Drawing.Size(1342, 676);
-            this.tpgManagement.TabIndex = 4;
-            this.tpgManagement.Text = "Management";
-            this.tpgManagement.UseVisualStyleBackColor = true;
             // 
             // grpUpdateCustomer
             // 
@@ -829,6 +413,497 @@
             this.label22.TabIndex = 17;
             this.label22.Text = "Store";
             // 
+            // btnAddCustomerCancel
+            // 
+            this.btnAddCustomerCancel.Location = new System.Drawing.Point(303, 355);
+            this.btnAddCustomerCancel.Name = "btnAddCustomerCancel";
+            this.btnAddCustomerCancel.Size = new System.Drawing.Size(175, 23);
+            this.btnAddCustomerCancel.TabIndex = 29;
+            this.btnAddCustomerCancel.Text = "Cancel";
+            this.btnAddCustomerCancel.UseVisualStyleBackColor = true;
+            this.btnAddCustomerCancel.Click += new System.EventHandler(this.btnAddCustomerCancel_Click);
+            // 
+            // txtAddCustomerCity
+            // 
+            this.txtAddCustomerCity.Location = new System.Drawing.Point(58, 306);
+            this.txtAddCustomerCity.Name = "txtAddCustomerCity";
+            this.txtAddCustomerCity.Size = new System.Drawing.Size(175, 20);
+            this.txtAddCustomerCity.TabIndex = 28;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(300, 190);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 13);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Address Line 2";
+            // 
+            // txtAddCustomerAddress2
+            // 
+            this.txtAddCustomerAddress2.Location = new System.Drawing.Point(303, 206);
+            this.txtAddCustomerAddress2.Multiline = true;
+            this.txtAddCustomerAddress2.Name = "txtAddCustomerAddress2";
+            this.txtAddCustomerAddress2.Size = new System.Drawing.Size(175, 64);
+            this.txtAddCustomerAddress2.TabIndex = 26;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(55, 190);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 13);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Address Line 1";
+            // 
+            // txtAddCustomerAddress1
+            // 
+            this.txtAddCustomerAddress1.Location = new System.Drawing.Point(58, 206);
+            this.txtAddCustomerAddress1.Multiline = true;
+            this.txtAddCustomerAddress1.Name = "txtAddCustomerAddress1";
+            this.txtAddCustomerAddress1.Size = new System.Drawing.Size(175, 64);
+            this.txtAddCustomerAddress1.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(55, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "First Name";
+            // 
+            // btnAddCustomerAddCustomer
+            // 
+            this.btnAddCustomerAddCustomer.Location = new System.Drawing.Point(58, 355);
+            this.btnAddCustomerAddCustomer.Name = "btnAddCustomerAddCustomer";
+            this.btnAddCustomerAddCustomer.Size = new System.Drawing.Size(175, 23);
+            this.btnAddCustomerAddCustomer.TabIndex = 23;
+            this.btnAddCustomerAddCustomer.Text = "Add Customer";
+            this.btnAddCustomerAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomerAddCustomer.Click += new System.EventHandler(this.btnAddCustomerAddCustomer_Click);
+            // 
+            // txtAddCustomerFName
+            // 
+            this.txtAddCustomerFName.Location = new System.Drawing.Point(58, 34);
+            this.txtAddCustomerFName.Name = "txtAddCustomerFName";
+            this.txtAddCustomerFName.Size = new System.Drawing.Size(175, 20);
+            this.txtAddCustomerFName.TabIndex = 8;
+            // 
+            // cmbAddCustomerCountry
+            // 
+            this.cmbAddCustomerCountry.FormattingEnabled = true;
+            this.cmbAddCustomerCountry.Location = new System.Drawing.Point(303, 305);
+            this.cmbAddCustomerCountry.Name = "cmbAddCustomerCountry";
+            this.cmbAddCustomerCountry.Size = new System.Drawing.Size(175, 21);
+            this.cmbAddCustomerCountry.TabIndex = 22;
+            // 
+            // txtAddCustomerLName
+            // 
+            this.txtAddCustomerLName.Location = new System.Drawing.Point(303, 34);
+            this.txtAddCustomerLName.Name = "txtAddCustomerLName";
+            this.txtAddCustomerLName.Size = new System.Drawing.Size(175, 20);
+            this.txtAddCustomerLName.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(300, 290);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Country";
+            // 
+            // txtAddCustomerEmail
+            // 
+            this.txtAddCustomerEmail.Location = new System.Drawing.Point(58, 91);
+            this.txtAddCustomerEmail.Name = "txtAddCustomerEmail";
+            this.txtAddCustomerEmail.Size = new System.Drawing.Size(420, 20);
+            this.txtAddCustomerEmail.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(300, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Last Name";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(55, 290);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "City";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(55, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Email Address";
+            // 
+            // cmbAddCustomerStore
+            // 
+            this.cmbAddCustomerStore.FormattingEnabled = true;
+            this.cmbAddCustomerStore.Location = new System.Drawing.Point(58, 146);
+            this.cmbAddCustomerStore.Name = "cmbAddCustomerStore";
+            this.cmbAddCustomerStore.Size = new System.Drawing.Size(420, 21);
+            this.cmbAddCustomerStore.TabIndex = 18;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(55, 131);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Store";
+            // 
+            // dgvCustomer
+            // 
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Location = new System.Drawing.Point(276, 77);
+            this.dgvCustomer.MultiSelect = false;
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.Size = new System.Drawing.Size(868, 357);
+            this.dgvCustomer.TabIndex = 1;
+            this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
+            // 
+            // tpgRentals
+            // 
+            this.tpgRentals.ImageIndex = 1;
+            this.tpgRentals.Location = new System.Drawing.Point(4, 49);
+            this.tpgRentals.Name = "tpgRentals";
+            this.tpgRentals.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgRentals.Size = new System.Drawing.Size(1342, 676);
+            this.tpgRentals.TabIndex = 1;
+            this.tpgRentals.Text = "Rentals";
+            this.tpgRentals.UseVisualStyleBackColor = true;
+            // 
+            // tpgGames
+            // 
+            this.tpgGames.Controls.Add(this.editGameGroup);
+            this.tpgGames.Controls.Add(this.clearSearchResultsBTN);
+            this.tpgGames.Controls.Add(this.gameSearchTextBox);
+            this.tpgGames.Controls.Add(this.gameSearchBTN);
+            this.tpgGames.Controls.Add(this.btnDeleteGame);
+            this.tpgGames.Controls.Add(this.btnUpdateGame);
+            this.tpgGames.Controls.Add(this.btnAddGame);
+            this.tpgGames.Controls.Add(this.addGameGroup);
+            this.tpgGames.Controls.Add(this.gameList);
+            this.tpgGames.ImageIndex = 0;
+            this.tpgGames.Location = new System.Drawing.Point(4, 49);
+            this.tpgGames.Name = "tpgGames";
+            this.tpgGames.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgGames.Size = new System.Drawing.Size(1342, 676);
+            this.tpgGames.TabIndex = 0;
+            this.tpgGames.Text = "Games";
+            this.tpgGames.UseVisualStyleBackColor = true;
+            // 
+            // clearSearchResultsBTN
+            // 
+            this.clearSearchResultsBTN.Location = new System.Drawing.Point(604, 28);
+            this.clearSearchResultsBTN.Name = "clearSearchResultsBTN";
+            this.clearSearchResultsBTN.Size = new System.Drawing.Size(132, 23);
+            this.clearSearchResultsBTN.TabIndex = 7;
+            this.clearSearchResultsBTN.Text = "Clear Search Results";
+            this.clearSearchResultsBTN.UseVisualStyleBackColor = true;
+            this.clearSearchResultsBTN.Click += new System.EventHandler(this.clearSearchResultsBTN_Click);
+            // 
+            // gameSearchTextBox
+            // 
+            this.gameSearchTextBox.Location = new System.Drawing.Point(276, 31);
+            this.gameSearchTextBox.Name = "gameSearchTextBox";
+            this.gameSearchTextBox.Size = new System.Drawing.Size(175, 20);
+            this.gameSearchTextBox.TabIndex = 6;
+            // 
+            // gameSearchBTN
+            // 
+            this.gameSearchBTN.Location = new System.Drawing.Point(486, 28);
+            this.gameSearchBTN.Name = "gameSearchBTN";
+            this.gameSearchBTN.Size = new System.Drawing.Size(76, 23);
+            this.gameSearchBTN.TabIndex = 5;
+            this.gameSearchBTN.Text = "Search";
+            this.gameSearchBTN.UseVisualStyleBackColor = true;
+            this.gameSearchBTN.Click += new System.EventHandler(this.gameSearchBTN_Click);
+            // 
+            // btnDeleteGame
+            // 
+            this.btnDeleteGame.Location = new System.Drawing.Point(8, 189);
+            this.btnDeleteGame.Name = "btnDeleteGame";
+            this.btnDeleteGame.Size = new System.Drawing.Size(253, 50);
+            this.btnDeleteGame.TabIndex = 3;
+            this.btnDeleteGame.Text = "Delete Game";
+            this.btnDeleteGame.UseVisualStyleBackColor = true;
+            this.btnDeleteGame.Click += new System.EventHandler(this.btnDeleteGame_Click);
+            // 
+            // btnUpdateGame
+            // 
+            this.btnUpdateGame.Location = new System.Drawing.Point(8, 133);
+            this.btnUpdateGame.Name = "btnUpdateGame";
+            this.btnUpdateGame.Size = new System.Drawing.Size(253, 50);
+            this.btnUpdateGame.TabIndex = 2;
+            this.btnUpdateGame.Text = "Update Game";
+            this.btnUpdateGame.UseVisualStyleBackColor = true;
+            this.btnUpdateGame.Click += new System.EventHandler(this.btnUpdateGame_Click);
+            // 
+            // btnAddGame
+            // 
+            this.btnAddGame.Location = new System.Drawing.Point(8, 77);
+            this.btnAddGame.Name = "btnAddGame";
+            this.btnAddGame.Size = new System.Drawing.Size(253, 50);
+            this.btnAddGame.TabIndex = 1;
+            this.btnAddGame.Text = "Add Game";
+            this.btnAddGame.UseVisualStyleBackColor = true;
+            this.btnAddGame.Click += new System.EventHandler(this.btnAddGame_Click);
+            // 
+            // addGameGroup
+            // 
+            this.addGameGroup.Controls.Add(this.label1);
+            this.addGameGroup.Controls.Add(this.addGameBTN);
+            this.addGameGroup.Controls.Add(this.gameTitleTextBox);
+            this.addGameGroup.Controls.Add(this.gamePublisherComboBox);
+            this.addGameGroup.Controls.Add(this.gameReleaseYearTextBox);
+            this.addGameGroup.Controls.Add(this.label6);
+            this.addGameGroup.Controls.Add(this.gameRentalRateTextBox);
+            this.addGameGroup.Controls.Add(this.gameGenreComboBox);
+            this.addGameGroup.Controls.Add(this.label2);
+            this.addGameGroup.Controls.Add(this.label5);
+            this.addGameGroup.Controls.Add(this.label3);
+            this.addGameGroup.Controls.Add(this.gameDeveloperComboBox);
+            this.addGameGroup.Controls.Add(this.label4);
+            this.addGameGroup.Location = new System.Drawing.Point(301, 77);
+            this.addGameGroup.Name = "addGameGroup";
+            this.addGameGroup.Size = new System.Drawing.Size(303, 409);
+            this.addGameGroup.TabIndex = 24;
+            this.addGameGroup.TabStop = false;
+            this.addGameGroup.Text = "Add Game";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Title";
+            // 
+            // addGameBTN
+            // 
+            this.addGameBTN.Location = new System.Drawing.Point(58, 355);
+            this.addGameBTN.Name = "addGameBTN";
+            this.addGameBTN.Size = new System.Drawing.Size(75, 23);
+            this.addGameBTN.TabIndex = 23;
+            this.addGameBTN.Text = "Add Game";
+            this.addGameBTN.UseVisualStyleBackColor = true;
+            this.addGameBTN.Click += new System.EventHandler(this.addGameBTN_Click);
+            // 
+            // gameTitleTextBox
+            // 
+            this.gameTitleTextBox.Location = new System.Drawing.Point(58, 34);
+            this.gameTitleTextBox.Name = "gameTitleTextBox";
+            this.gameTitleTextBox.Size = new System.Drawing.Size(175, 20);
+            this.gameTitleTextBox.TabIndex = 8;
+            // 
+            // gamePublisherComboBox
+            // 
+            this.gamePublisherComboBox.FormattingEnabled = true;
+            this.gamePublisherComboBox.Location = new System.Drawing.Point(58, 317);
+            this.gamePublisherComboBox.Name = "gamePublisherComboBox";
+            this.gamePublisherComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gamePublisherComboBox.TabIndex = 22;
+            // 
+            // gameReleaseYearTextBox
+            // 
+            this.gameReleaseYearTextBox.Location = new System.Drawing.Point(58, 90);
+            this.gameReleaseYearTextBox.Name = "gameReleaseYearTextBox";
+            this.gameReleaseYearTextBox.Size = new System.Drawing.Size(175, 20);
+            this.gameReleaseYearTextBox.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(55, 302);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Publisher";
+            // 
+            // gameRentalRateTextBox
+            // 
+            this.gameRentalRateTextBox.Location = new System.Drawing.Point(58, 146);
+            this.gameRentalRateTextBox.Name = "gameRentalRateTextBox";
+            this.gameRentalRateTextBox.Size = new System.Drawing.Size(175, 20);
+            this.gameRentalRateTextBox.TabIndex = 13;
+            // 
+            // gameGenreComboBox
+            // 
+            this.gameGenreComboBox.FormattingEnabled = true;
+            this.gameGenreComboBox.Location = new System.Drawing.Point(58, 258);
+            this.gameGenreComboBox.Name = "gameGenreComboBox";
+            this.gameGenreComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gameGenreComboBox.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(55, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Release Year";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(55, 243);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Genre";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(55, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Rental Rate";
+            // 
+            // gameDeveloperComboBox
+            // 
+            this.gameDeveloperComboBox.FormattingEnabled = true;
+            this.gameDeveloperComboBox.Location = new System.Drawing.Point(58, 202);
+            this.gameDeveloperComboBox.Name = "gameDeveloperComboBox";
+            this.gameDeveloperComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gameDeveloperComboBox.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(55, 187);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Developer";
+            // 
+            // gameList
+            // 
+            this.gameList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gameList.Location = new System.Drawing.Point(276, 77);
+            this.gameList.Name = "gameList";
+            this.gameList.Size = new System.Drawing.Size(1028, 357);
+            this.gameList.TabIndex = 0;
+            // 
+            // tabBastion
+            // 
+            this.tabBastion.Controls.Add(this.tpgGames);
+            this.tabBastion.Controls.Add(this.tpgRentals);
+            this.tabBastion.Controls.Add(this.tpgCustomers);
+            this.tabBastion.Controls.Add(this.tpgManagement);
+            this.tabBastion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabBastion.ImageList = this.tabImages;
+            this.tabBastion.ItemSize = new System.Drawing.Size(83, 45);
+            this.tabBastion.Location = new System.Drawing.Point(0, 0);
+            this.tabBastion.Name = "tabBastion";
+            this.tabBastion.SelectedIndex = 0;
+            this.tabBastion.Size = new System.Drawing.Size(1350, 729);
+            this.tabBastion.TabIndex = 0;
+            // 
+            // tpgManagement
+            // 
+            this.tpgManagement.ImageIndex = 3;
+            this.tpgManagement.Location = new System.Drawing.Point(4, 49);
+            this.tpgManagement.Name = "tpgManagement";
+            this.tpgManagement.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgManagement.Size = new System.Drawing.Size(1342, 676);
+            this.tpgManagement.TabIndex = 4;
+            this.tpgManagement.Text = "Management";
+            this.tpgManagement.UseVisualStyleBackColor = true;
+            // 
+            // editGameGroup
+            // 
+            this.editGameGroup.Controls.Add(this.label23);
+            this.editGameGroup.Controls.Add(this.updateGame);
+            this.editGameGroup.Controls.Add(this.editGameTitle);
+            this.editGameGroup.Controls.Add(this.editGameReleaseYear);
+            this.editGameGroup.Controls.Add(this.editGameRentalRate);
+            this.editGameGroup.Controls.Add(this.label25);
+            this.editGameGroup.Controls.Add(this.label27);
+            this.editGameGroup.Location = new System.Drawing.Point(630, 77);
+            this.editGameGroup.Name = "editGameGroup";
+            this.editGameGroup.Size = new System.Drawing.Size(303, 409);
+            this.editGameGroup.TabIndex = 25;
+            this.editGameGroup.TabStop = false;
+            this.editGameGroup.Text = "Edit Game";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(55, 18);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(27, 13);
+            this.label23.TabIndex = 14;
+            this.label23.Text = "Title";
+            // 
+            // updateGame
+            // 
+            this.updateGame.Location = new System.Drawing.Point(58, 355);
+            this.updateGame.Name = "updateGame";
+            this.updateGame.Size = new System.Drawing.Size(75, 23);
+            this.updateGame.TabIndex = 23;
+            this.updateGame.Text = "Update Game";
+            this.updateGame.UseVisualStyleBackColor = true;
+            this.updateGame.Click += new System.EventHandler(this.updateGame_Click);
+            // 
+            // editGameTitle
+            // 
+            this.editGameTitle.Location = new System.Drawing.Point(58, 34);
+            this.editGameTitle.Name = "editGameTitle";
+            this.editGameTitle.Size = new System.Drawing.Size(175, 20);
+            this.editGameTitle.TabIndex = 8;
+            // 
+            // editGameReleaseYear
+            // 
+            this.editGameReleaseYear.Location = new System.Drawing.Point(58, 90);
+            this.editGameReleaseYear.Name = "editGameReleaseYear";
+            this.editGameReleaseYear.Size = new System.Drawing.Size(175, 20);
+            this.editGameReleaseYear.TabIndex = 11;
+            // 
+            // editGameRentalRate
+            // 
+            this.editGameRentalRate.Location = new System.Drawing.Point(58, 146);
+            this.editGameRentalRate.Name = "editGameRentalRate";
+            this.editGameRentalRate.Size = new System.Drawing.Size(175, 20);
+            this.editGameRentalRate.TabIndex = 13;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(55, 74);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(71, 13);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "Release Year";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(55, 130);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(64, 13);
+            this.label27.TabIndex = 16;
+            this.label27.Text = "Rental Rate";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -843,6 +918,8 @@
             this.tpgCustomers.PerformLayout();
             this.grpAddCustomer.ResumeLayout(false);
             this.grpAddCustomer.PerformLayout();
+            this.grpUpdateCustomer.ResumeLayout(false);
+            this.grpUpdateCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.tpgGames.ResumeLayout(false);
             this.tpgGames.PerformLayout();
@@ -850,8 +927,8 @@
             this.addGameGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).EndInit();
             this.tabBastion.ResumeLayout(false);
-            this.grpUpdateCustomer.ResumeLayout(false);
-            this.grpUpdateCustomer.PerformLayout();
+            this.editGameGroup.ResumeLayout(false);
+            this.editGameGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -861,7 +938,6 @@
         private System.Windows.Forms.TabPage tpgCustomers;
         private System.Windows.Forms.TabPage tpgRentals;
         private System.Windows.Forms.TabPage tpgGames;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnDeleteGame;
         private System.Windows.Forms.Button btnUpdateGame;
         private System.Windows.Forms.Button btnAddGame;
@@ -930,6 +1006,14 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cmbUpdateCustomerStore;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.GroupBox editGameGroup;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button updateGame;
+        private System.Windows.Forms.TextBox editGameTitle;
+        private System.Windows.Forms.TextBox editGameReleaseYear;
+        private System.Windows.Forms.TextBox editGameRentalRate;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label27;
     }
 }
 
