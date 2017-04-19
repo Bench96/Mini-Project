@@ -30,6 +30,8 @@ namespace Bastion
 
             //}
             addGameGroup.Hide();
+            grpAddCustomer.Hide();
+            grpUpdateCustomer.Hide();
         }
 
         //***************************************Games Section********************************************//
@@ -71,6 +73,78 @@ namespace Bastion
                 gameList.Show();
                 addGameGroup.Hide();
             }   
+        }
+
+        //***************************************Customer Section********************************************//
+
+        private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvCustomer.SelectedRows.Count != 0)
+            {
+                btnUpdateCustomer.Enabled = true;
+                btnDeleteCustomer.Enabled = true;
+            }
+
+            else
+            {
+                btnUpdateCustomer.Enabled = false;
+                btnDeleteCustomer.Enabled = false;
+            }
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            dgvCustomer.Hide();
+            grpUpdateCustomer.Hide();
+            grpAddCustomer.Show();
+        }
+
+        private void btnAddCustomerAddCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddCustomerCancel_Click(object sender, EventArgs e)
+        {
+            grpAddCustomer.Hide();
+            grpUpdateCustomer.Hide();
+            dgvCustomer.Show();
+        }
+
+        private void btnUpdateCustomerUpdateCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateCustomerCancel_Click(object sender, EventArgs e)
+        {
+            grpAddCustomer.Hide();
+            grpUpdateCustomer.Hide();
+            dgvCustomer.Show();
+        }
+
+        private void btnUpdateCustomer_Click(object sender, EventArgs e)
+        {
+            dgvCustomer.Hide();
+            grpAddCustomer.Hide();
+            grpUpdateCustomer.Show();
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you wish to delete this customer record?", "Delete Customer",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                // TODO - delete record
+
+                // TODO - refresh dgv
+
+                grpAddCustomer.Hide();
+                grpUpdateCustomer.Hide();
+                dgvCustomer.Show();
+            }
         }
     }
 }
