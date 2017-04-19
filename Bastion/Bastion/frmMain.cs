@@ -30,8 +30,10 @@ namespace Bastion
 
             //}
             addGameGroup.Hide();
+
             grpAddCustomer.Hide();
             grpUpdateCustomer.Hide();
+            populateCustomersDatagridview();
         }
 
         //***************************************Games Section********************************************//
@@ -77,6 +79,45 @@ namespace Bastion
 
         //***************************************Customer Section********************************************//
 
+        private class CustomerProjection
+        {
+            public int CustomerID { get; set; }
+            public string FName { get; set; }
+            public string LName { get; set; }
+            public string Email { get; set; }
+            public string Address { get; set; }
+            public string City { get; set; }
+            public string Country { get; set; }
+            public bool Active { get; set; }
+        }
+
+        private void populateCustomersDatagridview()
+        {
+            var query = from cu in db.Customers
+                        join ad in db.Addresses on cu.AddressID equals ad.AddressID
+                        join ci in db.Cities on ad.CityID equals ci.CityID
+                        join co in db.Countries on ci.CountryID equals co.CountryID
+                        select new CustomerProjection()
+                        {
+                            CustomerID = cu.CustomerID,
+                            FName = cu.FirstName,
+                            LName = cu.LastName,
+                            Email = cu.Email,
+                            Address = ad.Address1,
+                            City = ci.City1,
+                            Country = co.Country1,
+                            Active = cu.Active
+                        };
+
+            var customers = query.ToList();
+
+            dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvCustomer.DataSource = null;
+            dgvCustomer.DataSource = customers;
+            dgvCustomer.Columns[1].HeaderText = "First Name";
+            dgvCustomer.Columns[2].HeaderText = "Last Name";
+        }
+
         private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvCustomer.SelectedRows.Count != 0)
@@ -94,6 +135,8 @@ namespace Bastion
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            cmbAddCustomerCountry.DataSource = db.Countries.Select(c => c.Country1).ToList();            
+
             dgvCustomer.Hide();
             grpUpdateCustomer.Hide();
             grpAddCustomer.Show();
@@ -101,7 +144,23 @@ namespace Bastion
 
         private void btnAddCustomerAddCustomer_Click(object sender, EventArgs e)
         {
+            if (txtAddCustomerFName.Text == "" || txtAddCustomerLName.Text == "" || txtAddCustomerEmail.Text == "" ||
+                txtUpdateCustomerAddress1.Text == "" || txtAddCustomerCity.Text == "")
+            {
+                MessageBox.Show("Please complete all the fields");
+            }
 
+            else
+            {
+                // TODO Add Customer
+                db.SaveChanges();
+
+                populateCustomersDatagridview();
+
+                grpAddCustomer.Hide();
+                grpUpdateCustomer.Hide();
+                dgvCustomer.Show();
+            }
         }
 
         private void btnAddCustomerCancel_Click(object sender, EventArgs e)
@@ -113,7 +172,37 @@ namespace Bastion
 
         private void btnUpdateCustomerUpdateCustomer_Click(object sender, EventArgs e)
         {
+            if (txtUpdateCustomerFName.Text == "" || txtUpdateCustomerLName.Text == "" || txtUpdateCustomerEmail.Text == "" ||
+                txtUpdateCustomerAddress1.Text == "" || txtUpdateCustomerCity.Text == "")
+            {
+                MessageBox.Show("Please complete all the fields");
+            }
 
+            else
+            {
+                int recordToUpdateID = (int)dgvCustomer.SelectedRows[0].Cells[0].Value;
+
+                Models.Customer customer = db.Customers.First(c => c.CustomerID == recordToUpdateID);
+                Models.Address address = db.Addresses.First(a => a.AddressID == customer.AddressID);
+                Models.City city = db.Cities.First(ci => ci.CityID == address.CityID);
+
+                customer.FirstName = txtUpdateCustomerFName.Text;
+                customer.LastName = txtUpdateCustomerLName.Text;
+                customer.Email = txtUpdateCustomerEmail.Text;
+                address.Address1 = txtUpdateCustomerAddress1.Text;
+                address.Address2 = txtUpdateCustomerAddress2.Text;
+                city.City1 = txtUpdateCustomerCity.Text;
+                city.CountryID = db.Countries.First(co => co.Country1 == cmbUpdateCustomerCountry.Text).CountryID;
+                customer.Active = chkUpdateCustomerActive.Checked;
+
+                db.SaveChanges();
+
+                populateCustomersDatagridview();
+
+                grpAddCustomer.Hide();
+                grpUpdateCustomer.Hide();
+                dgvCustomer.Show();
+            }
         }
 
         private void btnUpdateCustomerCancel_Click(object sender, EventArgs e)
@@ -125,6 +214,23 @@ namespace Bastion
 
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
+            cmbUpdateCustomerCountry.DataSource = db.Countries.Select(c => c.Country1).ToList();
+
+            int recordToUpdateID = (int)dgvCustomer.SelectedRows[0].Cells[0].Value;
+
+            Models.Customer customer = db.Customers.First(c => c.CustomerID == recordToUpdateID);
+            Models.Address address = db.Addresses.First(a => a.AddressID == customer.AddressID);
+            Models.City city = db.Cities.First(ci => ci.CityID == address.CityID);
+
+            txtUpdateCustomerFName.Text = customer.FirstName;
+            txtUpdateCustomerLName.Text = customer.LastName;
+            txtUpdateCustomerEmail.Text = customer.Email;
+            txtUpdateCustomerAddress1.Text = address.Address1;
+            txtUpdateCustomerAddress2.Text = address.Address2;
+            txtUpdateCustomerCity.Text = city.City1;
+            cmbUpdateCustomerCountry.Text = db.Countries.First(co => co.CountryID == city.CountryID).Country1;
+            chkUpdateCustomerActive.Checked = customer.Active;
+
             dgvCustomer.Hide();
             grpAddCustomer.Hide();
             grpUpdateCustomer.Show();
@@ -137,9 +243,11 @@ namespace Bastion
 
             if (dr == DialogResult.Yes)
             {
-                // TODO - delete record
+                int recordToDeleteID = (int)dgvCustomer.SelectedRows[0].Cells[0].Value;
+                db.Customers.Remove(db.Customers.First(c => c.CustomerID == recordToDeleteID));
+                db.SaveChanges();
 
-                // TODO - refresh dgv
+                populateCustomersDatagridview();
 
                 grpAddCustomer.Hide();
                 grpUpdateCustomer.Hide();

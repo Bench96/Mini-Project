@@ -32,6 +32,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tabImages = new System.Windows.Forms.ImageList(this.components);
             this.tpgCustomers = new System.Windows.Forms.TabPage();
+            this.grpUpdateCustomer = new System.Windows.Forms.GroupBox();
+            this.chkUpdateCustomerActive = new System.Windows.Forms.CheckBox();
+            this.btnUpdateCustomerCancel = new System.Windows.Forms.Button();
+            this.txtUpdateCustomerCity = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerAddress2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerAddress1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnUpdateCustomerUpdateCustomer = new System.Windows.Forms.Button();
+            this.txtUpdateCustomerFName = new System.Windows.Forms.TextBox();
+            this.cmbUpdateCustomerCountry = new System.Windows.Forms.ComboBox();
+            this.txtUpdateCustomerLName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerEmail = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cmbUpdateCustomerStore = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.btnClearSearchCustomer = new System.Windows.Forms.Button();
             this.txtSearchCustomer = new System.Windows.Forms.TextBox();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
@@ -84,33 +104,33 @@
             this.gameList = new System.Windows.Forms.DataGridView();
             this.tabBastion = new System.Windows.Forms.TabControl();
             this.tpgManagement = new System.Windows.Forms.TabPage();
-            this.grpUpdateCustomer = new System.Windows.Forms.GroupBox();
-            this.btnUpdateCustomerCancel = new System.Windows.Forms.Button();
-            this.txtUpdateCustomerCity = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtUpdateCustomerAddress2 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtUpdateCustomerAddress1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.btnUpdateCustomerUpdateCustomer = new System.Windows.Forms.Button();
-            this.txtUpdateCustomerFName = new System.Windows.Forms.TextBox();
-            this.cmbUpdateCustomerCountry = new System.Windows.Forms.ComboBox();
-            this.txtUpdateCustomerLName = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtUpdateCustomerEmail = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cmbUpdateCustomerStore = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.btnSearchStoreClear = new System.Windows.Forms.Button();
+            this.txtSearchStore = new System.Windows.Forms.TextBox();
+            this.btnSearchStore = new System.Windows.Forms.Button();
+            this.btnUpdateStore = new System.Windows.Forms.Button();
+            this.btnAddStore = new System.Windows.Forms.Button();
+            this.dgvStores = new System.Windows.Forms.DataGridView();
+            this.btnSearchEmployeeClear = new System.Windows.Forms.Button();
+            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
+            this.btnSearchEmployee = new System.Windows.Forms.Button();
+            this.btnDeleteEmployee = new System.Windows.Forms.Button();
+            this.btnUpdateEmployee = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.tpgCustomers.SuspendLayout();
+            this.grpUpdateCustomer.SuspendLayout();
             this.grpAddCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tpgGames.SuspendLayout();
             this.addGameGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).BeginInit();
             this.tabBastion.SuspendLayout();
-            this.grpUpdateCustomer.SuspendLayout();
+            this.tpgManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // tabImages
@@ -124,6 +144,8 @@
             // 
             // tpgCustomers
             // 
+            this.tpgCustomers.Controls.Add(this.label25);
+            this.tpgCustomers.Controls.Add(this.grpUpdateCustomer);
             this.tpgCustomers.Controls.Add(this.btnClearSearchCustomer);
             this.tpgCustomers.Controls.Add(this.txtSearchCustomer);
             this.tpgCustomers.Controls.Add(this.btnSearchCustomer);
@@ -140,6 +162,196 @@
             this.tpgCustomers.TabIndex = 3;
             this.tpgCustomers.Text = "Customers";
             this.tpgCustomers.UseVisualStyleBackColor = true;
+            // 
+            // grpUpdateCustomer
+            // 
+            this.grpUpdateCustomer.Controls.Add(this.chkUpdateCustomerActive);
+            this.grpUpdateCustomer.Controls.Add(this.btnUpdateCustomerCancel);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerCity);
+            this.grpUpdateCustomer.Controls.Add(this.label15);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerAddress2);
+            this.grpUpdateCustomer.Controls.Add(this.label16);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerAddress1);
+            this.grpUpdateCustomer.Controls.Add(this.label17);
+            this.grpUpdateCustomer.Controls.Add(this.btnUpdateCustomerUpdateCustomer);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerFName);
+            this.grpUpdateCustomer.Controls.Add(this.cmbUpdateCustomerCountry);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerLName);
+            this.grpUpdateCustomer.Controls.Add(this.label18);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerEmail);
+            this.grpUpdateCustomer.Controls.Add(this.label19);
+            this.grpUpdateCustomer.Controls.Add(this.label20);
+            this.grpUpdateCustomer.Controls.Add(this.label21);
+            this.grpUpdateCustomer.Controls.Add(this.cmbUpdateCustomerStore);
+            this.grpUpdateCustomer.Controls.Add(this.label22);
+            this.grpUpdateCustomer.Location = new System.Drawing.Point(301, 77);
+            this.grpUpdateCustomer.Name = "grpUpdateCustomer";
+            this.grpUpdateCustomer.Size = new System.Drawing.Size(549, 453);
+            this.grpUpdateCustomer.TabIndex = 32;
+            this.grpUpdateCustomer.TabStop = false;
+            this.grpUpdateCustomer.Text = "Update Customer";
+            // 
+            // chkUpdateCustomerActive
+            // 
+            this.chkUpdateCustomerActive.AutoSize = true;
+            this.chkUpdateCustomerActive.Location = new System.Drawing.Point(58, 355);
+            this.chkUpdateCustomerActive.Name = "chkUpdateCustomerActive";
+            this.chkUpdateCustomerActive.Size = new System.Drawing.Size(56, 17);
+            this.chkUpdateCustomerActive.TabIndex = 31;
+            this.chkUpdateCustomerActive.Text = "Active";
+            this.chkUpdateCustomerActive.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateCustomerCancel
+            // 
+            this.btnUpdateCustomerCancel.Location = new System.Drawing.Point(303, 401);
+            this.btnUpdateCustomerCancel.Name = "btnUpdateCustomerCancel";
+            this.btnUpdateCustomerCancel.Size = new System.Drawing.Size(175, 23);
+            this.btnUpdateCustomerCancel.TabIndex = 29;
+            this.btnUpdateCustomerCancel.Text = "Cancel";
+            this.btnUpdateCustomerCancel.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomerCancel.Click += new System.EventHandler(this.btnUpdateCustomerCancel_Click);
+            // 
+            // txtUpdateCustomerCity
+            // 
+            this.txtUpdateCustomerCity.Location = new System.Drawing.Point(58, 306);
+            this.txtUpdateCustomerCity.Name = "txtUpdateCustomerCity";
+            this.txtUpdateCustomerCity.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateCustomerCity.TabIndex = 28;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(300, 190);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 13);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Address Line 2";
+            // 
+            // txtUpdateCustomerAddress2
+            // 
+            this.txtUpdateCustomerAddress2.Location = new System.Drawing.Point(303, 206);
+            this.txtUpdateCustomerAddress2.Multiline = true;
+            this.txtUpdateCustomerAddress2.Name = "txtUpdateCustomerAddress2";
+            this.txtUpdateCustomerAddress2.Size = new System.Drawing.Size(175, 64);
+            this.txtUpdateCustomerAddress2.TabIndex = 26;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(55, 190);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 13);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Address Line 1";
+            // 
+            // txtUpdateCustomerAddress1
+            // 
+            this.txtUpdateCustomerAddress1.Location = new System.Drawing.Point(58, 206);
+            this.txtUpdateCustomerAddress1.Multiline = true;
+            this.txtUpdateCustomerAddress1.Name = "txtUpdateCustomerAddress1";
+            this.txtUpdateCustomerAddress1.Size = new System.Drawing.Size(175, 64);
+            this.txtUpdateCustomerAddress1.TabIndex = 24;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(55, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 13);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "First Name";
+            // 
+            // btnUpdateCustomerUpdateCustomer
+            // 
+            this.btnUpdateCustomerUpdateCustomer.Location = new System.Drawing.Point(58, 401);
+            this.btnUpdateCustomerUpdateCustomer.Name = "btnUpdateCustomerUpdateCustomer";
+            this.btnUpdateCustomerUpdateCustomer.Size = new System.Drawing.Size(175, 23);
+            this.btnUpdateCustomerUpdateCustomer.TabIndex = 23;
+            this.btnUpdateCustomerUpdateCustomer.Text = "Update Customer";
+            this.btnUpdateCustomerUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomerUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomerUpdateCustomer_Click);
+            // 
+            // txtUpdateCustomerFName
+            // 
+            this.txtUpdateCustomerFName.Location = new System.Drawing.Point(58, 34);
+            this.txtUpdateCustomerFName.Name = "txtUpdateCustomerFName";
+            this.txtUpdateCustomerFName.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateCustomerFName.TabIndex = 8;
+            // 
+            // cmbUpdateCustomerCountry
+            // 
+            this.cmbUpdateCustomerCountry.FormattingEnabled = true;
+            this.cmbUpdateCustomerCountry.Location = new System.Drawing.Point(303, 305);
+            this.cmbUpdateCustomerCountry.Name = "cmbUpdateCustomerCountry";
+            this.cmbUpdateCustomerCountry.Size = new System.Drawing.Size(175, 21);
+            this.cmbUpdateCustomerCountry.TabIndex = 22;
+            // 
+            // txtUpdateCustomerLName
+            // 
+            this.txtUpdateCustomerLName.Location = new System.Drawing.Point(303, 34);
+            this.txtUpdateCustomerLName.Name = "txtUpdateCustomerLName";
+            this.txtUpdateCustomerLName.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateCustomerLName.TabIndex = 11;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(300, 290);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(43, 13);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "Country";
+            // 
+            // txtUpdateCustomerEmail
+            // 
+            this.txtUpdateCustomerEmail.Location = new System.Drawing.Point(58, 91);
+            this.txtUpdateCustomerEmail.Name = "txtUpdateCustomerEmail";
+            this.txtUpdateCustomerEmail.Size = new System.Drawing.Size(420, 20);
+            this.txtUpdateCustomerEmail.TabIndex = 13;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(300, 18);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(58, 13);
+            this.label19.TabIndex = 15;
+            this.label19.Text = "Last Name";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(55, 290);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(24, 13);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "City";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(55, 75);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(73, 13);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Email Address";
+            // 
+            // cmbUpdateCustomerStore
+            // 
+            this.cmbUpdateCustomerStore.FormattingEnabled = true;
+            this.cmbUpdateCustomerStore.Location = new System.Drawing.Point(58, 146);
+            this.cmbUpdateCustomerStore.Name = "cmbUpdateCustomerStore";
+            this.cmbUpdateCustomerStore.Size = new System.Drawing.Size(420, 21);
+            this.cmbUpdateCustomerStore.TabIndex = 18;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(55, 131);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(32, 13);
+            this.label22.TabIndex = 17;
+            this.label22.Text = "Store";
             // 
             // btnClearSearchCustomer
             // 
@@ -200,7 +412,6 @@
             // 
             // grpAddCustomer
             // 
-            this.grpAddCustomer.Controls.Add(this.grpUpdateCustomer);
             this.grpAddCustomer.Controls.Add(this.btnAddCustomerCancel);
             this.grpAddCustomer.Controls.Add(this.txtAddCustomerCity);
             this.grpAddCustomer.Controls.Add(this.label14);
@@ -386,7 +597,8 @@
             this.dgvCustomer.Location = new System.Drawing.Point(276, 77);
             this.dgvCustomer.MultiSelect = false;
             this.dgvCustomer.Name = "dgvCustomer";
-            this.dgvCustomer.Size = new System.Drawing.Size(868, 357);
+            this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.Size = new System.Drawing.Size(1007, 548);
             this.dgvCustomer.TabIndex = 1;
             this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
@@ -641,6 +853,21 @@
             // 
             // tpgManagement
             // 
+            this.tpgManagement.Controls.Add(this.label24);
+            this.tpgManagement.Controls.Add(this.label23);
+            this.tpgManagement.Controls.Add(this.btnSearchStoreClear);
+            this.tpgManagement.Controls.Add(this.txtSearchStore);
+            this.tpgManagement.Controls.Add(this.btnSearchStore);
+            this.tpgManagement.Controls.Add(this.btnUpdateStore);
+            this.tpgManagement.Controls.Add(this.btnAddStore);
+            this.tpgManagement.Controls.Add(this.dgvStores);
+            this.tpgManagement.Controls.Add(this.btnSearchEmployeeClear);
+            this.tpgManagement.Controls.Add(this.txtSearchEmployee);
+            this.tpgManagement.Controls.Add(this.btnSearchEmployee);
+            this.tpgManagement.Controls.Add(this.btnDeleteEmployee);
+            this.tpgManagement.Controls.Add(this.btnUpdateEmployee);
+            this.tpgManagement.Controls.Add(this.btnAddEmployee);
+            this.tpgManagement.Controls.Add(this.dgvEmployees);
             this.tpgManagement.ImageIndex = 3;
             this.tpgManagement.Location = new System.Drawing.Point(4, 49);
             this.tpgManagement.Name = "tpgManagement";
@@ -650,184 +877,157 @@
             this.tpgManagement.Text = "Management";
             this.tpgManagement.UseVisualStyleBackColor = true;
             // 
-            // grpUpdateCustomer
+            // btnSearchStoreClear
             // 
-            this.grpUpdateCustomer.Controls.Add(this.btnUpdateCustomerCancel);
-            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerCity);
-            this.grpUpdateCustomer.Controls.Add(this.label15);
-            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerAddress2);
-            this.grpUpdateCustomer.Controls.Add(this.label16);
-            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerAddress1);
-            this.grpUpdateCustomer.Controls.Add(this.label17);
-            this.grpUpdateCustomer.Controls.Add(this.btnUpdateCustomerUpdateCustomer);
-            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerFName);
-            this.grpUpdateCustomer.Controls.Add(this.cmbUpdateCustomerCountry);
-            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerLName);
-            this.grpUpdateCustomer.Controls.Add(this.label18);
-            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerEmail);
-            this.grpUpdateCustomer.Controls.Add(this.label19);
-            this.grpUpdateCustomer.Controls.Add(this.label20);
-            this.grpUpdateCustomer.Controls.Add(this.label21);
-            this.grpUpdateCustomer.Controls.Add(this.cmbUpdateCustomerStore);
-            this.grpUpdateCustomer.Controls.Add(this.label22);
-            this.grpUpdateCustomer.Location = new System.Drawing.Point(0, 0);
-            this.grpUpdateCustomer.Name = "grpUpdateCustomer";
-            this.grpUpdateCustomer.Size = new System.Drawing.Size(549, 414);
-            this.grpUpdateCustomer.TabIndex = 32;
-            this.grpUpdateCustomer.TabStop = false;
-            this.grpUpdateCustomer.Text = "Update Customer";
+            this.btnSearchStoreClear.Location = new System.Drawing.Point(622, 411);
+            this.btnSearchStoreClear.Name = "btnSearchStoreClear";
+            this.btnSearchStoreClear.Size = new System.Drawing.Size(132, 23);
+            this.btnSearchStoreClear.TabIndex = 44;
+            this.btnSearchStoreClear.Text = "Clear Search Results";
+            this.btnSearchStoreClear.UseVisualStyleBackColor = true;
             // 
-            // btnUpdateCustomerCancel
+            // txtSearchStore
             // 
-            this.btnUpdateCustomerCancel.Location = new System.Drawing.Point(303, 355);
-            this.btnUpdateCustomerCancel.Name = "btnUpdateCustomerCancel";
-            this.btnUpdateCustomerCancel.Size = new System.Drawing.Size(175, 23);
-            this.btnUpdateCustomerCancel.TabIndex = 29;
-            this.btnUpdateCustomerCancel.Text = "Cancel";
-            this.btnUpdateCustomerCancel.UseVisualStyleBackColor = true;
-            this.btnUpdateCustomerCancel.Click += new System.EventHandler(this.btnUpdateCustomerCancel_Click);
+            this.txtSearchStore.Location = new System.Drawing.Point(294, 414);
+            this.txtSearchStore.Name = "txtSearchStore";
+            this.txtSearchStore.Size = new System.Drawing.Size(175, 20);
+            this.txtSearchStore.TabIndex = 43;
             // 
-            // txtUpdateCustomerCity
+            // btnSearchStore
             // 
-            this.txtUpdateCustomerCity.Location = new System.Drawing.Point(58, 306);
-            this.txtUpdateCustomerCity.Name = "txtUpdateCustomerCity";
-            this.txtUpdateCustomerCity.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateCustomerCity.TabIndex = 28;
+            this.btnSearchStore.Location = new System.Drawing.Point(504, 411);
+            this.btnSearchStore.Name = "btnSearchStore";
+            this.btnSearchStore.Size = new System.Drawing.Size(76, 23);
+            this.btnSearchStore.TabIndex = 42;
+            this.btnSearchStore.Text = "Search";
+            this.btnSearchStore.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // btnUpdateStore
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(300, 190);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 13);
-            this.label15.TabIndex = 27;
-            this.label15.Text = "Address Line 2";
+            this.btnUpdateStore.Enabled = false;
+            this.btnUpdateStore.Location = new System.Drawing.Point(26, 516);
+            this.btnUpdateStore.Name = "btnUpdateStore";
+            this.btnUpdateStore.Size = new System.Drawing.Size(253, 50);
+            this.btnUpdateStore.TabIndex = 40;
+            this.btnUpdateStore.Text = "Update Store";
+            this.btnUpdateStore.UseVisualStyleBackColor = true;
             // 
-            // txtUpdateCustomerAddress2
+            // btnAddStore
             // 
-            this.txtUpdateCustomerAddress2.Location = new System.Drawing.Point(303, 206);
-            this.txtUpdateCustomerAddress2.Multiline = true;
-            this.txtUpdateCustomerAddress2.Name = "txtUpdateCustomerAddress2";
-            this.txtUpdateCustomerAddress2.Size = new System.Drawing.Size(175, 64);
-            this.txtUpdateCustomerAddress2.TabIndex = 26;
+            this.btnAddStore.Location = new System.Drawing.Point(26, 460);
+            this.btnAddStore.Name = "btnAddStore";
+            this.btnAddStore.Size = new System.Drawing.Size(253, 50);
+            this.btnAddStore.TabIndex = 39;
+            this.btnAddStore.Text = "Add Store";
+            this.btnAddStore.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // dgvStores
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(55, 190);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 13);
-            this.label16.TabIndex = 25;
-            this.label16.Text = "Address Line 1";
+            this.dgvStores.AllowUserToAddRows = false;
+            this.dgvStores.AllowUserToDeleteRows = false;
+            this.dgvStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStores.Location = new System.Drawing.Point(294, 460);
+            this.dgvStores.MultiSelect = false;
+            this.dgvStores.Name = "dgvStores";
+            this.dgvStores.ReadOnly = true;
+            this.dgvStores.Size = new System.Drawing.Size(1007, 183);
+            this.dgvStores.TabIndex = 38;
             // 
-            // txtUpdateCustomerAddress1
+            // btnSearchEmployeeClear
             // 
-            this.txtUpdateCustomerAddress1.Location = new System.Drawing.Point(58, 206);
-            this.txtUpdateCustomerAddress1.Multiline = true;
-            this.txtUpdateCustomerAddress1.Name = "txtUpdateCustomerAddress1";
-            this.txtUpdateCustomerAddress1.Size = new System.Drawing.Size(175, 64);
-            this.txtUpdateCustomerAddress1.TabIndex = 24;
+            this.btnSearchEmployeeClear.Location = new System.Drawing.Point(622, 36);
+            this.btnSearchEmployeeClear.Name = "btnSearchEmployeeClear";
+            this.btnSearchEmployeeClear.Size = new System.Drawing.Size(132, 23);
+            this.btnSearchEmployeeClear.TabIndex = 37;
+            this.btnSearchEmployeeClear.Text = "Clear Search Results";
+            this.btnSearchEmployeeClear.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // txtSearchEmployee
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(55, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(57, 13);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "First Name";
+            this.txtSearchEmployee.Location = new System.Drawing.Point(294, 39);
+            this.txtSearchEmployee.Name = "txtSearchEmployee";
+            this.txtSearchEmployee.Size = new System.Drawing.Size(175, 20);
+            this.txtSearchEmployee.TabIndex = 36;
             // 
-            // btnUpdateCustomerUpdateCustomer
+            // btnSearchEmployee
             // 
-            this.btnUpdateCustomerUpdateCustomer.Location = new System.Drawing.Point(58, 355);
-            this.btnUpdateCustomerUpdateCustomer.Name = "btnUpdateCustomerUpdateCustomer";
-            this.btnUpdateCustomerUpdateCustomer.Size = new System.Drawing.Size(175, 23);
-            this.btnUpdateCustomerUpdateCustomer.TabIndex = 23;
-            this.btnUpdateCustomerUpdateCustomer.Text = "Update Customer";
-            this.btnUpdateCustomerUpdateCustomer.UseVisualStyleBackColor = true;
-            this.btnUpdateCustomerUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomerUpdateCustomer_Click);
+            this.btnSearchEmployee.Location = new System.Drawing.Point(504, 36);
+            this.btnSearchEmployee.Name = "btnSearchEmployee";
+            this.btnSearchEmployee.Size = new System.Drawing.Size(76, 23);
+            this.btnSearchEmployee.TabIndex = 35;
+            this.btnSearchEmployee.Text = "Search";
+            this.btnSearchEmployee.UseVisualStyleBackColor = true;
             // 
-            // txtUpdateCustomerFName
+            // btnDeleteEmployee
             // 
-            this.txtUpdateCustomerFName.Location = new System.Drawing.Point(58, 34);
-            this.txtUpdateCustomerFName.Name = "txtUpdateCustomerFName";
-            this.txtUpdateCustomerFName.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateCustomerFName.TabIndex = 8;
+            this.btnDeleteEmployee.Enabled = false;
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(26, 197);
+            this.btnDeleteEmployee.Name = "btnDeleteEmployee";
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(253, 50);
+            this.btnDeleteEmployee.TabIndex = 34;
+            this.btnDeleteEmployee.Text = "Delete Employee";
+            this.btnDeleteEmployee.UseVisualStyleBackColor = true;
             // 
-            // cmbUpdateCustomerCountry
+            // btnUpdateEmployee
             // 
-            this.cmbUpdateCustomerCountry.FormattingEnabled = true;
-            this.cmbUpdateCustomerCountry.Location = new System.Drawing.Point(303, 305);
-            this.cmbUpdateCustomerCountry.Name = "cmbUpdateCustomerCountry";
-            this.cmbUpdateCustomerCountry.Size = new System.Drawing.Size(175, 21);
-            this.cmbUpdateCustomerCountry.TabIndex = 22;
+            this.btnUpdateEmployee.Enabled = false;
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(26, 141);
+            this.btnUpdateEmployee.Name = "btnUpdateEmployee";
+            this.btnUpdateEmployee.Size = new System.Drawing.Size(253, 50);
+            this.btnUpdateEmployee.TabIndex = 33;
+            this.btnUpdateEmployee.Text = "Update Employee";
+            this.btnUpdateEmployee.UseVisualStyleBackColor = true;
             // 
-            // txtUpdateCustomerLName
+            // btnAddEmployee
             // 
-            this.txtUpdateCustomerLName.Location = new System.Drawing.Point(303, 34);
-            this.txtUpdateCustomerLName.Name = "txtUpdateCustomerLName";
-            this.txtUpdateCustomerLName.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateCustomerLName.TabIndex = 11;
+            this.btnAddEmployee.Location = new System.Drawing.Point(26, 85);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(253, 50);
+            this.btnAddEmployee.TabIndex = 32;
+            this.btnAddEmployee.Text = "Add Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // dgvEmployees
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(300, 290);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 13);
-            this.label18.TabIndex = 21;
-            this.label18.Text = "Country";
+            this.dgvEmployees.AllowUserToAddRows = false;
+            this.dgvEmployees.AllowUserToDeleteRows = false;
+            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployees.Location = new System.Drawing.Point(294, 85);
+            this.dgvEmployees.MultiSelect = false;
+            this.dgvEmployees.Name = "dgvEmployees";
+            this.dgvEmployees.ReadOnly = true;
+            this.dgvEmployees.Size = new System.Drawing.Size(1007, 241);
+            this.dgvEmployees.TabIndex = 31;
             // 
-            // txtUpdateCustomerEmail
+            // label23
             // 
-            this.txtUpdateCustomerEmail.Location = new System.Drawing.Point(58, 91);
-            this.txtUpdateCustomerEmail.Name = "txtUpdateCustomerEmail";
-            this.txtUpdateCustomerEmail.Size = new System.Drawing.Size(420, 20);
-            this.txtUpdateCustomerEmail.TabIndex = 13;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(23, 32);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(130, 26);
+            this.label23.TabIndex = 45;
+            this.label23.Text = "Employees";
             // 
-            // label19
+            // label24
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(300, 18);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 13);
-            this.label19.TabIndex = 15;
-            this.label19.Text = "Last Name";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(23, 407);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(81, 26);
+            this.label24.TabIndex = 46;
+            this.label24.Text = "Stores";
             // 
-            // label20
+            // label25
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(55, 290);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(24, 13);
-            this.label20.TabIndex = 19;
-            this.label20.Text = "City";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(55, 75);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(73, 13);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Email Address";
-            // 
-            // cmbUpdateCustomerStore
-            // 
-            this.cmbUpdateCustomerStore.FormattingEnabled = true;
-            this.cmbUpdateCustomerStore.Location = new System.Drawing.Point(58, 146);
-            this.cmbUpdateCustomerStore.Name = "cmbUpdateCustomerStore";
-            this.cmbUpdateCustomerStore.Size = new System.Drawing.Size(420, 21);
-            this.cmbUpdateCustomerStore.TabIndex = 18;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(55, 131);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(32, 13);
-            this.label22.TabIndex = 17;
-            this.label22.Text = "Store";
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(8, 25);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(127, 26);
+            this.label25.TabIndex = 46;
+            this.label25.Text = "Customers";
             // 
             // frmMain
             // 
@@ -841,6 +1041,8 @@
             this.Text = "BG";
             this.tpgCustomers.ResumeLayout(false);
             this.tpgCustomers.PerformLayout();
+            this.grpUpdateCustomer.ResumeLayout(false);
+            this.grpUpdateCustomer.PerformLayout();
             this.grpAddCustomer.ResumeLayout(false);
             this.grpAddCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
@@ -850,8 +1052,10 @@
             this.addGameGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).EndInit();
             this.tabBastion.ResumeLayout(false);
-            this.grpUpdateCustomer.ResumeLayout(false);
-            this.grpUpdateCustomer.PerformLayout();
+            this.tpgManagement.ResumeLayout(false);
+            this.tpgManagement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -930,6 +1134,23 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cmbUpdateCustomerStore;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox chkUpdateCustomerActive;
+        private System.Windows.Forms.Button btnSearchEmployeeClear;
+        private System.Windows.Forms.TextBox txtSearchEmployee;
+        private System.Windows.Forms.Button btnSearchEmployee;
+        private System.Windows.Forms.Button btnDeleteEmployee;
+        private System.Windows.Forms.Button btnUpdateEmployee;
+        private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.DataGridView dgvEmployees;
+        private System.Windows.Forms.Button btnSearchStoreClear;
+        private System.Windows.Forms.TextBox txtSearchStore;
+        private System.Windows.Forms.Button btnSearchStore;
+        private System.Windows.Forms.Button btnUpdateStore;
+        private System.Windows.Forms.Button btnAddStore;
+        private System.Windows.Forms.DataGridView dgvStores;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label25;
     }
 }
 
