@@ -105,21 +105,26 @@
             this.gameList = new System.Windows.Forms.DataGridView();
             this.tabBastion = new System.Windows.Forms.TabControl();
             this.tpgManagement = new System.Windows.Forms.TabPage();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.btnSearchStoreClear = new System.Windows.Forms.Button();
-            this.txtSearchStore = new System.Windows.Forms.TextBox();
-            this.btnSearchStore = new System.Windows.Forms.Button();
-            this.btnUpdateStore = new System.Windows.Forms.Button();
-            this.btnAddStore = new System.Windows.Forms.Button();
-            this.dgvStores = new System.Windows.Forms.DataGridView();
-            this.btnSearchEmployeeClear = new System.Windows.Forms.Button();
-            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
-            this.btnSearchEmployee = new System.Windows.Forms.Button();
-            this.btnDeleteEmployee = new System.Windows.Forms.Button();
-            this.btnUpdateEmployee = new System.Windows.Forms.Button();
-            this.btnAddEmployee = new System.Windows.Forms.Button();
-            this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.grpUpdateEmployee = new System.Windows.Forms.GroupBox();
+            this.btnUpdateEmployeeCancel = new System.Windows.Forms.Button();
+            this.chkUpdateEmployeeActive = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.btnUpdateEmployeeUpdateEmployee = new System.Windows.Forms.Button();
+            this.txtUpdateEmployeeFName = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtUpdateEmployeeLName = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtUpdateEmployeeEmail = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.cmbUpdateEmployeeStore = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.grpAddEmployee = new System.Windows.Forms.GroupBox();
             this.btnAddEmployeeCancel = new System.Windows.Forms.Button();
             this.txtAddEmployeeCity = new System.Windows.Forms.TextBox();
@@ -139,26 +144,33 @@
             this.label32 = new System.Windows.Forms.Label();
             this.cmbAddEmployeeStore = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.chkUpdateEmployeeActive = new System.Windows.Forms.CheckBox();
-            this.grpUpdateEmployee = new System.Windows.Forms.GroupBox();
-            this.btnUpdateEmployeeCancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.btnUpdateEmployeeUpdateEmployee = new System.Windows.Forms.Button();
-            this.txtUpdateEmployeeFName = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtUpdateEmployeeLName = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txtUpdateEmployeeEmail = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.cmbUpdateEmployeeStore = new System.Windows.Forms.ComboBox();
-            this.label41 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.btnSearchStoreClear = new System.Windows.Forms.Button();
+            this.txtSearchStore = new System.Windows.Forms.TextBox();
+            this.btnSearchStore = new System.Windows.Forms.Button();
+            this.btnUpdateStore = new System.Windows.Forms.Button();
+            this.btnAddStore = new System.Windows.Forms.Button();
+            this.dgvStores = new System.Windows.Forms.DataGridView();
+            this.btnSearchEmployeeClear = new System.Windows.Forms.Button();
+            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
+            this.btnSearchEmployee = new System.Windows.Forms.Button();
+            this.btnDeleteEmployee = new System.Windows.Forms.Button();
+            this.btnUpdateEmployee = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.txtUpdateCustomerDistrict = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerPostalCode = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtUpdateCustomerPhone = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtAddCustomerPhone = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtAddCustomerPostalCode = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.txtAddCustomerDistrict = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
             this.tpgCustomers.SuspendLayout();
             this.grpUpdateCustomer.SuspendLayout();
             this.grpAddCustomer.SuspendLayout();
@@ -168,10 +180,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).BeginInit();
             this.tabBastion.SuspendLayout();
             this.tpgManagement.SuspendLayout();
+            this.grpUpdateEmployee.SuspendLayout();
+            this.grpAddEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
-            this.grpAddEmployee.SuspendLayout();
-            this.grpUpdateEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabImages
@@ -185,6 +197,7 @@
             // 
             // tpgCustomers
             // 
+            this.tpgCustomers.Controls.Add(this.grpAddCustomer);
             this.tpgCustomers.Controls.Add(this.label25);
             this.tpgCustomers.Controls.Add(this.grpUpdateCustomer);
             this.tpgCustomers.Controls.Add(this.btnClearSearchCustomer);
@@ -193,7 +206,6 @@
             this.tpgCustomers.Controls.Add(this.btnDeleteCustomer);
             this.tpgCustomers.Controls.Add(this.btnUpdateCustomer);
             this.tpgCustomers.Controls.Add(this.btnAddCustomer);
-            this.tpgCustomers.Controls.Add(this.grpAddCustomer);
             this.tpgCustomers.Controls.Add(this.dgvCustomer);
             this.tpgCustomers.ImageIndex = 2;
             this.tpgCustomers.Location = new System.Drawing.Point(4, 49);
@@ -216,6 +228,12 @@
             // 
             // grpUpdateCustomer
             // 
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerPhone);
+            this.grpUpdateCustomer.Controls.Add(this.label44);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerPostalCode);
+            this.grpUpdateCustomer.Controls.Add(this.label43);
+            this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerDistrict);
+            this.grpUpdateCustomer.Controls.Add(this.label42);
             this.grpUpdateCustomer.Controls.Add(this.chkUpdateCustomerActive);
             this.grpUpdateCustomer.Controls.Add(this.btnUpdateCustomerCancel);
             this.grpUpdateCustomer.Controls.Add(this.txtUpdateCustomerCity);
@@ -237,7 +255,7 @@
             this.grpUpdateCustomer.Controls.Add(this.label22);
             this.grpUpdateCustomer.Location = new System.Drawing.Point(301, 77);
             this.grpUpdateCustomer.Name = "grpUpdateCustomer";
-            this.grpUpdateCustomer.Size = new System.Drawing.Size(549, 453);
+            this.grpUpdateCustomer.Size = new System.Drawing.Size(549, 548);
             this.grpUpdateCustomer.TabIndex = 32;
             this.grpUpdateCustomer.TabStop = false;
             this.grpUpdateCustomer.Text = "Update Customer";
@@ -245,7 +263,7 @@
             // chkUpdateCustomerActive
             // 
             this.chkUpdateCustomerActive.AutoSize = true;
-            this.chkUpdateCustomerActive.Location = new System.Drawing.Point(58, 355);
+            this.chkUpdateCustomerActive.Location = new System.Drawing.Point(58, 458);
             this.chkUpdateCustomerActive.Name = "chkUpdateCustomerActive";
             this.chkUpdateCustomerActive.Size = new System.Drawing.Size(56, 17);
             this.chkUpdateCustomerActive.TabIndex = 31;
@@ -254,7 +272,7 @@
             // 
             // btnUpdateCustomerCancel
             // 
-            this.btnUpdateCustomerCancel.Location = new System.Drawing.Point(303, 401);
+            this.btnUpdateCustomerCancel.Location = new System.Drawing.Point(303, 504);
             this.btnUpdateCustomerCancel.Name = "btnUpdateCustomerCancel";
             this.btnUpdateCustomerCancel.Size = new System.Drawing.Size(175, 23);
             this.btnUpdateCustomerCancel.TabIndex = 29;
@@ -264,7 +282,7 @@
             // 
             // txtUpdateCustomerCity
             // 
-            this.txtUpdateCustomerCity.Location = new System.Drawing.Point(58, 306);
+            this.txtUpdateCustomerCity.Location = new System.Drawing.Point(58, 414);
             this.txtUpdateCustomerCity.Name = "txtUpdateCustomerCity";
             this.txtUpdateCustomerCity.Size = new System.Drawing.Size(175, 20);
             this.txtUpdateCustomerCity.TabIndex = 28;
@@ -283,7 +301,7 @@
             this.txtUpdateCustomerAddress2.Location = new System.Drawing.Point(303, 206);
             this.txtUpdateCustomerAddress2.Multiline = true;
             this.txtUpdateCustomerAddress2.Name = "txtUpdateCustomerAddress2";
-            this.txtUpdateCustomerAddress2.Size = new System.Drawing.Size(175, 64);
+            this.txtUpdateCustomerAddress2.Size = new System.Drawing.Size(175, 93);
             this.txtUpdateCustomerAddress2.TabIndex = 26;
             // 
             // label16
@@ -300,7 +318,7 @@
             this.txtUpdateCustomerAddress1.Location = new System.Drawing.Point(58, 206);
             this.txtUpdateCustomerAddress1.Multiline = true;
             this.txtUpdateCustomerAddress1.Name = "txtUpdateCustomerAddress1";
-            this.txtUpdateCustomerAddress1.Size = new System.Drawing.Size(175, 64);
+            this.txtUpdateCustomerAddress1.Size = new System.Drawing.Size(175, 94);
             this.txtUpdateCustomerAddress1.TabIndex = 24;
             // 
             // label17
@@ -314,7 +332,7 @@
             // 
             // btnUpdateCustomerUpdateCustomer
             // 
-            this.btnUpdateCustomerUpdateCustomer.Location = new System.Drawing.Point(58, 401);
+            this.btnUpdateCustomerUpdateCustomer.Location = new System.Drawing.Point(58, 504);
             this.btnUpdateCustomerUpdateCustomer.Name = "btnUpdateCustomerUpdateCustomer";
             this.btnUpdateCustomerUpdateCustomer.Size = new System.Drawing.Size(175, 23);
             this.btnUpdateCustomerUpdateCustomer.TabIndex = 23;
@@ -332,7 +350,7 @@
             // cmbUpdateCustomerCountry
             // 
             this.cmbUpdateCustomerCountry.FormattingEnabled = true;
-            this.cmbUpdateCustomerCountry.Location = new System.Drawing.Point(303, 305);
+            this.cmbUpdateCustomerCountry.Location = new System.Drawing.Point(303, 413);
             this.cmbUpdateCustomerCountry.Name = "cmbUpdateCustomerCountry";
             this.cmbUpdateCustomerCountry.Size = new System.Drawing.Size(175, 21);
             this.cmbUpdateCustomerCountry.TabIndex = 22;
@@ -347,7 +365,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(300, 290);
+            this.label18.Location = new System.Drawing.Point(300, 398);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(43, 13);
             this.label18.TabIndex = 21;
@@ -357,7 +375,7 @@
             // 
             this.txtUpdateCustomerEmail.Location = new System.Drawing.Point(58, 91);
             this.txtUpdateCustomerEmail.Name = "txtUpdateCustomerEmail";
-            this.txtUpdateCustomerEmail.Size = new System.Drawing.Size(420, 20);
+            this.txtUpdateCustomerEmail.Size = new System.Drawing.Size(175, 20);
             this.txtUpdateCustomerEmail.TabIndex = 13;
             // 
             // label19
@@ -372,7 +390,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(55, 290);
+            this.label20.Location = new System.Drawing.Point(55, 398);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(24, 13);
             this.label20.TabIndex = 19;
@@ -463,7 +481,13 @@
             // 
             // grpAddCustomer
             // 
+            this.grpAddCustomer.Controls.Add(this.txtAddCustomerPostalCode);
+            this.grpAddCustomer.Controls.Add(this.label46);
+            this.grpAddCustomer.Controls.Add(this.txtAddCustomerDistrict);
+            this.grpAddCustomer.Controls.Add(this.label47);
+            this.grpAddCustomer.Controls.Add(this.txtAddCustomerPhone);
             this.grpAddCustomer.Controls.Add(this.btnAddCustomerCancel);
+            this.grpAddCustomer.Controls.Add(this.label45);
             this.grpAddCustomer.Controls.Add(this.txtAddCustomerCity);
             this.grpAddCustomer.Controls.Add(this.label14);
             this.grpAddCustomer.Controls.Add(this.txtAddCustomerAddress2);
@@ -483,14 +507,14 @@
             this.grpAddCustomer.Controls.Add(this.label12);
             this.grpAddCustomer.Location = new System.Drawing.Point(301, 77);
             this.grpAddCustomer.Name = "grpAddCustomer";
-            this.grpAddCustomer.Size = new System.Drawing.Size(549, 414);
+            this.grpAddCustomer.Size = new System.Drawing.Size(549, 548);
             this.grpAddCustomer.TabIndex = 31;
             this.grpAddCustomer.TabStop = false;
             this.grpAddCustomer.Text = "Add Customer";
             // 
             // btnAddCustomerCancel
             // 
-            this.btnAddCustomerCancel.Location = new System.Drawing.Point(303, 355);
+            this.btnAddCustomerCancel.Location = new System.Drawing.Point(303, 504);
             this.btnAddCustomerCancel.Name = "btnAddCustomerCancel";
             this.btnAddCustomerCancel.Size = new System.Drawing.Size(175, 23);
             this.btnAddCustomerCancel.TabIndex = 29;
@@ -500,7 +524,7 @@
             // 
             // txtAddCustomerCity
             // 
-            this.txtAddCustomerCity.Location = new System.Drawing.Point(58, 306);
+            this.txtAddCustomerCity.Location = new System.Drawing.Point(58, 437);
             this.txtAddCustomerCity.Name = "txtAddCustomerCity";
             this.txtAddCustomerCity.Size = new System.Drawing.Size(175, 20);
             this.txtAddCustomerCity.TabIndex = 28;
@@ -519,7 +543,7 @@
             this.txtAddCustomerAddress2.Location = new System.Drawing.Point(303, 206);
             this.txtAddCustomerAddress2.Multiline = true;
             this.txtAddCustomerAddress2.Name = "txtAddCustomerAddress2";
-            this.txtAddCustomerAddress2.Size = new System.Drawing.Size(175, 64);
+            this.txtAddCustomerAddress2.Size = new System.Drawing.Size(175, 120);
             this.txtAddCustomerAddress2.TabIndex = 26;
             // 
             // label13
@@ -536,7 +560,7 @@
             this.txtAddCustomerAddress1.Location = new System.Drawing.Point(58, 206);
             this.txtAddCustomerAddress1.Multiline = true;
             this.txtAddCustomerAddress1.Name = "txtAddCustomerAddress1";
-            this.txtAddCustomerAddress1.Size = new System.Drawing.Size(175, 64);
+            this.txtAddCustomerAddress1.Size = new System.Drawing.Size(175, 120);
             this.txtAddCustomerAddress1.TabIndex = 24;
             // 
             // label7
@@ -550,7 +574,7 @@
             // 
             // btnAddCustomerAddCustomer
             // 
-            this.btnAddCustomerAddCustomer.Location = new System.Drawing.Point(58, 355);
+            this.btnAddCustomerAddCustomer.Location = new System.Drawing.Point(58, 504);
             this.btnAddCustomerAddCustomer.Name = "btnAddCustomerAddCustomer";
             this.btnAddCustomerAddCustomer.Size = new System.Drawing.Size(175, 23);
             this.btnAddCustomerAddCustomer.TabIndex = 23;
@@ -568,7 +592,7 @@
             // cmbAddCustomerCountry
             // 
             this.cmbAddCustomerCountry.FormattingEnabled = true;
-            this.cmbAddCustomerCountry.Location = new System.Drawing.Point(303, 305);
+            this.cmbAddCustomerCountry.Location = new System.Drawing.Point(303, 436);
             this.cmbAddCustomerCountry.Name = "cmbAddCustomerCountry";
             this.cmbAddCustomerCountry.Size = new System.Drawing.Size(175, 21);
             this.cmbAddCustomerCountry.TabIndex = 22;
@@ -583,7 +607,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(300, 290);
+            this.label8.Location = new System.Drawing.Point(300, 421);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 21;
@@ -593,7 +617,7 @@
             // 
             this.txtAddCustomerEmail.Location = new System.Drawing.Point(58, 91);
             this.txtAddCustomerEmail.Name = "txtAddCustomerEmail";
-            this.txtAddCustomerEmail.Size = new System.Drawing.Size(420, 20);
+            this.txtAddCustomerEmail.Size = new System.Drawing.Size(175, 20);
             this.txtAddCustomerEmail.TabIndex = 13;
             // 
             // label9
@@ -608,7 +632,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(55, 290);
+            this.label10.Location = new System.Drawing.Point(55, 421);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 13);
             this.label10.TabIndex = 19;
@@ -649,6 +673,8 @@
             this.dgvCustomer.MultiSelect = false;
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersVisible = false;
+            this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomer.Size = new System.Drawing.Size(1007, 548);
             this.dgvCustomer.TabIndex = 1;
             this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
@@ -930,147 +956,193 @@
             this.tpgManagement.Text = "Management";
             this.tpgManagement.UseVisualStyleBackColor = true;
             // 
-            // label24
+            // grpUpdateEmployee
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(23, 407);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(81, 26);
-            this.label24.TabIndex = 46;
-            this.label24.Text = "Stores";
+            this.grpUpdateEmployee.Controls.Add(this.btnUpdateEmployeeCancel);
+            this.grpUpdateEmployee.Controls.Add(this.chkUpdateEmployeeActive);
+            this.grpUpdateEmployee.Controls.Add(this.textBox1);
+            this.grpUpdateEmployee.Controls.Add(this.label34);
+            this.grpUpdateEmployee.Controls.Add(this.textBox2);
+            this.grpUpdateEmployee.Controls.Add(this.label35);
+            this.grpUpdateEmployee.Controls.Add(this.textBox3);
+            this.grpUpdateEmployee.Controls.Add(this.label36);
+            this.grpUpdateEmployee.Controls.Add(this.btnUpdateEmployeeUpdateEmployee);
+            this.grpUpdateEmployee.Controls.Add(this.txtUpdateEmployeeFName);
+            this.grpUpdateEmployee.Controls.Add(this.comboBox1);
+            this.grpUpdateEmployee.Controls.Add(this.txtUpdateEmployeeLName);
+            this.grpUpdateEmployee.Controls.Add(this.label37);
+            this.grpUpdateEmployee.Controls.Add(this.txtUpdateEmployeeEmail);
+            this.grpUpdateEmployee.Controls.Add(this.label38);
+            this.grpUpdateEmployee.Controls.Add(this.label39);
+            this.grpUpdateEmployee.Controls.Add(this.label40);
+            this.grpUpdateEmployee.Controls.Add(this.cmbUpdateEmployeeStore);
+            this.grpUpdateEmployee.Controls.Add(this.label41);
+            this.grpUpdateEmployee.Location = new System.Drawing.Point(276, 78);
+            this.grpUpdateEmployee.Name = "grpUpdateEmployee";
+            this.grpUpdateEmployee.Size = new System.Drawing.Size(1007, 271);
+            this.grpUpdateEmployee.TabIndex = 48;
+            this.grpUpdateEmployee.TabStop = false;
+            this.grpUpdateEmployee.Text = "Update Employee";
             // 
-            // label23
+            // btnUpdateEmployeeCancel
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(23, 32);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(130, 26);
-            this.label23.TabIndex = 45;
-            this.label23.Text = "Employees";
+            this.btnUpdateEmployeeCancel.Location = new System.Drawing.Point(303, 234);
+            this.btnUpdateEmployeeCancel.Name = "btnUpdateEmployeeCancel";
+            this.btnUpdateEmployeeCancel.Size = new System.Drawing.Size(175, 23);
+            this.btnUpdateEmployeeCancel.TabIndex = 29;
+            this.btnUpdateEmployeeCancel.Text = "Cancel";
+            this.btnUpdateEmployeeCancel.UseVisualStyleBackColor = true;
             // 
-            // btnSearchStoreClear
+            // chkUpdateEmployeeActive
             // 
-            this.btnSearchStoreClear.Location = new System.Drawing.Point(622, 411);
-            this.btnSearchStoreClear.Name = "btnSearchStoreClear";
-            this.btnSearchStoreClear.Size = new System.Drawing.Size(132, 23);
-            this.btnSearchStoreClear.TabIndex = 44;
-            this.btnSearchStoreClear.Text = "Clear Search Results";
-            this.btnSearchStoreClear.UseVisualStyleBackColor = true;
+            this.chkUpdateEmployeeActive.AutoSize = true;
+            this.chkUpdateEmployeeActive.Location = new System.Drawing.Point(58, 190);
+            this.chkUpdateEmployeeActive.Name = "chkUpdateEmployeeActive";
+            this.chkUpdateEmployeeActive.Size = new System.Drawing.Size(56, 17);
+            this.chkUpdateEmployeeActive.TabIndex = 48;
+            this.chkUpdateEmployeeActive.Text = "Active";
+            this.chkUpdateEmployeeActive.UseVisualStyleBackColor = true;
             // 
-            // txtSearchStore
+            // textBox1
             // 
-            this.txtSearchStore.Location = new System.Drawing.Point(294, 414);
-            this.txtSearchStore.Name = "txtSearchStore";
-            this.txtSearchStore.Size = new System.Drawing.Size(175, 20);
-            this.txtSearchStore.TabIndex = 43;
+            this.textBox1.Location = new System.Drawing.Point(562, 134);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(175, 20);
+            this.textBox1.TabIndex = 28;
             // 
-            // btnSearchStore
+            // label34
             // 
-            this.btnSearchStore.Location = new System.Drawing.Point(504, 411);
-            this.btnSearchStore.Name = "btnSearchStore";
-            this.btnSearchStore.Size = new System.Drawing.Size(76, 23);
-            this.btnSearchStore.TabIndex = 42;
-            this.btnSearchStore.Text = "Search";
-            this.btnSearchStore.UseVisualStyleBackColor = true;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(804, 18);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(77, 13);
+            this.label34.TabIndex = 27;
+            this.label34.Text = "Address Line 2";
             // 
-            // btnUpdateStore
+            // textBox2
             // 
-            this.btnUpdateStore.Enabled = false;
-            this.btnUpdateStore.Location = new System.Drawing.Point(26, 516);
-            this.btnUpdateStore.Name = "btnUpdateStore";
-            this.btnUpdateStore.Size = new System.Drawing.Size(253, 50);
-            this.btnUpdateStore.TabIndex = 40;
-            this.btnUpdateStore.Text = "Update Store";
-            this.btnUpdateStore.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(807, 34);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(175, 64);
+            this.textBox2.TabIndex = 26;
             // 
-            // btnAddStore
+            // label35
             // 
-            this.btnAddStore.Location = new System.Drawing.Point(26, 460);
-            this.btnAddStore.Name = "btnAddStore";
-            this.btnAddStore.Size = new System.Drawing.Size(253, 50);
-            this.btnAddStore.TabIndex = 39;
-            this.btnAddStore.Text = "Add Store";
-            this.btnAddStore.UseVisualStyleBackColor = true;
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(559, 18);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(77, 13);
+            this.label35.TabIndex = 25;
+            this.label35.Text = "Address Line 1";
             // 
-            // dgvStores
+            // textBox3
             // 
-            this.dgvStores.AllowUserToAddRows = false;
-            this.dgvStores.AllowUserToDeleteRows = false;
-            this.dgvStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStores.Location = new System.Drawing.Point(294, 460);
-            this.dgvStores.MultiSelect = false;
-            this.dgvStores.Name = "dgvStores";
-            this.dgvStores.ReadOnly = true;
-            this.dgvStores.Size = new System.Drawing.Size(1007, 183);
-            this.dgvStores.TabIndex = 38;
+            this.textBox3.Location = new System.Drawing.Point(562, 34);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(175, 64);
+            this.textBox3.TabIndex = 24;
             // 
-            // btnSearchEmployeeClear
+            // label36
             // 
-            this.btnSearchEmployeeClear.Location = new System.Drawing.Point(622, 36);
-            this.btnSearchEmployeeClear.Name = "btnSearchEmployeeClear";
-            this.btnSearchEmployeeClear.Size = new System.Drawing.Size(132, 23);
-            this.btnSearchEmployeeClear.TabIndex = 37;
-            this.btnSearchEmployeeClear.Text = "Clear Search Results";
-            this.btnSearchEmployeeClear.UseVisualStyleBackColor = true;
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(55, 18);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(57, 13);
+            this.label36.TabIndex = 14;
+            this.label36.Text = "First Name";
             // 
-            // txtSearchEmployee
+            // btnUpdateEmployeeUpdateEmployee
             // 
-            this.txtSearchEmployee.Location = new System.Drawing.Point(294, 39);
-            this.txtSearchEmployee.Name = "txtSearchEmployee";
-            this.txtSearchEmployee.Size = new System.Drawing.Size(175, 20);
-            this.txtSearchEmployee.TabIndex = 36;
+            this.btnUpdateEmployeeUpdateEmployee.Location = new System.Drawing.Point(58, 234);
+            this.btnUpdateEmployeeUpdateEmployee.Name = "btnUpdateEmployeeUpdateEmployee";
+            this.btnUpdateEmployeeUpdateEmployee.Size = new System.Drawing.Size(175, 23);
+            this.btnUpdateEmployeeUpdateEmployee.TabIndex = 23;
+            this.btnUpdateEmployeeUpdateEmployee.Text = "Add Employee";
+            this.btnUpdateEmployeeUpdateEmployee.UseVisualStyleBackColor = true;
             // 
-            // btnSearchEmployee
+            // txtUpdateEmployeeFName
             // 
-            this.btnSearchEmployee.Location = new System.Drawing.Point(504, 36);
-            this.btnSearchEmployee.Name = "btnSearchEmployee";
-            this.btnSearchEmployee.Size = new System.Drawing.Size(76, 23);
-            this.btnSearchEmployee.TabIndex = 35;
-            this.btnSearchEmployee.Text = "Search";
-            this.btnSearchEmployee.UseVisualStyleBackColor = true;
+            this.txtUpdateEmployeeFName.Location = new System.Drawing.Point(58, 34);
+            this.txtUpdateEmployeeFName.Name = "txtUpdateEmployeeFName";
+            this.txtUpdateEmployeeFName.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateEmployeeFName.TabIndex = 8;
             // 
-            // btnDeleteEmployee
+            // comboBox1
             // 
-            this.btnDeleteEmployee.Enabled = false;
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(26, 197);
-            this.btnDeleteEmployee.Name = "btnDeleteEmployee";
-            this.btnDeleteEmployee.Size = new System.Drawing.Size(253, 50);
-            this.btnDeleteEmployee.TabIndex = 34;
-            this.btnDeleteEmployee.Text = "Delete Employee";
-            this.btnDeleteEmployee.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(807, 133);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(175, 21);
+            this.comboBox1.TabIndex = 22;
             // 
-            // btnUpdateEmployee
+            // txtUpdateEmployeeLName
             // 
-            this.btnUpdateEmployee.Enabled = false;
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(26, 141);
-            this.btnUpdateEmployee.Name = "btnUpdateEmployee";
-            this.btnUpdateEmployee.Size = new System.Drawing.Size(253, 50);
-            this.btnUpdateEmployee.TabIndex = 33;
-            this.btnUpdateEmployee.Text = "Update Employee";
-            this.btnUpdateEmployee.UseVisualStyleBackColor = true;
+            this.txtUpdateEmployeeLName.Location = new System.Drawing.Point(303, 34);
+            this.txtUpdateEmployeeLName.Name = "txtUpdateEmployeeLName";
+            this.txtUpdateEmployeeLName.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateEmployeeLName.TabIndex = 11;
             // 
-            // btnAddEmployee
+            // label37
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(26, 85);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(253, 50);
-            this.btnAddEmployee.TabIndex = 32;
-            this.btnAddEmployee.Text = "Add Employee";
-            this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(804, 118);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(43, 13);
+            this.label37.TabIndex = 21;
+            this.label37.Text = "Country";
             // 
-            // dgvEmployees
+            // txtUpdateEmployeeEmail
             // 
-            this.dgvEmployees.AllowUserToAddRows = false;
-            this.dgvEmployees.AllowUserToDeleteRows = false;
-            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Location = new System.Drawing.Point(294, 85);
-            this.dgvEmployees.MultiSelect = false;
-            this.dgvEmployees.Name = "dgvEmployees";
-            this.dgvEmployees.ReadOnly = true;
-            this.dgvEmployees.Size = new System.Drawing.Size(1007, 241);
-            this.dgvEmployees.TabIndex = 31;
+            this.txtUpdateEmployeeEmail.Location = new System.Drawing.Point(58, 91);
+            this.txtUpdateEmployeeEmail.Name = "txtUpdateEmployeeEmail";
+            this.txtUpdateEmployeeEmail.Size = new System.Drawing.Size(420, 20);
+            this.txtUpdateEmployeeEmail.TabIndex = 13;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(300, 18);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(58, 13);
+            this.label38.TabIndex = 15;
+            this.label38.Text = "Last Name";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(559, 118);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(24, 13);
+            this.label39.TabIndex = 19;
+            this.label39.Text = "City";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(55, 75);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(73, 13);
+            this.label40.TabIndex = 16;
+            this.label40.Text = "Email Address";
+            // 
+            // cmbUpdateEmployeeStore
+            // 
+            this.cmbUpdateEmployeeStore.FormattingEnabled = true;
+            this.cmbUpdateEmployeeStore.Location = new System.Drawing.Point(58, 146);
+            this.cmbUpdateEmployeeStore.Name = "cmbUpdateEmployeeStore";
+            this.cmbUpdateEmployeeStore.Size = new System.Drawing.Size(420, 21);
+            this.cmbUpdateEmployeeStore.TabIndex = 18;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(55, 131);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(32, 13);
+            this.label41.TabIndex = 17;
+            this.label41.Text = "Store";
             // 
             // grpAddEmployee
             // 
@@ -1092,7 +1164,7 @@
             this.grpAddEmployee.Controls.Add(this.label32);
             this.grpAddEmployee.Controls.Add(this.cmbAddEmployeeStore);
             this.grpAddEmployee.Controls.Add(this.label33);
-            this.grpAddEmployee.Location = new System.Drawing.Point(294, 85);
+            this.grpAddEmployee.Location = new System.Drawing.Point(276, 79);
             this.grpAddEmployee.Name = "grpAddEmployee";
             this.grpAddEmployee.Size = new System.Drawing.Size(1007, 271);
             this.grpAddEmployee.TabIndex = 47;
@@ -1249,193 +1321,247 @@
             this.label33.TabIndex = 17;
             this.label33.Text = "Store";
             // 
-            // chkUpdateEmployeeActive
+            // label24
             // 
-            this.chkUpdateEmployeeActive.AutoSize = true;
-            this.chkUpdateEmployeeActive.Location = new System.Drawing.Point(58, 190);
-            this.chkUpdateEmployeeActive.Name = "chkUpdateEmployeeActive";
-            this.chkUpdateEmployeeActive.Size = new System.Drawing.Size(56, 17);
-            this.chkUpdateEmployeeActive.TabIndex = 48;
-            this.chkUpdateEmployeeActive.Text = "Active";
-            this.chkUpdateEmployeeActive.UseVisualStyleBackColor = true;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(5, 400);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(81, 26);
+            this.label24.TabIndex = 46;
+            this.label24.Text = "Stores";
             // 
-            // grpUpdateEmployee
+            // label23
             // 
-            this.grpUpdateEmployee.Controls.Add(this.btnUpdateEmployeeCancel);
-            this.grpUpdateEmployee.Controls.Add(this.chkUpdateEmployeeActive);
-            this.grpUpdateEmployee.Controls.Add(this.textBox1);
-            this.grpUpdateEmployee.Controls.Add(this.label34);
-            this.grpUpdateEmployee.Controls.Add(this.textBox2);
-            this.grpUpdateEmployee.Controls.Add(this.label35);
-            this.grpUpdateEmployee.Controls.Add(this.textBox3);
-            this.grpUpdateEmployee.Controls.Add(this.label36);
-            this.grpUpdateEmployee.Controls.Add(this.btnUpdateEmployeeUpdateEmployee);
-            this.grpUpdateEmployee.Controls.Add(this.txtUpdateEmployeeFName);
-            this.grpUpdateEmployee.Controls.Add(this.comboBox1);
-            this.grpUpdateEmployee.Controls.Add(this.txtUpdateEmployeeLName);
-            this.grpUpdateEmployee.Controls.Add(this.label37);
-            this.grpUpdateEmployee.Controls.Add(this.txtUpdateEmployeeEmail);
-            this.grpUpdateEmployee.Controls.Add(this.label38);
-            this.grpUpdateEmployee.Controls.Add(this.label39);
-            this.grpUpdateEmployee.Controls.Add(this.label40);
-            this.grpUpdateEmployee.Controls.Add(this.cmbUpdateEmployeeStore);
-            this.grpUpdateEmployee.Controls.Add(this.label41);
-            this.grpUpdateEmployee.Location = new System.Drawing.Point(294, 85);
-            this.grpUpdateEmployee.Name = "grpUpdateEmployee";
-            this.grpUpdateEmployee.Size = new System.Drawing.Size(1007, 271);
-            this.grpUpdateEmployee.TabIndex = 48;
-            this.grpUpdateEmployee.TabStop = false;
-            this.grpUpdateEmployee.Text = "Update Employee";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(5, 25);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(130, 26);
+            this.label23.TabIndex = 45;
+            this.label23.Text = "Employees";
             // 
-            // btnUpdateEmployeeCancel
+            // btnSearchStoreClear
             // 
-            this.btnUpdateEmployeeCancel.Location = new System.Drawing.Point(303, 234);
-            this.btnUpdateEmployeeCancel.Name = "btnUpdateEmployeeCancel";
-            this.btnUpdateEmployeeCancel.Size = new System.Drawing.Size(175, 23);
-            this.btnUpdateEmployeeCancel.TabIndex = 29;
-            this.btnUpdateEmployeeCancel.Text = "Cancel";
-            this.btnUpdateEmployeeCancel.UseVisualStyleBackColor = true;
+            this.btnSearchStoreClear.Location = new System.Drawing.Point(604, 404);
+            this.btnSearchStoreClear.Name = "btnSearchStoreClear";
+            this.btnSearchStoreClear.Size = new System.Drawing.Size(132, 23);
+            this.btnSearchStoreClear.TabIndex = 44;
+            this.btnSearchStoreClear.Text = "Clear Search Results";
+            this.btnSearchStoreClear.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtSearchStore
             // 
-            this.textBox1.Location = new System.Drawing.Point(562, 134);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 28;
+            this.txtSearchStore.Location = new System.Drawing.Point(276, 407);
+            this.txtSearchStore.Name = "txtSearchStore";
+            this.txtSearchStore.Size = new System.Drawing.Size(175, 20);
+            this.txtSearchStore.TabIndex = 43;
             // 
-            // label34
+            // btnSearchStore
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(804, 18);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(77, 13);
-            this.label34.TabIndex = 27;
-            this.label34.Text = "Address Line 2";
+            this.btnSearchStore.Location = new System.Drawing.Point(486, 404);
+            this.btnSearchStore.Name = "btnSearchStore";
+            this.btnSearchStore.Size = new System.Drawing.Size(76, 23);
+            this.btnSearchStore.TabIndex = 42;
+            this.btnSearchStore.Text = "Search";
+            this.btnSearchStore.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // btnUpdateStore
             // 
-            this.textBox2.Location = new System.Drawing.Point(807, 34);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 64);
-            this.textBox2.TabIndex = 26;
+            this.btnUpdateStore.Enabled = false;
+            this.btnUpdateStore.Location = new System.Drawing.Point(8, 509);
+            this.btnUpdateStore.Name = "btnUpdateStore";
+            this.btnUpdateStore.Size = new System.Drawing.Size(253, 50);
+            this.btnUpdateStore.TabIndex = 40;
+            this.btnUpdateStore.Text = "Update Store";
+            this.btnUpdateStore.UseVisualStyleBackColor = true;
             // 
-            // label35
+            // btnAddStore
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(559, 18);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(77, 13);
-            this.label35.TabIndex = 25;
-            this.label35.Text = "Address Line 1";
+            this.btnAddStore.Location = new System.Drawing.Point(8, 453);
+            this.btnAddStore.Name = "btnAddStore";
+            this.btnAddStore.Size = new System.Drawing.Size(253, 50);
+            this.btnAddStore.TabIndex = 39;
+            this.btnAddStore.Text = "Add Store";
+            this.btnAddStore.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // dgvStores
             // 
-            this.textBox3.Location = new System.Drawing.Point(562, 34);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 64);
-            this.textBox3.TabIndex = 24;
+            this.dgvStores.AllowUserToAddRows = false;
+            this.dgvStores.AllowUserToDeleteRows = false;
+            this.dgvStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStores.Location = new System.Drawing.Point(276, 453);
+            this.dgvStores.MultiSelect = false;
+            this.dgvStores.Name = "dgvStores";
+            this.dgvStores.ReadOnly = true;
+            this.dgvStores.RowHeadersVisible = false;
+            this.dgvStores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStores.Size = new System.Drawing.Size(1007, 183);
+            this.dgvStores.TabIndex = 38;
             // 
-            // label36
+            // btnSearchEmployeeClear
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(55, 18);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(57, 13);
-            this.label36.TabIndex = 14;
-            this.label36.Text = "First Name";
+            this.btnSearchEmployeeClear.Location = new System.Drawing.Point(604, 29);
+            this.btnSearchEmployeeClear.Name = "btnSearchEmployeeClear";
+            this.btnSearchEmployeeClear.Size = new System.Drawing.Size(132, 23);
+            this.btnSearchEmployeeClear.TabIndex = 37;
+            this.btnSearchEmployeeClear.Text = "Clear Search Results";
+            this.btnSearchEmployeeClear.UseVisualStyleBackColor = true;
             // 
-            // btnUpdateEmployeeUpdateEmployee
+            // txtSearchEmployee
             // 
-            this.btnUpdateEmployeeUpdateEmployee.Location = new System.Drawing.Point(58, 234);
-            this.btnUpdateEmployeeUpdateEmployee.Name = "btnUpdateEmployeeUpdateEmployee";
-            this.btnUpdateEmployeeUpdateEmployee.Size = new System.Drawing.Size(175, 23);
-            this.btnUpdateEmployeeUpdateEmployee.TabIndex = 23;
-            this.btnUpdateEmployeeUpdateEmployee.Text = "Add Employee";
-            this.btnUpdateEmployeeUpdateEmployee.UseVisualStyleBackColor = true;
+            this.txtSearchEmployee.Location = new System.Drawing.Point(276, 32);
+            this.txtSearchEmployee.Name = "txtSearchEmployee";
+            this.txtSearchEmployee.Size = new System.Drawing.Size(175, 20);
+            this.txtSearchEmployee.TabIndex = 36;
             // 
-            // txtUpdateEmployeeFName
+            // btnSearchEmployee
             // 
-            this.txtUpdateEmployeeFName.Location = new System.Drawing.Point(58, 34);
-            this.txtUpdateEmployeeFName.Name = "txtUpdateEmployeeFName";
-            this.txtUpdateEmployeeFName.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateEmployeeFName.TabIndex = 8;
+            this.btnSearchEmployee.Location = new System.Drawing.Point(486, 29);
+            this.btnSearchEmployee.Name = "btnSearchEmployee";
+            this.btnSearchEmployee.Size = new System.Drawing.Size(76, 23);
+            this.btnSearchEmployee.TabIndex = 35;
+            this.btnSearchEmployee.Text = "Search";
+            this.btnSearchEmployee.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // btnDeleteEmployee
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(807, 133);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 21);
-            this.comboBox1.TabIndex = 22;
+            this.btnDeleteEmployee.Enabled = false;
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(8, 190);
+            this.btnDeleteEmployee.Name = "btnDeleteEmployee";
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(253, 50);
+            this.btnDeleteEmployee.TabIndex = 34;
+            this.btnDeleteEmployee.Text = "Delete Employee";
+            this.btnDeleteEmployee.UseVisualStyleBackColor = true;
             // 
-            // txtUpdateEmployeeLName
+            // btnUpdateEmployee
             // 
-            this.txtUpdateEmployeeLName.Location = new System.Drawing.Point(303, 34);
-            this.txtUpdateEmployeeLName.Name = "txtUpdateEmployeeLName";
-            this.txtUpdateEmployeeLName.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateEmployeeLName.TabIndex = 11;
+            this.btnUpdateEmployee.Enabled = false;
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(8, 134);
+            this.btnUpdateEmployee.Name = "btnUpdateEmployee";
+            this.btnUpdateEmployee.Size = new System.Drawing.Size(253, 50);
+            this.btnUpdateEmployee.TabIndex = 33;
+            this.btnUpdateEmployee.Text = "Update Employee";
+            this.btnUpdateEmployee.UseVisualStyleBackColor = true;
             // 
-            // label37
+            // btnAddEmployee
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(804, 118);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(43, 13);
-            this.label37.TabIndex = 21;
-            this.label37.Text = "Country";
+            this.btnAddEmployee.Location = new System.Drawing.Point(8, 78);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(253, 50);
+            this.btnAddEmployee.TabIndex = 32;
+            this.btnAddEmployee.Text = "Add Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
             // 
-            // txtUpdateEmployeeEmail
+            // dgvEmployees
             // 
-            this.txtUpdateEmployeeEmail.Location = new System.Drawing.Point(58, 91);
-            this.txtUpdateEmployeeEmail.Name = "txtUpdateEmployeeEmail";
-            this.txtUpdateEmployeeEmail.Size = new System.Drawing.Size(420, 20);
-            this.txtUpdateEmployeeEmail.TabIndex = 13;
+            this.dgvEmployees.AllowUserToAddRows = false;
+            this.dgvEmployees.AllowUserToDeleteRows = false;
+            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployees.Location = new System.Drawing.Point(276, 85);
+            this.dgvEmployees.MultiSelect = false;
+            this.dgvEmployees.Name = "dgvEmployees";
+            this.dgvEmployees.ReadOnly = true;
+            this.dgvEmployees.RowHeadersVisible = false;
+            this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployees.Size = new System.Drawing.Size(1007, 241);
+            this.dgvEmployees.TabIndex = 31;
             // 
-            // label38
+            // txtUpdateCustomerDistrict
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(300, 18);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(58, 13);
-            this.label38.TabIndex = 15;
-            this.label38.Text = "Last Name";
+            this.txtUpdateCustomerDistrict.Location = new System.Drawing.Point(58, 345);
+            this.txtUpdateCustomerDistrict.Name = "txtUpdateCustomerDistrict";
+            this.txtUpdateCustomerDistrict.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateCustomerDistrict.TabIndex = 33;
             // 
-            // label39
+            // label42
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(559, 118);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(24, 13);
-            this.label39.TabIndex = 19;
-            this.label39.Text = "City";
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(55, 329);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(39, 13);
+            this.label42.TabIndex = 32;
+            this.label42.Text = "District";
             // 
-            // label40
+            // txtUpdateCustomerPostalCode
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(55, 75);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(73, 13);
-            this.label40.TabIndex = 16;
-            this.label40.Text = "Email Address";
+            this.txtUpdateCustomerPostalCode.Location = new System.Drawing.Point(303, 345);
+            this.txtUpdateCustomerPostalCode.Name = "txtUpdateCustomerPostalCode";
+            this.txtUpdateCustomerPostalCode.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateCustomerPostalCode.TabIndex = 35;
             // 
-            // cmbUpdateEmployeeStore
+            // label43
             // 
-            this.cmbUpdateEmployeeStore.FormattingEnabled = true;
-            this.cmbUpdateEmployeeStore.Location = new System.Drawing.Point(58, 146);
-            this.cmbUpdateEmployeeStore.Name = "cmbUpdateEmployeeStore";
-            this.cmbUpdateEmployeeStore.Size = new System.Drawing.Size(420, 21);
-            this.cmbUpdateEmployeeStore.TabIndex = 18;
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(300, 329);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(64, 13);
+            this.label43.TabIndex = 34;
+            this.label43.Text = "Postal Code";
             // 
-            // label41
+            // txtUpdateCustomerPhone
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(55, 131);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(32, 13);
-            this.label41.TabIndex = 17;
-            this.label41.Text = "Store";
+            this.txtUpdateCustomerPhone.Location = new System.Drawing.Point(303, 91);
+            this.txtUpdateCustomerPhone.Name = "txtUpdateCustomerPhone";
+            this.txtUpdateCustomerPhone.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateCustomerPhone.TabIndex = 36;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(300, 75);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(78, 13);
+            this.label44.TabIndex = 37;
+            this.label44.Text = "Phone Number";
+            // 
+            // txtAddCustomerPhone
+            // 
+            this.txtAddCustomerPhone.Location = new System.Drawing.Point(303, 91);
+            this.txtAddCustomerPhone.Name = "txtAddCustomerPhone";
+            this.txtAddCustomerPhone.Size = new System.Drawing.Size(175, 20);
+            this.txtAddCustomerPhone.TabIndex = 47;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(300, 75);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(78, 13);
+            this.label45.TabIndex = 48;
+            this.label45.Text = "Phone Number";
+            // 
+            // txtAddCustomerPostalCode
+            // 
+            this.txtAddCustomerPostalCode.Location = new System.Drawing.Point(303, 368);
+            this.txtAddCustomerPostalCode.Name = "txtAddCustomerPostalCode";
+            this.txtAddCustomerPostalCode.Size = new System.Drawing.Size(175, 20);
+            this.txtAddCustomerPostalCode.TabIndex = 52;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(300, 352);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(64, 13);
+            this.label46.TabIndex = 51;
+            this.label46.Text = "Postal Code";
+            // 
+            // txtAddCustomerDistrict
+            // 
+            this.txtAddCustomerDistrict.Location = new System.Drawing.Point(58, 368);
+            this.txtAddCustomerDistrict.Name = "txtAddCustomerDistrict";
+            this.txtAddCustomerDistrict.Size = new System.Drawing.Size(175, 20);
+            this.txtAddCustomerDistrict.TabIndex = 50;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(55, 352);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(39, 13);
+            this.label47.TabIndex = 49;
+            this.label47.Text = "District";
             // 
             // frmMain
             // 
@@ -1462,12 +1588,12 @@
             this.tabBastion.ResumeLayout(false);
             this.tpgManagement.ResumeLayout(false);
             this.tpgManagement.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
-            this.grpAddEmployee.ResumeLayout(false);
-            this.grpAddEmployee.PerformLayout();
             this.grpUpdateEmployee.ResumeLayout(false);
             this.grpUpdateEmployee.PerformLayout();
+            this.grpAddEmployee.ResumeLayout(false);
+            this.grpAddEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1602,6 +1728,18 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.ComboBox cmbUpdateEmployeeStore;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox txtUpdateCustomerPostalCode;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtUpdateCustomerDistrict;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtUpdateCustomerPhone;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txtAddCustomerPhone;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox txtAddCustomerPostalCode;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox txtAddCustomerDistrict;
+        private System.Windows.Forms.Label label47;
     }
 }
 

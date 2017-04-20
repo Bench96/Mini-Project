@@ -34,6 +34,9 @@ namespace Bastion
             grpAddCustomer.Hide();
             grpUpdateCustomer.Hide();
             populateCustomersDatagridview();
+
+            grpAddEmployee.Hide();
+            grpUpdateEmployee.Hide();
         }
 
         //***************************************Games Section********************************************//
@@ -118,6 +121,25 @@ namespace Bastion
             dgvCustomer.Columns[2].HeaderText = "Last Name";
         }
 
+        private int dbCityHandler(string city, string country)
+        {
+            if(db.Cities.Count(ci => ci.City1 == city) > 0)
+            {
+                return db.Cities.First(ci => ci.City1 == city).CityID;
+            }
+
+            else
+            {
+                Models.City newCity = new Models.City();
+                newCity.City1 = city;
+                newCity.CountryID = db.Countries.First(co => co.Country1 == country).CountryID;
+                db.Cities.Add(newCity);
+                db.SaveChanges();
+
+                return newCity.CityID;
+            }
+        }
+
         private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvCustomer.SelectedRows.Count != 0)
@@ -135,7 +157,30 @@ namespace Bastion
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            cmbAddCustomerCountry.DataSource = db.Countries.Select(c => c.Country1).ToList();            
+            var storeQuery = from s in db.Stores
+                        join a in db.Addresses on s.AddressID equals a.AddressID
+                        join ci in db.Cities on a.CityID equals ci.CityID
+                        join co in db.Countries on ci.CountryID equals co.CountryID
+                        select new
+                        {
+                            DisplayValue = a.Address1 + " > " + ci.City1 +  " > " + co.Country1,
+                            Value = s.StoreID 
+                        };
+
+            cmbAddCustomerStore.DataSource = storeQuery.ToList();
+            cmbAddCustomerStore.DisplayMember = "DisplayValue";
+            cmbAddCustomerStore.ValueMember = "Value";
+
+            var countryQuery = from co in db.Countries
+                        select new
+                        {
+                            DisplayValue = co.Country1,
+                            Value = co.CountryID
+                        };
+
+            cmbAddCustomerCountry.DataSource = countryQuery.ToList();
+            cmbAddCustomerCountry.DisplayMember = "DisplayValue";
+            cmbAddCustomerCountry.ValueMember = "Value";
 
             dgvCustomer.Hide();
             grpUpdateCustomer.Hide();
@@ -152,7 +197,25 @@ namespace Bastion
 
             else
             {
-                // TODO Add Customer
+                Models.Customer newCustomer = new Models.Customer();
+                Models.Address newAddress = new Models.Address();
+
+                newCustomer.FirstName = txtAddCustomerFName.Text;
+                newCustomer.LastName = txtAddCustomerLName.Text;
+                newCustomer.Email = txtAddCustomerEmail.Text;
+                newCustomer.Active = true;
+                newCustomer.StoreID = (int)cmbAddCustomerStore.SelectedValue;
+                newCustomer.CreateDate = new DateTime();
+
+                newAddress.Address1 = txtAddCustomerAddress1.Text;
+                newAddress.Address2 = txtAddCustomerAddress2.Text;
+                newAddress.PostalCode = txtAddCustomerPostalCode.Text;
+                newAddress.District = txtAddCustomerDistrict.Text;
+                newAddress.Phone = txtAddCustomerPhone.Text;
+                newAddress.CityID = dbCityHandler(txtAddCustomerCity.Text, cmbAddCustomerCountry.Text);
+
+                db.Addresses.Add(newAddress);
+                db.Customers.Add(newCustomer);
                 db.SaveChanges();
 
                 populateCustomersDatagridview();
@@ -191,8 +254,10 @@ namespace Bastion
                 customer.Email = txtUpdateCustomerEmail.Text;
                 address.Address1 = txtUpdateCustomerAddress1.Text;
                 address.Address2 = txtUpdateCustomerAddress2.Text;
-                city.City1 = txtUpdateCustomerCity.Text;
-                city.CountryID = db.Countries.First(co => co.Country1 == cmbUpdateCustomerCountry.Text).CountryID;
+                address.District = txtUpdateCustomerDistrict.Text;
+                address.Phone = txtUpdateCustomerPhone.Text;
+                address.PostalCode = txtUpdateCustomerPostalCode.Text;
+                address.CityID = dbCityHandler(txtUpdateCustomerCity.Text, cmbUpdateCustomerCountry.Text);
                 customer.Active = chkUpdateCustomerActive.Checked;
 
                 db.SaveChanges();
@@ -214,7 +279,30 @@ namespace Bastion
 
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            cmbUpdateCustomerCountry.DataSource = db.Countries.Select(c => c.Country1).ToList();
+            var storeQuery = from s in db.Stores
+                             join a in db.Addresses on s.AddressID equals a.AddressID
+                             join ci in db.Cities on a.CityID equals ci.CityID
+                             join co in db.Countries on ci.CountryID equals co.CountryID
+                             select new
+                             {
+                                 DisplayValue = a.Address1 + " > " + ci.City1 + " > " + co.Country1,
+                                 Value = s.StoreID
+                             };
+
+            cmbUpdateCustomerStore.DataSource = storeQuery.ToList();
+            cmbUpdateCustomerStore.DisplayMember = "DisplayValue";
+            cmbUpdateCustomerStore.ValueMember = "Value";
+
+            var countryQuery = from co in db.Countries
+                               select new
+                               {
+                                   DisplayValue = co.Country1,
+                                   Value = co.CountryID
+                               };
+
+            cmbUpdateCustomerCountry.DataSource = countryQuery.ToList();
+            cmbUpdateCustomerCountry.DisplayMember = "DisplayValue";
+            cmbUpdateCustomerCountry.ValueMember = "Value";
 
             int recordToUpdateID = (int)dgvCustomer.SelectedRows[0].Cells[0].Value;
 
@@ -228,6 +316,10 @@ namespace Bastion
             txtUpdateCustomerAddress1.Text = address.Address1;
             txtUpdateCustomerAddress2.Text = address.Address2;
             txtUpdateCustomerCity.Text = city.City1;
+            txtUpdateCustomerDistrict.Text = address.District;
+            txtUpdateCustomerPhone.Text = address.Phone;
+            txtUpdateCustomerPostalCode.Text = address.PostalCode;
+            cmbUpdateCustomerStore.SelectedValue = customer.StoreID;
             cmbUpdateCustomerCountry.Text = db.Countries.First(co => co.CountryID == city.CountryID).Country1;
             chkUpdateCustomerActive.Checked = customer.Active;
 
