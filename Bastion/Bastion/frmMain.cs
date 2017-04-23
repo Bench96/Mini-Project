@@ -31,12 +31,17 @@ namespace Bastion
             //}
             addGameGroup.Hide();
 
+            // Customer tab init
             grpAddCustomer.Hide();
             grpUpdateCustomer.Hide();
             populateCustomersDatagridview();
 
+            // Management tab init
             grpAddEmployee.Hide();
             grpUpdateEmployee.Hide();
+
+            populateEmployeeDatagridview();
+            populateStoreDatagridview();
         }
 
         //***************************************Games Section********************************************//
@@ -345,6 +350,160 @@ namespace Bastion
                 grpUpdateCustomer.Hide();
                 dgvCustomer.Show();
             }
+        }
+
+        //***************************************Management Section********************************************//
+
+        private class EmployeeProjection
+        {
+            public int EmployeeID { get; set; }
+            public string FName { get; set; }
+            public string LName { get; set; }
+            public string Email { get; set; }
+            public string Store { get; set; }
+            public bool Active { get; set; }
+        }
+
+        private void populateEmployeeDatagridview()
+        {
+            var query = from em in db.Staffs
+                        join st in db.Stores on em.StoreID equals st.StoreID
+                        join ad in db.Addresses on st.AddressID equals ad.AddressID
+                        join ci in db.Cities on ad.CityID equals ci.CityID
+                        join co in db.Countries on ci.CountryID equals co.CountryID
+                        select new EmployeeProjection()
+                        {
+                            EmployeeID = em.StaffID,
+                            FName = em.FirstName,
+                            LName = em.LastName,
+                            Email = em.Email,
+                            Store = ad.Address1 + " > " + ci.City1 + " > " + co.Country1,
+                            Active = em.Active
+                        };
+
+            var employees = query.ToList();
+
+            dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvEmployees.DataSource = null;
+            dgvEmployees.DataSource = employees;
+            dgvEmployees.Columns[1].HeaderText = "First Name";
+            dgvEmployees.Columns[2].HeaderText = "Last Name";
+        }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEmployeeAddEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEmployeeCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateEmployeeUpdateEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateEmployeeCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvEmployees_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvEmployees.SelectedRows.Count != 0)
+            {
+                btnUpdateEmployee.Enabled = true;
+                btnDeleteEmployee.Enabled = true;
+            }
+
+            else
+            {
+                btnUpdateEmployee.Enabled = false;
+                btnUpdateEmployee.Enabled = false;
+            }
+        }
+
+        private class StoreProjection
+        {
+            public int StoreID { get; set; }
+            public string Address { get; set; }
+            public string District { get; set; }
+            public string City { get; set; }
+            public string Country { get; set; }
+            public string PostalCode { get; set; }
+            public string Telephone { get; set; }
+        }
+
+        private void populateStoreDatagridview()
+        {
+            var query = from st in db.Stores
+                        join ad in db.Addresses on st.AddressID equals ad.AddressID
+                        join ci in db.Cities on ad.CityID equals ci.CityID
+                        join co in db.Countries on ci.CountryID equals co.CountryID
+                        select new StoreProjection()
+                        {
+                            StoreID = st.StoreID,
+                            Address = ad.Address1,
+                            District = ad.District,
+                            City = ci.City1,
+                            Country = co.Country1,
+                            PostalCode = ad.PostalCode,
+                            Telephone = ad.Phone
+                        };
+
+            var stores = query.ToList();
+
+            dgvStores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvStores.DataSource = null;
+            dgvStores.DataSource = stores;
+            dgvStores.Columns[5].HeaderText = "Postal Code";
+        }
+
+        private void dgvStores_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvStores.SelectedRows.Count != 0)
+            {
+                btnUpdateStore.Enabled = true;
+                btnDeleteStore.Enabled = true;
+            }
+
+            else
+            {
+                btnUpdateStore.Enabled = false;
+                btnDeleteStore.Enabled = false;
+            }
+        }
+
+        private void btnAddStore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateStore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteStore_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
