@@ -126,11 +126,15 @@ namespace Bastion
             dgvCustomer.Columns[2].HeaderText = "Last Name";
         }
 
-        private int dbCityHandler(string city, string country)
+        private void dbCityHandler(Models.Address address, string city, string country)
         {
             if(db.Cities.Count(ci => ci.City1 == city) > 0)
             {
-                return db.Cities.First(ci => ci.City1 == city).CityID;
+                address.CityID = db.Cities.First(ci => ci.City1 == city).CityID;
+
+                Models.City cityEntity = new Models.City();
+                cityEntity = db.Cities.First(ci => ci.CityID == address.CityID);
+                cityEntity.CountryID = db.Countries.First(co => co.Country1 == country).CountryID;
             }
 
             else
@@ -141,7 +145,7 @@ namespace Bastion
                 db.Cities.Add(newCity);
                 db.SaveChanges();
 
-                return newCity.CityID;
+                address.CityID = newCity.CityID;
             }
         }
 
@@ -217,7 +221,7 @@ namespace Bastion
                 newAddress.PostalCode = txtAddCustomerPostalCode.Text;
                 newAddress.District = txtAddCustomerDistrict.Text;
                 newAddress.Phone = txtAddCustomerPhone.Text;
-                newAddress.CityID = dbCityHandler(txtAddCustomerCity.Text, cmbAddCustomerCountry.Text);
+                dbCityHandler(newAddress, txtAddCustomerCity.Text, cmbAddCustomerCountry.Text);
 
                 db.Addresses.Add(newAddress);
                 db.Customers.Add(newCustomer);
@@ -262,7 +266,7 @@ namespace Bastion
                 address.District = txtUpdateCustomerDistrict.Text;
                 address.Phone = txtUpdateCustomerPhone.Text;
                 address.PostalCode = txtUpdateCustomerPostalCode.Text;
-                address.CityID = dbCityHandler(txtUpdateCustomerCity.Text, cmbUpdateCustomerCountry.Text);
+                dbCityHandler(address, txtUpdateCustomerCity.Text, cmbUpdateCustomerCountry.Text);
                 customer.Active = chkUpdateCustomerActive.Checked;
 
                 db.SaveChanges();
@@ -360,6 +364,8 @@ namespace Bastion
             public string FName { get; set; }
             public string LName { get; set; }
             public string Email { get; set; }
+            public string Phone { get; set; }
+            public string Address { get; set; }
             public string Store { get; set; }
             public bool Active { get; set; }
         }
@@ -367,6 +373,7 @@ namespace Bastion
         private void populateEmployeeDatagridview()
         {
             var query = from em in db.Staffs
+                        join ea in db.Addresses on em.AddressID equals ea.AddressID
                         join st in db.Stores on em.StoreID equals st.StoreID
                         join ad in db.Addresses on st.AddressID equals ad.AddressID
                         join ci in db.Cities on ad.CityID equals ci.CityID
@@ -377,13 +384,15 @@ namespace Bastion
                             FName = em.FirstName,
                             LName = em.LastName,
                             Email = em.Email,
+                            Phone = ea.Phone,
+                            Address = ea.Address1,
                             Store = ad.Address1 + " > " + ci.City1 + " > " + co.Country1,
                             Active = em.Active
                         };
 
             var employees = query.ToList();
 
-            dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEmployees.DataSource = null;
             dgvEmployees.DataSource = employees;
             dgvEmployees.Columns[1].HeaderText = "First Name";
@@ -392,37 +401,194 @@ namespace Bastion
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
+            var storeQuery = from s in db.Stores
+                             join a in db.Addresses on s.AddressID equals a.AddressID
+                             join ci in db.Cities on a.CityID equals ci.CityID
+                             join co in db.Countries on ci.CountryID equals co.CountryID
+                             select new
+                             {
+                                 DisplayValue = a.Address1 + " > " + ci.City1 + " > " + co.Country1,
+                                 Value = s.StoreID
+                             };
 
+            cmbAddEmployeeStore.DataSource = storeQuery.ToList();
+            cmbAddEmployeeStore.DisplayMember = "DisplayValue";
+            cmbAddEmployeeStore.ValueMember = "Value";
+
+            var countryQuery = from co in db.Countries
+                               select new
+                               {
+                                   DisplayValue = co.Country1,
+                                   Value = co.CountryID
+                               };
+
+            cmbAddEmployeeCountry.DataSource = countryQuery.ToList();
+            cmbAddEmployeeCountry.DisplayMember = "DisplayValue";
+            cmbAddEmployeeCountry.ValueMember = "Value";
+
+            dgvEmployees.Hide();
+            grpUpdateEmployee.Hide();
+            grpAddEmployee.Show();
         }
 
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
         {
+            var storeQuery = from s in db.Stores
+                             join a in db.Addresses on s.AddressID equals a.AddressID
+                             join ci in db.Cities on a.CityID equals ci.CityID
+                             join co in db.Countries on ci.CountryID equals co.CountryID
+                             select new
+                             {
+                                 DisplayValue = a.Address1 + " > " + ci.City1 + " > " + co.Country1,
+                                 Value = s.StoreID
+                             };
 
+            cmbUpdateEmployeeStore.DataSource = storeQuery.ToList();
+            cmbUpdateEmployeeStore.DisplayMember = "DisplayValue";
+            cmbUpdateEmployeeStore.ValueMember = "Value";
+
+            var countryQuery = from co in db.Countries
+                               select new
+                               {
+                                   DisplayValue = co.Country1,
+                                   Value = co.CountryID
+                               };
+
+            cmbUpdateEmployeeCountry.DataSource = countryQuery.ToList();
+            cmbUpdateEmployeeCountry.DisplayMember = "DisplayValue";
+            cmbUpdateEmployeeCountry.ValueMember = "Value";
+
+            int recordToUpdateID = (int)dgvEmployees.SelectedRows[0].Cells[0].Value;
+
+            Models.Staff employee = db.Staffs.First(em => em.StaffID == recordToUpdateID);
+            Models.Address address = db.Addresses.First(a => a.AddressID == employee.AddressID);
+            Models.City city = db.Cities.First(ci => ci.CityID == address.CityID);
+
+            txtUpdateEmployeeFName.Text = employee.FirstName;
+            txtUpdateEmployeeLName.Text = employee.LastName;
+            txtUpdateEmployeeEmail.Text = employee.Email;
+            txtUpdateEmployeeAddress1.Text = address.Address1;
+            txtUpdateEmployeeAddress2.Text = address.Address2;
+            txtUpdateEmployeeCity.Text = city.City1;
+            txtUpdateEmployeeDistrict.Text = address.District;
+            txtUpdateEmployeePhone.Text = address.Phone;
+            txtUpdateEmployeePostalCode.Text = address.PostalCode;
+            cmbUpdateEmployeeStore.SelectedValue = employee.StoreID;
+            cmbUpdateEmployeeCountry.Text = db.Countries.First(co => co.CountryID == city.CountryID).Country1;
+            chkUpdateEmployeeActive.Checked = employee.Active;
+
+            dgvEmployees.Hide();
+            grpAddEmployee.Hide();
+            grpUpdateEmployee.Show();
         }
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Are you sure you wish to delete this employee record?", "Delete Employee",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (dr == DialogResult.Yes)
+            {
+                int recordToDeleteID = (int)dgvEmployees.SelectedRows[0].Cells[0].Value;
+                db.Staffs.Remove(db.Staffs.First(c => c.StaffID == recordToDeleteID));
+                db.SaveChanges();
+
+                populateEmployeeDatagridview();
+
+                grpAddEmployee.Hide();
+                grpUpdateEmployee.Hide();
+                dgvEmployees.Show();
+            }
         }
 
         private void btnAddEmployeeAddEmployee_Click(object sender, EventArgs e)
         {
+            if (txtAddEmployeeFName.Text == "" || txtAddEmployeeLName.Text == "" || txtAddEmployeeEmail.Text == "" ||
+                txtAddEmployeeAddress1.Text == "" || txtAddEmployeeCity.Text == "")
+            {
+                MessageBox.Show("Please complete all the fields");
+            }
 
+            else
+            {
+                Models.Staff newEmployee = new Models.Staff();
+                Models.Address newAddress = new Models.Address();
+
+                newEmployee.FirstName = txtAddEmployeeFName.Text;
+                newEmployee.LastName = txtAddEmployeeLName.Text;
+                newEmployee.Email = txtAddEmployeeEmail.Text;
+                newEmployee.Active = true;
+                newEmployee.StoreID = (int)cmbAddEmployeeStore.SelectedValue;
+
+                newAddress.Address1 = txtAddEmployeeAddress1.Text;
+                newAddress.Address2 = txtAddEmployeeAddress2.Text;
+                newAddress.PostalCode = txtAddEmployeePostalCode.Text;
+                newAddress.District = txtAddEmployeeDistrict.Text;
+                newAddress.Phone = txtAddEmployeePhone.Text;
+                dbCityHandler(newAddress, txtAddEmployeeCity.Text, cmbAddEmployeeCountry.Text);
+
+                db.Addresses.Add(newAddress);
+                db.Staffs.Add(newEmployee);
+                db.SaveChanges();
+
+                populateEmployeeDatagridview();
+
+                grpAddEmployee.Hide();
+                grpUpdateEmployee.Hide();
+                dgvEmployees.Show();
+            }
         }
 
         private void btnAddEmployeeCancel_Click(object sender, EventArgs e)
         {
-
+            grpAddEmployee.Hide();
+            grpUpdateEmployee.Hide();
+            dgvEmployees.Show();
         }
 
         private void btnUpdateEmployeeUpdateEmployee_Click(object sender, EventArgs e)
         {
+            if (txtUpdateEmployeeFName.Text == "" || txtUpdateEmployeeLName.Text == "" || txtUpdateEmployeeEmail.Text == "" ||
+                txtUpdateEmployeeAddress1.Text == "" || txtUpdateEmployeeCity.Text == "")
+            {
+                MessageBox.Show("Please complete all the fields");
+            }
 
+            else
+            {
+                int recordToUpdateID = (int)dgvEmployees.SelectedRows[0].Cells[0].Value;
+
+                Models.Staff employee = db.Staffs.First(em => em.StaffID == recordToUpdateID);
+                Models.Address address = db.Addresses.First(a => a.AddressID == employee.AddressID);
+                Models.City city = db.Cities.First(ci => ci.CityID == address.CityID);
+
+                employee.FirstName = txtUpdateEmployeeFName.Text;
+                employee.LastName = txtUpdateEmployeeLName.Text;
+                employee.Email = txtUpdateEmployeeEmail.Text;
+                address.Address1 = txtUpdateEmployeeAddress1.Text;
+                address.Address2 = txtUpdateEmployeeAddress2.Text;
+                address.District = txtUpdateEmployeeDistrict.Text;
+                address.Phone = txtUpdateEmployeePhone.Text;
+                address.PostalCode = txtUpdateEmployeePostalCode.Text;
+                dbCityHandler(address, txtUpdateEmployeeCity.Text, cmbUpdateEmployeeCountry.Text);
+                employee.Active = chkUpdateEmployeeActive.Checked;
+
+                db.SaveChanges();
+
+                populateEmployeeDatagridview();
+                populateStoreDatagridview();
+
+                grpAddEmployee.Hide();
+                grpUpdateEmployee.Hide();
+                dgvEmployees.Show();
+            }
         }
 
         private void btnUpdateEmployeeCancel_Click(object sender, EventArgs e)
         {
-
+            grpAddEmployee.Hide();
+            grpUpdateEmployee.Hide();
+            dgvEmployees.Show();
         }
 
         private void dgvEmployees_SelectionChanged(object sender, EventArgs e)
@@ -449,6 +615,7 @@ namespace Bastion
             public string Country { get; set; }
             public string PostalCode { get; set; }
             public string Telephone { get; set; }
+            public string Manager { get; set; }
         }
 
         private void populateStoreDatagridview()
@@ -457,6 +624,7 @@ namespace Bastion
                         join ad in db.Addresses on st.AddressID equals ad.AddressID
                         join ci in db.Cities on ad.CityID equals ci.CityID
                         join co in db.Countries on ci.CountryID equals co.CountryID
+                        join mn in db.Staffs on st.ManagerStaffID equals mn.StaffID
                         select new StoreProjection()
                         {
                             StoreID = st.StoreID,
@@ -465,12 +633,13 @@ namespace Bastion
                             City = ci.City1,
                             Country = co.Country1,
                             PostalCode = ad.PostalCode,
-                            Telephone = ad.Phone
+                            Telephone = ad.Phone,
+                            Manager = mn.FirstName + " " + mn.LastName
                         };
 
             var stores = query.ToList();
 
-            dgvStores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvStores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStores.DataSource = null;
             dgvStores.DataSource = stores;
             dgvStores.Columns[5].HeaderText = "Postal Code";
