@@ -39,6 +39,8 @@ namespace Bastion
             // Management tab init
             grpAddEmployee.Hide();
             grpUpdateEmployee.Hide();
+            grpAddStore.Hide();
+            grpUpdateStore.Hide();
 
             populateEmployeeDatagridview();
             populateStoreDatagridview();
@@ -662,17 +664,131 @@ namespace Bastion
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
+            var managerQuery = from em in db.Staffs
+                               select new
+                               {
+                                   DisplayValue = em.FirstName + " " + em.LastName,
+                                   Value = em.StaffID
+                               };
 
+            cmbAddStoreManager.DataSource = managerQuery.ToList();
+            cmbAddStoreManager.DisplayMember = "DisplayValue";
+            cmbAddStoreManager.ValueMember = "Value";
+
+            var countryQuery = from co in db.Countries
+                               select new
+                               {
+                                   DisplayValue = co.Country1,
+                                   Value = co.CountryID
+                               };
+
+            cmbAddStoreCountry.DataSource = countryQuery.ToList();
+            cmbAddStoreCountry.DisplayMember = "DisplayValue";
+            cmbAddStoreCountry.ValueMember = "Value";
+
+            dgvStores.Hide();
+            grpUpdateStore.Hide();
+            grpAddStore.Show();
         }
 
         private void btnUpdateStore_Click(object sender, EventArgs e)
         {
+            var managerQuery = from em in db.Staffs
+                               select new
+                               {
+                                   DisplayValue = em.FirstName + " " + em.LastName,
+                                   Value = em.StaffID
+                               };
 
+            cmbUpdateStoreManager.DataSource = managerQuery.ToList();
+            cmbUpdateStoreManager.DisplayMember = "DisplayValue";
+            cmbUpdateStoreManager.ValueMember = "Value";
+
+            var countryQuery = from co in db.Countries
+                               select new
+                               {
+                                   DisplayValue = co.Country1,
+                                   Value = co.CountryID
+                               };
+
+            cmbUpdateStoreCountry.DataSource = countryQuery.ToList();
+            cmbUpdateStoreCountry.DisplayMember = "DisplayValue";
+            cmbUpdateStoreCountry.ValueMember = "Value";
+
+            int recordToUpdateID = (int)dgvStores.SelectedRows[0].Cells[0].Value;
+
+            Models.Store store = db.Stores.First(st => st.StoreID == recordToUpdateID);
+            Models.Address address = db.Addresses.First(a => a.AddressID == store.AddressID);
+            Models.City city = db.Cities.First(ci => ci.CityID == address.CityID);
+            Models.Staff manager = db.Staffs.First(em => em.StaffID == store.ManagerStaffID);
+
+            txtUpdateStoreAddress1.Text = address.Address1;
+            txtUpdateStoreAddress2.Text = address.Address2;
+            txtUpdateStoreCity.Text = city.City1;
+            txtUpdateStoreDistrict.Text = address.District;
+            txtUpdateStorePhone.Text = address.Phone;
+            txtUpdateStorePostalCode.Text = address.PostalCode;
+            cmbUpdateStoreManager.SelectedValue = manager.StaffID;
+            cmbUpdateEmployeeCountry.Text = db.Countries.First(co => co.CountryID == city.CountryID).Country1;
+
+            dgvStores.Hide();
+            grpAddStore.Hide();
+            grpUpdateStore.Show();
         }
 
         private void btnDeleteStore_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Are you sure you wish to delete this store record?", "Delete Store",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (dr == DialogResult.Yes)
+            {
+                int recordToDeleteID = (int)dgvStores.SelectedRows[0].Cells[0].Value;
+                db.Stores.Remove(db.Stores.First(st => st.StoreID == recordToDeleteID));
+
+                foreach (Models.Staff employee in db.Staffs.Where(em => em.StoreID == recordToDeleteID))
+                {
+                    employee.Active = false;
+                }
+
+                db.SaveChanges();
+
+                populateEmployeeDatagridview();
+                populateStoreDatagridview();
+
+                grpAddStore.Hide();
+                grpUpdateStore.Hide();
+                dgvStores.Show();
+            }
+        }
+
+        private void btnUpdateStoreUpdateStore_Click(object sender, EventArgs e)
+        {
+
+            dgvStores.Hide();
+            grpAddStore.Hide();
+            grpUpdateStore.Show();
+        }
+
+        private void btnUpdateStoreCancel_Click(object sender, EventArgs e)
+        {
+            grpAddStore.Hide();
+            grpUpdateStore.Hide();
+            dgvStores.Show();
+        }
+
+        private void btnAddStoreAddStore_Click(object sender, EventArgs e)
+        {
+            dgvStores.Hide();
+            grpUpdateStore.Hide();
+            grpAddStore.Show();
+        }
+
+        private void btnAddStoreCancel_Click(object sender, EventArgs e)
+        {
+            grpAddStore.Hide();
+            grpUpdateStore.Hide();
+            dgvStores.Show();
         }
     }
 }
