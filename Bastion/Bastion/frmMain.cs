@@ -119,9 +119,69 @@ namespace Bastion
                             Active = cu.Active
                         };
 
+            if (cmbCustomerSearchOrderBy.Text == "First Name")
+            {
+                query = query.Where(x => x.FName.Contains(txtSearchCustomer.Text));
+
+                if (cmbCustomerSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.FName);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.FName);
+                }
+            }
+
+            else if (cmbCustomerSearchOrderBy.Text == "Last Name")
+            {
+                query = query.Where(x => x.LName.Contains(txtSearchCustomer.Text));
+
+                if (cmbCustomerSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.LName);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.LName);
+                }
+            }
+
+            else if (cmbCustomerSearchOrderBy.Text == "Email Address")
+            {
+                query = query.Where(x => x.Email.Contains(txtSearchCustomer.Text));
+
+                if (cmbCustomerSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.Email);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.Email);
+                }
+            }
+
+            else if (cmbCustomerSearchOrderBy.Text == "Country")
+            {
+                query = query.Where(x => x.Country.Contains(txtSearchCustomer.Text));
+
+                if (cmbCustomerSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.Country);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.Country);
+                }
+            }
+
             var customers = query.ToList();
 
-            dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCustomer.DataSource = null;
             dgvCustomer.DataSource = customers;
             dgvCustomer.Columns[1].HeaderText = "First Name";
@@ -134,8 +194,7 @@ namespace Bastion
             {
                 address.CityID = db.Cities.First(ci => ci.City1 == city).CityID;
 
-                Models.City cityEntity = new Models.City();
-                cityEntity = db.Cities.First(ci => ci.CityID == address.CityID);
+                Models.City cityEntity = db.Cities.First(ci => ci.CityID == address.CityID);
                 cityEntity.CountryID = db.Countries.First(co => co.Country1 == country).CountryID;
             }
 
@@ -149,6 +208,19 @@ namespace Bastion
 
                 address.CityID = newCity.CityID;
             }
+        }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            populateCustomersDatagridview();
+        }
+
+        private void btnClearSearchCustomer_Click(object sender, EventArgs e)
+        {
+            txtSearchCustomer.Clear();
+            cmbCustomerSearchOrderBy.Text = "";
+            cmbCustomerSearchOrder.Text = "";
+            populateCustomersDatagridview();
         }
 
         private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
@@ -201,9 +273,9 @@ namespace Bastion
         private void btnAddCustomerAddCustomer_Click(object sender, EventArgs e)
         {
             if (txtAddCustomerFName.Text == "" || txtAddCustomerLName.Text == "" || txtAddCustomerEmail.Text == "" ||
-                txtUpdateCustomerAddress1.Text == "" || txtAddCustomerCity.Text == "")
+                txtAddCustomerAddress1.Text == "" || txtAddCustomerCity.Text == "")
             {
-                MessageBox.Show("Please complete all the fields");
+                MessageBox.Show("Please complete all the required fields.");
             }
 
             else
@@ -224,8 +296,9 @@ namespace Bastion
                 newAddress.District = txtAddCustomerDistrict.Text;
                 newAddress.Phone = txtAddCustomerPhone.Text;
                 dbCityHandler(newAddress, txtAddCustomerCity.Text, cmbAddCustomerCountry.Text);
-
+            
                 db.Addresses.Add(newAddress);
+                newCustomer.AddressID = newAddress.AddressID;
                 db.Customers.Add(newCustomer);
                 db.SaveChanges();
 
@@ -249,7 +322,7 @@ namespace Bastion
             if (txtUpdateCustomerFName.Text == "" || txtUpdateCustomerLName.Text == "" || txtUpdateCustomerEmail.Text == "" ||
                 txtUpdateCustomerAddress1.Text == "" || txtUpdateCustomerCity.Text == "")
             {
-                MessageBox.Show("Please complete all the fields");
+                MessageBox.Show("Please complete all the required fields.");
             }
 
             else
@@ -263,6 +336,7 @@ namespace Bastion
                 customer.FirstName = txtUpdateCustomerFName.Text;
                 customer.LastName = txtUpdateCustomerLName.Text;
                 customer.Email = txtUpdateCustomerEmail.Text;
+
                 address.Address1 = txtUpdateCustomerAddress1.Text;
                 address.Address2 = txtUpdateCustomerAddress2.Text;
                 address.District = txtUpdateCustomerDistrict.Text;
@@ -271,6 +345,7 @@ namespace Bastion
                 dbCityHandler(address, txtUpdateCustomerCity.Text, cmbUpdateCustomerCountry.Text);
                 customer.Active = chkUpdateCustomerActive.Checked;
 
+                customer.AddressID = address.AddressID;
                 db.SaveChanges();
 
                 populateCustomersDatagridview();
@@ -341,13 +416,14 @@ namespace Bastion
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure you wish to delete this customer record?", "Delete Customer",
+            DialogResult dr = MessageBox.Show("Are you sure you wish to delete this customer record?" +
+                "\n\nNote: The customer record will only be set to inactive and not completely removed.", "Delete Customer",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
                 int recordToDeleteID = (int)dgvCustomer.SelectedRows[0].Cells[0].Value;
-                db.Customers.Remove(db.Customers.First(c => c.CustomerID == recordToDeleteID));
+                db.Customers.First(cu => cu.CustomerID == recordToDeleteID).Active = false;
                 db.SaveChanges();
 
                 populateCustomersDatagridview();
@@ -392,6 +468,66 @@ namespace Bastion
                             Active = em.Active
                         };
 
+            if (cmbEmployeeSearchOrderBy.Text == "First Name")
+            {
+                query = query.Where(x => x.FName.Contains(txtSearchEmployee.Text));
+
+                if (cmbEmployeeSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.FName);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.FName);
+                }
+            }
+
+            else if (cmbEmployeeSearchOrderBy.Text == "Last Name")
+            {
+                query = query.Where(x => x.LName.Contains(txtSearchEmployee.Text));
+
+                if (cmbEmployeeSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.LName);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.LName);
+                }
+            }
+
+            else if (cmbEmployeeSearchOrderBy.Text == "Email Address")
+            {
+                query = query.Where(x => x.Email.Contains(txtSearchEmployee.Text));
+
+                if (cmbEmployeeSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.Email);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.Email);
+                }
+            }
+
+            else if (cmbEmployeeSearchOrderBy.Text == "Store")
+            {
+                query = query.Where(x => x.Store.Contains(txtSearchEmployee.Text));
+
+                if (cmbEmployeeSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.Store);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.Store);
+                }
+            }
+
             var employees = query.ToList();
 
             dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -399,6 +535,19 @@ namespace Bastion
             dgvEmployees.DataSource = employees;
             dgvEmployees.Columns[1].HeaderText = "First Name";
             dgvEmployees.Columns[2].HeaderText = "Last Name";
+        }
+
+        private void btnSearchEmployee_Click(object sender, EventArgs e)
+        {
+            populateEmployeeDatagridview();
+        }
+
+        private void btnSearchEmployeeClear_Click(object sender, EventArgs e)
+        {
+            txtSearchEmployee.Clear();
+            cmbEmployeeSearchOrderBy.Text = "";
+            cmbEmployeeSearchOrder.Text = "";
+            populateEmployeeDatagridview();
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -486,13 +635,14 @@ namespace Bastion
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure you wish to delete this employee record?", "Delete Employee",
+            DialogResult dr = MessageBox.Show("Are you sure you wish to delete this employee record?" +
+                "\n\nNote: The employee record will only be set to inactive and not completely removed.", "Delete Employee",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
                 int recordToDeleteID = (int)dgvEmployees.SelectedRows[0].Cells[0].Value;
-                db.Staffs.Remove(db.Staffs.First(c => c.StaffID == recordToDeleteID));
+                db.Staffs.First(em => em.StaffID == recordToDeleteID).Active = false;
                 db.SaveChanges();
 
                 populateEmployeeDatagridview();
@@ -508,7 +658,7 @@ namespace Bastion
             if (txtAddEmployeeFName.Text == "" || txtAddEmployeeLName.Text == "" || txtAddEmployeeEmail.Text == "" ||
                 txtAddEmployeeAddress1.Text == "" || txtAddEmployeeCity.Text == "")
             {
-                MessageBox.Show("Please complete all the fields");
+                MessageBox.Show("Please complete all the required fields.");
             }
 
             else
@@ -530,6 +680,7 @@ namespace Bastion
                 dbCityHandler(newAddress, txtAddEmployeeCity.Text, cmbAddEmployeeCountry.Text);
 
                 db.Addresses.Add(newAddress);
+                newEmployee.AddressID = newAddress.AddressID;
                 db.Staffs.Add(newEmployee);
                 db.SaveChanges();
 
@@ -553,7 +704,7 @@ namespace Bastion
             if (txtUpdateEmployeeFName.Text == "" || txtUpdateEmployeeLName.Text == "" || txtUpdateEmployeeEmail.Text == "" ||
                 txtUpdateEmployeeAddress1.Text == "" || txtUpdateEmployeeCity.Text == "")
             {
-                MessageBox.Show("Please complete all the fields");
+                MessageBox.Show("Please complete all the required fields.");
             }
 
             else
@@ -574,7 +725,9 @@ namespace Bastion
                 address.PostalCode = txtUpdateEmployeePostalCode.Text;
                 dbCityHandler(address, txtUpdateEmployeeCity.Text, cmbUpdateEmployeeCountry.Text);
                 employee.Active = chkUpdateEmployeeActive.Checked;
+                employee.StoreID = (int)cmbUpdateEmployeeStore.SelectedValue;
 
+                employee.AddressID = address.AddressID;
                 db.SaveChanges();
 
                 populateEmployeeDatagridview();
@@ -639,6 +792,66 @@ namespace Bastion
                             Manager = mn.FirstName + " " + mn.LastName
                         };
 
+            if (cmbStoreSearchOrderBy.Text == "Manager")
+            {
+                query = query.Where(x => x.Manager.Contains(txtSearchStore.Text));
+
+                if (cmbStoreSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.Manager);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.Manager);
+                }
+            }
+
+            else if (cmbStoreSearchOrderBy.Text == "City")
+            {
+                query = query.Where(x => x.City.Contains(txtSearchStore.Text));
+
+                if (cmbStoreSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.City);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.City);
+                }
+            }
+
+            else if (cmbStoreSearchOrderBy.Text == "District")
+            {
+                query = query.Where(x => x.District.Contains(txtSearchStore.Text));
+
+                if (cmbStoreSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.District);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.District);
+                }
+            }
+
+            else if (cmbStoreSearchOrderBy.Text == "Country")
+            {
+                query = query.Where(x => x.Country.Contains(txtSearchStore.Text));
+
+                if (cmbStoreSearchOrder.Text == "Descending")
+                {
+                    query = query.OrderByDescending(x => x.Country);
+                }
+
+                else
+                {
+                    query = query.OrderBy(x => x.Country);
+                }
+            }
+
             var stores = query.ToList();
 
             dgvStores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -647,18 +860,29 @@ namespace Bastion
             dgvStores.Columns[5].HeaderText = "Postal Code";
         }
 
+        private void btnSearchStore_Click(object sender, EventArgs e)
+        {
+            populateStoreDatagridview();
+        }
+
+        private void btnSearchStoreClear_Click(object sender, EventArgs e)
+        {
+            txtSearchStore.Clear();
+            cmbStoreSearchOrderBy.Text = "";
+            cmbStoreSearchOrder.Text = "";
+            populateStoreDatagridview();
+        }
+
         private void dgvStores_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvStores.SelectedRows.Count != 0)
             {
                 btnUpdateStore.Enabled = true;
-                btnDeleteStore.Enabled = true;
             }
 
             else
             {
                 btnUpdateStore.Enabled = false;
-                btnDeleteStore.Enabled = false;
             }
         }
 
@@ -729,7 +953,7 @@ namespace Bastion
             txtUpdateStorePhone.Text = address.Phone;
             txtUpdateStorePostalCode.Text = address.PostalCode;
             cmbUpdateStoreManager.SelectedValue = manager.StaffID;
-            cmbUpdateEmployeeCountry.Text = db.Countries.First(co => co.CountryID == city.CountryID).Country1;
+            cmbUpdateStoreCountry.Text = db.Countries.First(co => co.CountryID == city.CountryID).Country1;
 
             dgvStores.Hide();
             grpAddStore.Hide();
@@ -764,10 +988,37 @@ namespace Bastion
 
         private void btnUpdateStoreUpdateStore_Click(object sender, EventArgs e)
         {
+            if (txtUpdateStorePhone.Text == "" || txtUpdateStoreCity.Text == "" || txtUpdateStoreAddress1.Text == "" ||
+                            txtUpdateStorePostalCode.Text == "" || txtUpdateStoreDistrict.Text == "")
+            {
+                MessageBox.Show("Please complete all the required fields.");
+            }
 
-            dgvStores.Hide();
-            grpAddStore.Hide();
-            grpUpdateStore.Show();
+            else
+            {
+                int recordToUpdateID = (int)dgvStores.SelectedRows[0].Cells[0].Value;
+
+                Models.Store store = db.Stores.First(st => st.StoreID == recordToUpdateID);
+                Models.Address address = db.Addresses.First(ad => ad.AddressID == store.AddressID);
+
+                store.ManagerStaffID = (int)cmbUpdateStoreManager.SelectedValue;
+
+                address.Address1 = txtUpdateStoreAddress1.Text;
+                address.Address2 = txtUpdateStoreAddress2.Text;
+                address.PostalCode = txtUpdateStorePostalCode.Text;
+                address.District = txtUpdateStoreDistrict.Text;
+                address.Phone = txtUpdateStorePhone.Text;
+                dbCityHandler(address, txtUpdateStoreCity.Text, cmbUpdateStoreCountry.Text);
+
+                store.AddressID = address.AddressID;
+                db.SaveChanges();
+
+                populateStoreDatagridview();
+
+                grpUpdateStore.Hide();
+                grpAddStore.Hide();
+                dgvStores.Show();
+            }
         }
 
         private void btnUpdateStoreCancel_Click(object sender, EventArgs e)
@@ -779,9 +1030,37 @@ namespace Bastion
 
         private void btnAddStoreAddStore_Click(object sender, EventArgs e)
         {
-            dgvStores.Hide();
-            grpUpdateStore.Hide();
-            grpAddStore.Show();
+            if (txtAddStorePhone.Text == "" || txtAddStoreCity.Text == "" || txtAddStoreAddress1.Text == "" ||
+                txtAddStorePostalCode.Text == "" || txtAddStoreDistrict.Text == "")
+            {
+                MessageBox.Show("Please complete all the required fields.");
+            }
+
+            else
+            {
+                Models.Store newStore = new Models.Store();
+                Models.Address newAddress = new Models.Address();
+
+                newStore.ManagerStaffID = (int)cmbAddStoreManager.SelectedValue;
+
+                newAddress.Address1 = txtAddStoreAddress1.Text;
+                newAddress.Address2 = txtAddStoreAddress2.Text;
+                newAddress.PostalCode = txtAddStorePostalCode.Text;
+                newAddress.District = txtAddStoreDistrict.Text;
+                newAddress.Phone = txtAddStorePhone.Text;
+                dbCityHandler(newAddress, txtAddStoreCity.Text, cmbAddStoreCountry.Text);
+
+                db.Addresses.Add(newAddress);
+                newStore.AddressID = newAddress.AddressID;
+                db.Stores.Add(newStore);
+                db.SaveChanges();
+
+                populateStoreDatagridview();
+
+                grpUpdateStore.Hide();
+                grpAddStore.Hide();
+                dgvStores.Show();
+            }
         }
 
         private void btnAddStoreCancel_Click(object sender, EventArgs e)

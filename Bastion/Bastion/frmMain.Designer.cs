@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tabImages = new System.Windows.Forms.ImageList(this.components);
             this.tpgCustomers = new System.Windows.Forms.TabPage();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.cmbCustomerSearchOrder = new System.Windows.Forms.ComboBox();
+            this.cmbCustomerSearchOrderBy = new System.Windows.Forms.ComboBox();
+            this.label71 = new System.Windows.Forms.Label();
             this.grpAddCustomer = new System.Windows.Forms.GroupBox();
             this.txtAddCustomerPostalCode = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
@@ -117,6 +122,54 @@
             this.gameList = new System.Windows.Forms.DataGridView();
             this.tabBastion = new System.Windows.Forms.TabControl();
             this.tpgManagement = new System.Windows.Forms.TabPage();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.cmbStoreSearchOrder = new System.Windows.Forms.ComboBox();
+            this.cmbStoreSearchOrderBy = new System.Windows.Forms.ComboBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.cmbEmployeeSearchOrder = new System.Windows.Forms.ComboBox();
+            this.cmbEmployeeSearchOrderBy = new System.Windows.Forms.ComboBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.grpAddStore = new System.Windows.Forms.GroupBox();
+            this.txtAddStorePhone = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txtAddStorePostalCode = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txtAddStoreDistrict = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.btnAddStoreCancel = new System.Windows.Forms.Button();
+            this.txtAddStoreCity = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txtAddStoreAddress2 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.txtAddStoreAddress1 = new System.Windows.Forms.TextBox();
+            this.btnAddStoreAddStore = new System.Windows.Forms.Button();
+            this.cmbAddStoreCountry = new System.Windows.Forms.ComboBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.cmbAddStoreManager = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.grpUpdateStore = new System.Windows.Forms.GroupBox();
+            this.txtUpdateStorePhone = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtUpdateStorePostalCode = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.txtUpdateStoreDistrict = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.btnUpdateStoreCancel = new System.Windows.Forms.Button();
+            this.txtUpdateStoreCity = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txtUpdateStoreAddress2 = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.txtUpdateStoreAddress1 = new System.Windows.Forms.TextBox();
+            this.btnUpdateStoreUpdateStore = new System.Windows.Forms.Button();
+            this.cmbUpdateStoreCountry = new System.Windows.Forms.ComboBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.cmbUpdateStoreManager = new System.Windows.Forms.ComboBox();
+            this.label69 = new System.Windows.Forms.Label();
             this.grpAddEmployee = new System.Windows.Forms.GroupBox();
             this.txtAddEmployeePhone = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
@@ -142,7 +195,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.cmbAddEmployeeStore = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.btnDeleteStore = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.btnSearchStoreClear = new System.Windows.Forms.Button();
@@ -184,44 +236,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.cmbUpdateEmployeeStore = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.grpAddStore = new System.Windows.Forms.GroupBox();
-            this.txtAddStorePhone = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.txtAddStorePostalCode = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.txtAddStoreDistrict = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.btnAddStoreCancel = new System.Windows.Forms.Button();
-            this.txtAddStoreCity = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.txtAddStoreAddress2 = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.txtAddStoreAddress1 = new System.Windows.Forms.TextBox();
-            this.btnAddStoreAddStore = new System.Windows.Forms.Button();
-            this.cmbAddStoreCountry = new System.Windows.Forms.ComboBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.cmbAddStoreManager = new System.Windows.Forms.ComboBox();
-            this.grpUpdateStore = new System.Windows.Forms.GroupBox();
-            this.txtUpdateStorePhone = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.txtUpdateStorePostalCode = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.txtUpdateStoreDistrict = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.btnUpdateStoreCancel = new System.Windows.Forms.Button();
-            this.txtUpdateStoreCity = new System.Windows.Forms.TextBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.txtUpdateStoreAddress2 = new System.Windows.Forms.TextBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.txtUpdateStoreAddress1 = new System.Windows.Forms.TextBox();
-            this.btnUpdateStoreUpdateStore = new System.Windows.Forms.Button();
-            this.cmbUpdateStoreCountry = new System.Windows.Forms.ComboBox();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.cmbUpdateStoreManager = new System.Windows.Forms.ComboBox();
-            this.label69 = new System.Windows.Forms.Label();
             this.tpgCustomers.SuspendLayout();
             this.grpAddCustomer.SuspendLayout();
             this.grpUpdateCustomer.SuspendLayout();
@@ -231,12 +245,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).BeginInit();
             this.tabBastion.SuspendLayout();
             this.tpgManagement.SuspendLayout();
+            this.grpAddStore.SuspendLayout();
+            this.grpUpdateStore.SuspendLayout();
             this.grpAddEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.grpUpdateEmployee.SuspendLayout();
-            this.grpAddStore.SuspendLayout();
-            this.grpUpdateStore.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabImages
@@ -250,6 +264,11 @@
             // 
             // tpgCustomers
             // 
+            this.tpgCustomers.Controls.Add(this.label73);
+            this.tpgCustomers.Controls.Add(this.label72);
+            this.tpgCustomers.Controls.Add(this.cmbCustomerSearchOrder);
+            this.tpgCustomers.Controls.Add(this.cmbCustomerSearchOrderBy);
+            this.tpgCustomers.Controls.Add(this.label71);
             this.tpgCustomers.Controls.Add(this.grpAddCustomer);
             this.tpgCustomers.Controls.Add(this.label25);
             this.tpgCustomers.Controls.Add(this.grpUpdateCustomer);
@@ -264,10 +283,61 @@
             this.tpgCustomers.Location = new System.Drawing.Point(4, 49);
             this.tpgCustomers.Name = "tpgCustomers";
             this.tpgCustomers.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgCustomers.Size = new System.Drawing.Size(1342, 676);
+            this.tpgCustomers.Size = new System.Drawing.Size(1342, 658);
             this.tpgCustomers.TabIndex = 3;
             this.tpgCustomers.Text = "Customers";
             this.tpgCustomers.UseVisualStyleBackColor = true;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(848, 34);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(36, 13);
+            this.label73.TabIndex = 69;
+            this.label73.Text = "Order:";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(273, 34);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(44, 13);
+            this.label72.TabIndex = 68;
+            this.label72.Text = "Search:";
+            // 
+            // cmbCustomerSearchOrder
+            // 
+            this.cmbCustomerSearchOrder.FormattingEnabled = true;
+            this.cmbCustomerSearchOrder.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.cmbCustomerSearchOrder.Location = new System.Drawing.Point(890, 30);
+            this.cmbCustomerSearchOrder.Name = "cmbCustomerSearchOrder";
+            this.cmbCustomerSearchOrder.Size = new System.Drawing.Size(124, 21);
+            this.cmbCustomerSearchOrder.TabIndex = 67;
+            // 
+            // cmbCustomerSearchOrderBy
+            // 
+            this.cmbCustomerSearchOrderBy.FormattingEnabled = true;
+            this.cmbCustomerSearchOrderBy.Items.AddRange(new object[] {
+            "First Name",
+            "Last Name",
+            "Email Address",
+            "Country"});
+            this.cmbCustomerSearchOrderBy.Location = new System.Drawing.Point(630, 30);
+            this.cmbCustomerSearchOrderBy.Name = "cmbCustomerSearchOrderBy";
+            this.cmbCustomerSearchOrderBy.Size = new System.Drawing.Size(175, 21);
+            this.cmbCustomerSearchOrderBy.TabIndex = 65;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(565, 33);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(59, 13);
+            this.label71.TabIndex = 66;
+            this.label71.Text = "Search By:";
             // 
             // grpAddCustomer
             // 
@@ -758,28 +828,30 @@
             // 
             // btnClearSearchCustomer
             // 
-            this.btnClearSearchCustomer.Location = new System.Drawing.Point(604, 28);
+            this.btnClearSearchCustomer.Location = new System.Drawing.Point(1151, 29);
             this.btnClearSearchCustomer.Name = "btnClearSearchCustomer";
             this.btnClearSearchCustomer.Size = new System.Drawing.Size(132, 23);
             this.btnClearSearchCustomer.TabIndex = 30;
             this.btnClearSearchCustomer.Text = "Clear Search Results";
             this.btnClearSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnClearSearchCustomer.Click += new System.EventHandler(this.btnClearSearchCustomer_Click);
             // 
             // txtSearchCustomer
             // 
-            this.txtSearchCustomer.Location = new System.Drawing.Point(276, 31);
+            this.txtSearchCustomer.Location = new System.Drawing.Point(323, 31);
             this.txtSearchCustomer.Name = "txtSearchCustomer";
-            this.txtSearchCustomer.Size = new System.Drawing.Size(175, 20);
+            this.txtSearchCustomer.Size = new System.Drawing.Size(211, 20);
             this.txtSearchCustomer.TabIndex = 1;
             // 
             // btnSearchCustomer
             // 
-            this.btnSearchCustomer.Location = new System.Drawing.Point(486, 28);
+            this.btnSearchCustomer.Location = new System.Drawing.Point(1052, 29);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
             this.btnSearchCustomer.Size = new System.Drawing.Size(76, 23);
             this.btnSearchCustomer.TabIndex = 28;
             this.btnSearchCustomer.Text = "Search";
             this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
             // 
             // btnDeleteCustomer
             // 
@@ -834,7 +906,7 @@
             this.tpgRentals.Location = new System.Drawing.Point(4, 49);
             this.tpgRentals.Name = "tpgRentals";
             this.tpgRentals.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgRentals.Size = new System.Drawing.Size(1342, 676);
+            this.tpgRentals.Size = new System.Drawing.Size(1342, 658);
             this.tpgRentals.TabIndex = 1;
             this.tpgRentals.Text = "Rentals";
             this.tpgRentals.UseVisualStyleBackColor = true;
@@ -854,7 +926,7 @@
             this.tpgGames.Location = new System.Drawing.Point(4, 49);
             this.tpgGames.Name = "tpgGames";
             this.tpgGames.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgGames.Size = new System.Drawing.Size(1342, 676);
+            this.tpgGames.Size = new System.Drawing.Size(1342, 658);
             this.tpgGames.TabIndex = 0;
             this.tpgGames.Text = "Games";
             this.tpgGames.UseVisualStyleBackColor = true;
@@ -1079,10 +1151,19 @@
             // 
             // tpgManagement
             // 
+            this.tpgManagement.Controls.Add(this.label78);
+            this.tpgManagement.Controls.Add(this.label76);
+            this.tpgManagement.Controls.Add(this.cmbStoreSearchOrder);
+            this.tpgManagement.Controls.Add(this.cmbStoreSearchOrderBy);
+            this.tpgManagement.Controls.Add(this.label77);
+            this.tpgManagement.Controls.Add(this.label75);
+            this.tpgManagement.Controls.Add(this.label74);
+            this.tpgManagement.Controls.Add(this.cmbEmployeeSearchOrder);
+            this.tpgManagement.Controls.Add(this.cmbEmployeeSearchOrderBy);
+            this.tpgManagement.Controls.Add(this.label70);
             this.tpgManagement.Controls.Add(this.grpAddStore);
             this.tpgManagement.Controls.Add(this.grpUpdateStore);
             this.tpgManagement.Controls.Add(this.grpAddEmployee);
-            this.tpgManagement.Controls.Add(this.btnDeleteStore);
             this.tpgManagement.Controls.Add(this.label24);
             this.tpgManagement.Controls.Add(this.label23);
             this.tpgManagement.Controls.Add(this.btnSearchStoreClear);
@@ -1107,6 +1188,466 @@
             this.tpgManagement.TabIndex = 4;
             this.tpgManagement.Text = "Management";
             this.tpgManagement.UseVisualStyleBackColor = true;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(273, 389);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(44, 13);
+            this.label78.TabIndex = 71;
+            this.label78.Text = "Search:";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(859, 389);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(36, 13);
+            this.label76.TabIndex = 70;
+            this.label76.Text = "Order:";
+            // 
+            // cmbStoreSearchOrder
+            // 
+            this.cmbStoreSearchOrder.FormattingEnabled = true;
+            this.cmbStoreSearchOrder.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.cmbStoreSearchOrder.Location = new System.Drawing.Point(901, 385);
+            this.cmbStoreSearchOrder.Name = "cmbStoreSearchOrder";
+            this.cmbStoreSearchOrder.Size = new System.Drawing.Size(125, 21);
+            this.cmbStoreSearchOrder.TabIndex = 69;
+            // 
+            // cmbStoreSearchOrderBy
+            // 
+            this.cmbStoreSearchOrderBy.FormattingEnabled = true;
+            this.cmbStoreSearchOrderBy.Items.AddRange(new object[] {
+            "Manager",
+            "District",
+            "City",
+            "Country"});
+            this.cmbStoreSearchOrderBy.Location = new System.Drawing.Point(650, 385);
+            this.cmbStoreSearchOrderBy.Name = "cmbStoreSearchOrderBy";
+            this.cmbStoreSearchOrderBy.Size = new System.Drawing.Size(175, 21);
+            this.cmbStoreSearchOrderBy.TabIndex = 67;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(585, 388);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(59, 13);
+            this.label77.TabIndex = 68;
+            this.label77.Text = "Search By:";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(859, 38);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(36, 13);
+            this.label75.TabIndex = 66;
+            this.label75.Text = "Order:";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(273, 38);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(44, 13);
+            this.label74.TabIndex = 65;
+            this.label74.Text = "Search:";
+            // 
+            // cmbEmployeeSearchOrder
+            // 
+            this.cmbEmployeeSearchOrder.FormattingEnabled = true;
+            this.cmbEmployeeSearchOrder.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.cmbEmployeeSearchOrder.Location = new System.Drawing.Point(901, 34);
+            this.cmbEmployeeSearchOrder.Name = "cmbEmployeeSearchOrder";
+            this.cmbEmployeeSearchOrder.Size = new System.Drawing.Size(125, 21);
+            this.cmbEmployeeSearchOrder.TabIndex = 64;
+            // 
+            // cmbEmployeeSearchOrderBy
+            // 
+            this.cmbEmployeeSearchOrderBy.FormattingEnabled = true;
+            this.cmbEmployeeSearchOrderBy.Items.AddRange(new object[] {
+            "First Name",
+            "Last Name",
+            "Email Address",
+            "Store"});
+            this.cmbEmployeeSearchOrderBy.Location = new System.Drawing.Point(650, 34);
+            this.cmbEmployeeSearchOrderBy.Name = "cmbEmployeeSearchOrderBy";
+            this.cmbEmployeeSearchOrderBy.Size = new System.Drawing.Size(175, 21);
+            this.cmbEmployeeSearchOrderBy.TabIndex = 63;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(585, 37);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(59, 13);
+            this.label70.TabIndex = 63;
+            this.label70.Text = "Search By:";
+            // 
+            // grpAddStore
+            // 
+            this.grpAddStore.Controls.Add(this.txtAddStorePhone);
+            this.grpAddStore.Controls.Add(this.label54);
+            this.grpAddStore.Controls.Add(this.txtAddStorePostalCode);
+            this.grpAddStore.Controls.Add(this.label55);
+            this.grpAddStore.Controls.Add(this.txtAddStoreDistrict);
+            this.grpAddStore.Controls.Add(this.label56);
+            this.grpAddStore.Controls.Add(this.btnAddStoreCancel);
+            this.grpAddStore.Controls.Add(this.txtAddStoreCity);
+            this.grpAddStore.Controls.Add(this.label57);
+            this.grpAddStore.Controls.Add(this.txtAddStoreAddress2);
+            this.grpAddStore.Controls.Add(this.label58);
+            this.grpAddStore.Controls.Add(this.txtAddStoreAddress1);
+            this.grpAddStore.Controls.Add(this.btnAddStoreAddStore);
+            this.grpAddStore.Controls.Add(this.cmbAddStoreCountry);
+            this.grpAddStore.Controls.Add(this.label60);
+            this.grpAddStore.Controls.Add(this.label62);
+            this.grpAddStore.Controls.Add(this.cmbAddStoreManager);
+            this.grpAddStore.Controls.Add(this.label64);
+            this.grpAddStore.Location = new System.Drawing.Point(276, 427);
+            this.grpAddStore.Name = "grpAddStore";
+            this.grpAddStore.Size = new System.Drawing.Size(1007, 235);
+            this.grpAddStore.TabIndex = 50;
+            this.grpAddStore.TabStop = false;
+            this.grpAddStore.Text = "Add Store";
+            // 
+            // txtAddStorePhone
+            // 
+            this.txtAddStorePhone.Location = new System.Drawing.Point(58, 112);
+            this.txtAddStorePhone.Name = "txtAddStorePhone";
+            this.txtAddStorePhone.Size = new System.Drawing.Size(228, 20);
+            this.txtAddStorePhone.TabIndex = 62;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(55, 96);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(58, 13);
+            this.label54.TabIndex = 61;
+            this.label54.Text = "Telephone";
+            // 
+            // txtAddStorePostalCode
+            // 
+            this.txtAddStorePostalCode.Location = new System.Drawing.Point(807, 135);
+            this.txtAddStorePostalCode.Name = "txtAddStorePostalCode";
+            this.txtAddStorePostalCode.Size = new System.Drawing.Size(175, 20);
+            this.txtAddStorePostalCode.TabIndex = 60;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(804, 119);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(64, 13);
+            this.label55.TabIndex = 59;
+            this.label55.Text = "Postal Code";
+            // 
+            // txtAddStoreDistrict
+            // 
+            this.txtAddStoreDistrict.Location = new System.Drawing.Point(562, 135);
+            this.txtAddStoreDistrict.Name = "txtAddStoreDistrict";
+            this.txtAddStoreDistrict.Size = new System.Drawing.Size(175, 20);
+            this.txtAddStoreDistrict.TabIndex = 58;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(559, 119);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(39, 13);
+            this.label56.TabIndex = 57;
+            this.label56.Text = "District";
+            // 
+            // btnAddStoreCancel
+            // 
+            this.btnAddStoreCancel.Location = new System.Drawing.Point(303, 191);
+            this.btnAddStoreCancel.Name = "btnAddStoreCancel";
+            this.btnAddStoreCancel.Size = new System.Drawing.Size(175, 23);
+            this.btnAddStoreCancel.TabIndex = 29;
+            this.btnAddStoreCancel.Text = "Cancel";
+            this.btnAddStoreCancel.UseVisualStyleBackColor = true;
+            this.btnAddStoreCancel.Click += new System.EventHandler(this.btnAddStoreCancel_Click);
+            // 
+            // txtAddStoreCity
+            // 
+            this.txtAddStoreCity.Location = new System.Drawing.Point(562, 194);
+            this.txtAddStoreCity.Name = "txtAddStoreCity";
+            this.txtAddStoreCity.Size = new System.Drawing.Size(175, 20);
+            this.txtAddStoreCity.TabIndex = 28;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(804, 18);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(77, 13);
+            this.label57.TabIndex = 27;
+            this.label57.Text = "Address Line 2";
+            // 
+            // txtAddStoreAddress2
+            // 
+            this.txtAddStoreAddress2.Location = new System.Drawing.Point(807, 34);
+            this.txtAddStoreAddress2.Multiline = true;
+            this.txtAddStoreAddress2.Name = "txtAddStoreAddress2";
+            this.txtAddStoreAddress2.Size = new System.Drawing.Size(175, 62);
+            this.txtAddStoreAddress2.TabIndex = 26;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(559, 18);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(77, 13);
+            this.label58.TabIndex = 25;
+            this.label58.Text = "Address Line 1";
+            // 
+            // txtAddStoreAddress1
+            // 
+            this.txtAddStoreAddress1.Location = new System.Drawing.Point(562, 34);
+            this.txtAddStoreAddress1.Multiline = true;
+            this.txtAddStoreAddress1.Name = "txtAddStoreAddress1";
+            this.txtAddStoreAddress1.Size = new System.Drawing.Size(175, 62);
+            this.txtAddStoreAddress1.TabIndex = 24;
+            // 
+            // btnAddStoreAddStore
+            // 
+            this.btnAddStoreAddStore.Location = new System.Drawing.Point(58, 191);
+            this.btnAddStoreAddStore.Name = "btnAddStoreAddStore";
+            this.btnAddStoreAddStore.Size = new System.Drawing.Size(175, 23);
+            this.btnAddStoreAddStore.TabIndex = 23;
+            this.btnAddStoreAddStore.Text = "Add Store";
+            this.btnAddStoreAddStore.UseVisualStyleBackColor = true;
+            this.btnAddStoreAddStore.Click += new System.EventHandler(this.btnAddStoreAddStore_Click);
+            // 
+            // cmbAddStoreCountry
+            // 
+            this.cmbAddStoreCountry.FormattingEnabled = true;
+            this.cmbAddStoreCountry.Location = new System.Drawing.Point(807, 193);
+            this.cmbAddStoreCountry.Name = "cmbAddStoreCountry";
+            this.cmbAddStoreCountry.Size = new System.Drawing.Size(175, 21);
+            this.cmbAddStoreCountry.TabIndex = 22;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(804, 178);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(43, 13);
+            this.label60.TabIndex = 21;
+            this.label60.Text = "Country";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(559, 178);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(24, 13);
+            this.label62.TabIndex = 19;
+            this.label62.Text = "City";
+            // 
+            // cmbAddStoreManager
+            // 
+            this.cmbAddStoreManager.FormattingEnabled = true;
+            this.cmbAddStoreManager.Location = new System.Drawing.Point(58, 55);
+            this.cmbAddStoreManager.Name = "cmbAddStoreManager";
+            this.cmbAddStoreManager.Size = new System.Drawing.Size(228, 21);
+            this.cmbAddStoreManager.TabIndex = 18;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(55, 40);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(49, 13);
+            this.label64.TabIndex = 17;
+            this.label64.Text = "Manager";
+            // 
+            // grpUpdateStore
+            // 
+            this.grpUpdateStore.Controls.Add(this.txtUpdateStorePhone);
+            this.grpUpdateStore.Controls.Add(this.label59);
+            this.grpUpdateStore.Controls.Add(this.txtUpdateStorePostalCode);
+            this.grpUpdateStore.Controls.Add(this.label61);
+            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreDistrict);
+            this.grpUpdateStore.Controls.Add(this.label63);
+            this.grpUpdateStore.Controls.Add(this.btnUpdateStoreCancel);
+            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreCity);
+            this.grpUpdateStore.Controls.Add(this.label65);
+            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreAddress2);
+            this.grpUpdateStore.Controls.Add(this.label66);
+            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreAddress1);
+            this.grpUpdateStore.Controls.Add(this.btnUpdateStoreUpdateStore);
+            this.grpUpdateStore.Controls.Add(this.cmbUpdateStoreCountry);
+            this.grpUpdateStore.Controls.Add(this.label67);
+            this.grpUpdateStore.Controls.Add(this.label68);
+            this.grpUpdateStore.Controls.Add(this.cmbUpdateStoreManager);
+            this.grpUpdateStore.Controls.Add(this.label69);
+            this.grpUpdateStore.Location = new System.Drawing.Point(276, 427);
+            this.grpUpdateStore.Name = "grpUpdateStore";
+            this.grpUpdateStore.Size = new System.Drawing.Size(1007, 243);
+            this.grpUpdateStore.TabIndex = 51;
+            this.grpUpdateStore.TabStop = false;
+            this.grpUpdateStore.Text = "Update Store";
+            // 
+            // txtUpdateStorePhone
+            // 
+            this.txtUpdateStorePhone.Location = new System.Drawing.Point(58, 112);
+            this.txtUpdateStorePhone.Name = "txtUpdateStorePhone";
+            this.txtUpdateStorePhone.Size = new System.Drawing.Size(228, 20);
+            this.txtUpdateStorePhone.TabIndex = 62;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(55, 96);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(58, 13);
+            this.label59.TabIndex = 61;
+            this.label59.Text = "Telephone";
+            // 
+            // txtUpdateStorePostalCode
+            // 
+            this.txtUpdateStorePostalCode.Location = new System.Drawing.Point(807, 135);
+            this.txtUpdateStorePostalCode.Name = "txtUpdateStorePostalCode";
+            this.txtUpdateStorePostalCode.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateStorePostalCode.TabIndex = 60;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(804, 119);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(64, 13);
+            this.label61.TabIndex = 59;
+            this.label61.Text = "Postal Code";
+            // 
+            // txtUpdateStoreDistrict
+            // 
+            this.txtUpdateStoreDistrict.Location = new System.Drawing.Point(562, 135);
+            this.txtUpdateStoreDistrict.Name = "txtUpdateStoreDistrict";
+            this.txtUpdateStoreDistrict.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateStoreDistrict.TabIndex = 58;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(559, 119);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(39, 13);
+            this.label63.TabIndex = 57;
+            this.label63.Text = "District";
+            // 
+            // btnUpdateStoreCancel
+            // 
+            this.btnUpdateStoreCancel.Location = new System.Drawing.Point(303, 191);
+            this.btnUpdateStoreCancel.Name = "btnUpdateStoreCancel";
+            this.btnUpdateStoreCancel.Size = new System.Drawing.Size(175, 23);
+            this.btnUpdateStoreCancel.TabIndex = 29;
+            this.btnUpdateStoreCancel.Text = "Cancel";
+            this.btnUpdateStoreCancel.UseVisualStyleBackColor = true;
+            this.btnUpdateStoreCancel.Click += new System.EventHandler(this.btnUpdateStoreCancel_Click);
+            // 
+            // txtUpdateStoreCity
+            // 
+            this.txtUpdateStoreCity.Location = new System.Drawing.Point(562, 194);
+            this.txtUpdateStoreCity.Name = "txtUpdateStoreCity";
+            this.txtUpdateStoreCity.Size = new System.Drawing.Size(175, 20);
+            this.txtUpdateStoreCity.TabIndex = 28;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(804, 18);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(77, 13);
+            this.label65.TabIndex = 27;
+            this.label65.Text = "Address Line 2";
+            // 
+            // txtUpdateStoreAddress2
+            // 
+            this.txtUpdateStoreAddress2.Location = new System.Drawing.Point(807, 34);
+            this.txtUpdateStoreAddress2.Multiline = true;
+            this.txtUpdateStoreAddress2.Name = "txtUpdateStoreAddress2";
+            this.txtUpdateStoreAddress2.Size = new System.Drawing.Size(175, 62);
+            this.txtUpdateStoreAddress2.TabIndex = 26;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(559, 18);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(77, 13);
+            this.label66.TabIndex = 25;
+            this.label66.Text = "Address Line 1";
+            // 
+            // txtUpdateStoreAddress1
+            // 
+            this.txtUpdateStoreAddress1.Location = new System.Drawing.Point(562, 34);
+            this.txtUpdateStoreAddress1.Multiline = true;
+            this.txtUpdateStoreAddress1.Name = "txtUpdateStoreAddress1";
+            this.txtUpdateStoreAddress1.Size = new System.Drawing.Size(175, 62);
+            this.txtUpdateStoreAddress1.TabIndex = 24;
+            // 
+            // btnUpdateStoreUpdateStore
+            // 
+            this.btnUpdateStoreUpdateStore.Location = new System.Drawing.Point(58, 191);
+            this.btnUpdateStoreUpdateStore.Name = "btnUpdateStoreUpdateStore";
+            this.btnUpdateStoreUpdateStore.Size = new System.Drawing.Size(175, 23);
+            this.btnUpdateStoreUpdateStore.TabIndex = 23;
+            this.btnUpdateStoreUpdateStore.Text = "Update Store";
+            this.btnUpdateStoreUpdateStore.UseVisualStyleBackColor = true;
+            this.btnUpdateStoreUpdateStore.Click += new System.EventHandler(this.btnUpdateStoreUpdateStore_Click);
+            // 
+            // cmbUpdateStoreCountry
+            // 
+            this.cmbUpdateStoreCountry.FormattingEnabled = true;
+            this.cmbUpdateStoreCountry.Location = new System.Drawing.Point(807, 193);
+            this.cmbUpdateStoreCountry.Name = "cmbUpdateStoreCountry";
+            this.cmbUpdateStoreCountry.Size = new System.Drawing.Size(175, 21);
+            this.cmbUpdateStoreCountry.TabIndex = 22;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(804, 178);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(43, 13);
+            this.label67.TabIndex = 21;
+            this.label67.Text = "Country";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(559, 178);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(24, 13);
+            this.label68.TabIndex = 19;
+            this.label68.Text = "City";
+            // 
+            // cmbUpdateStoreManager
+            // 
+            this.cmbUpdateStoreManager.FormattingEnabled = true;
+            this.cmbUpdateStoreManager.Location = new System.Drawing.Point(58, 55);
+            this.cmbUpdateStoreManager.Name = "cmbUpdateStoreManager";
+            this.cmbUpdateStoreManager.Size = new System.Drawing.Size(228, 21);
+            this.cmbUpdateStoreManager.TabIndex = 18;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(55, 40);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(49, 13);
+            this.label69.TabIndex = 17;
+            this.label69.Text = "Manager";
             // 
             // grpAddEmployee
             // 
@@ -1341,17 +1882,6 @@
             this.label33.TabIndex = 17;
             this.label33.Text = "Store";
             // 
-            // btnDeleteStore
-            // 
-            this.btnDeleteStore.Enabled = false;
-            this.btnDeleteStore.Location = new System.Drawing.Point(10, 541);
-            this.btnDeleteStore.Name = "btnDeleteStore";
-            this.btnDeleteStore.Size = new System.Drawing.Size(253, 50);
-            this.btnDeleteStore.TabIndex = 49;
-            this.btnDeleteStore.Text = "Delete Store";
-            this.btnDeleteStore.UseVisualStyleBackColor = true;
-            this.btnDeleteStore.Click += new System.EventHandler(this.btnDeleteStore_Click);
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -1374,28 +1904,30 @@
             // 
             // btnSearchStoreClear
             // 
-            this.btnSearchStoreClear.Location = new System.Drawing.Point(604, 380);
+            this.btnSearchStoreClear.Location = new System.Drawing.Point(1151, 383);
             this.btnSearchStoreClear.Name = "btnSearchStoreClear";
             this.btnSearchStoreClear.Size = new System.Drawing.Size(132, 23);
             this.btnSearchStoreClear.TabIndex = 44;
             this.btnSearchStoreClear.Text = "Clear Search Results";
             this.btnSearchStoreClear.UseVisualStyleBackColor = true;
+            this.btnSearchStoreClear.Click += new System.EventHandler(this.btnSearchStoreClear_Click);
             // 
             // txtSearchStore
             // 
-            this.txtSearchStore.Location = new System.Drawing.Point(276, 383);
+            this.txtSearchStore.Location = new System.Drawing.Point(323, 386);
             this.txtSearchStore.Name = "txtSearchStore";
-            this.txtSearchStore.Size = new System.Drawing.Size(175, 20);
+            this.txtSearchStore.Size = new System.Drawing.Size(239, 20);
             this.txtSearchStore.TabIndex = 43;
             // 
             // btnSearchStore
             // 
-            this.btnSearchStore.Location = new System.Drawing.Point(486, 380);
+            this.btnSearchStore.Location = new System.Drawing.Point(1059, 383);
             this.btnSearchStore.Name = "btnSearchStore";
             this.btnSearchStore.Size = new System.Drawing.Size(76, 23);
             this.btnSearchStore.TabIndex = 42;
             this.btnSearchStore.Text = "Search";
             this.btnSearchStore.UseVisualStyleBackColor = true;
+            this.btnSearchStore.Click += new System.EventHandler(this.btnSearchStore_Click);
             // 
             // btnUpdateStore
             // 
@@ -1435,28 +1967,30 @@
             // 
             // btnSearchEmployeeClear
             // 
-            this.btnSearchEmployeeClear.Location = new System.Drawing.Point(604, 29);
+            this.btnSearchEmployeeClear.Location = new System.Drawing.Point(1151, 32);
             this.btnSearchEmployeeClear.Name = "btnSearchEmployeeClear";
             this.btnSearchEmployeeClear.Size = new System.Drawing.Size(132, 23);
             this.btnSearchEmployeeClear.TabIndex = 37;
             this.btnSearchEmployeeClear.Text = "Clear Search Results";
             this.btnSearchEmployeeClear.UseVisualStyleBackColor = true;
+            this.btnSearchEmployeeClear.Click += new System.EventHandler(this.btnSearchEmployeeClear_Click);
             // 
             // txtSearchEmployee
             // 
-            this.txtSearchEmployee.Location = new System.Drawing.Point(276, 32);
+            this.txtSearchEmployee.Location = new System.Drawing.Point(323, 34);
             this.txtSearchEmployee.Name = "txtSearchEmployee";
-            this.txtSearchEmployee.Size = new System.Drawing.Size(175, 20);
+            this.txtSearchEmployee.Size = new System.Drawing.Size(239, 20);
             this.txtSearchEmployee.TabIndex = 36;
             // 
             // btnSearchEmployee
             // 
-            this.btnSearchEmployee.Location = new System.Drawing.Point(486, 29);
+            this.btnSearchEmployee.Location = new System.Drawing.Point(1058, 32);
             this.btnSearchEmployee.Name = "btnSearchEmployee";
             this.btnSearchEmployee.Size = new System.Drawing.Size(76, 23);
             this.btnSearchEmployee.TabIndex = 35;
             this.btnSearchEmployee.Text = "Search";
             this.btnSearchEmployee.UseVisualStyleBackColor = true;
+            this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
             // 
             // btnDeleteEmployee
             // 
@@ -1749,364 +2283,6 @@
             this.label41.TabIndex = 17;
             this.label41.Text = "Store";
             // 
-            // grpAddStore
-            // 
-            this.grpAddStore.Controls.Add(this.txtAddStorePhone);
-            this.grpAddStore.Controls.Add(this.label54);
-            this.grpAddStore.Controls.Add(this.txtAddStorePostalCode);
-            this.grpAddStore.Controls.Add(this.label55);
-            this.grpAddStore.Controls.Add(this.txtAddStoreDistrict);
-            this.grpAddStore.Controls.Add(this.label56);
-            this.grpAddStore.Controls.Add(this.btnAddStoreCancel);
-            this.grpAddStore.Controls.Add(this.txtAddStoreCity);
-            this.grpAddStore.Controls.Add(this.label57);
-            this.grpAddStore.Controls.Add(this.txtAddStoreAddress2);
-            this.grpAddStore.Controls.Add(this.label58);
-            this.grpAddStore.Controls.Add(this.txtAddStoreAddress1);
-            this.grpAddStore.Controls.Add(this.btnAddStoreAddStore);
-            this.grpAddStore.Controls.Add(this.cmbAddStoreCountry);
-            this.grpAddStore.Controls.Add(this.label60);
-            this.grpAddStore.Controls.Add(this.label62);
-            this.grpAddStore.Controls.Add(this.cmbAddStoreManager);
-            this.grpAddStore.Controls.Add(this.label64);
-            this.grpAddStore.Location = new System.Drawing.Point(276, 427);
-            this.grpAddStore.Name = "grpAddStore";
-            this.grpAddStore.Size = new System.Drawing.Size(1007, 235);
-            this.grpAddStore.TabIndex = 50;
-            this.grpAddStore.TabStop = false;
-            this.grpAddStore.Text = "Add Store";
-            // 
-            // txtAddStorePhone
-            // 
-            this.txtAddStorePhone.Location = new System.Drawing.Point(58, 112);
-            this.txtAddStorePhone.Name = "txtAddStorePhone";
-            this.txtAddStorePhone.Size = new System.Drawing.Size(228, 20);
-            this.txtAddStorePhone.TabIndex = 62;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(55, 96);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(58, 13);
-            this.label54.TabIndex = 61;
-            this.label54.Text = "Telephone";
-            // 
-            // txtAddStorePostalCode
-            // 
-            this.txtAddStorePostalCode.Location = new System.Drawing.Point(807, 135);
-            this.txtAddStorePostalCode.Name = "txtAddStorePostalCode";
-            this.txtAddStorePostalCode.Size = new System.Drawing.Size(175, 20);
-            this.txtAddStorePostalCode.TabIndex = 60;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(804, 119);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(64, 13);
-            this.label55.TabIndex = 59;
-            this.label55.Text = "Postal Code";
-            // 
-            // txtAddStoreDistrict
-            // 
-            this.txtAddStoreDistrict.Location = new System.Drawing.Point(562, 135);
-            this.txtAddStoreDistrict.Name = "txtAddStoreDistrict";
-            this.txtAddStoreDistrict.Size = new System.Drawing.Size(175, 20);
-            this.txtAddStoreDistrict.TabIndex = 58;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(559, 119);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(39, 13);
-            this.label56.TabIndex = 57;
-            this.label56.Text = "District";
-            // 
-            // btnAddStoreCancel
-            // 
-            this.btnAddStoreCancel.Location = new System.Drawing.Point(303, 191);
-            this.btnAddStoreCancel.Name = "btnAddStoreCancel";
-            this.btnAddStoreCancel.Size = new System.Drawing.Size(175, 23);
-            this.btnAddStoreCancel.TabIndex = 29;
-            this.btnAddStoreCancel.Text = "Cancel";
-            this.btnAddStoreCancel.UseVisualStyleBackColor = true;
-            this.btnAddStoreCancel.Click += new System.EventHandler(this.btnAddStoreCancel_Click);
-            // 
-            // txtAddStoreCity
-            // 
-            this.txtAddStoreCity.Location = new System.Drawing.Point(562, 194);
-            this.txtAddStoreCity.Name = "txtAddStoreCity";
-            this.txtAddStoreCity.Size = new System.Drawing.Size(175, 20);
-            this.txtAddStoreCity.TabIndex = 28;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(804, 18);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(77, 13);
-            this.label57.TabIndex = 27;
-            this.label57.Text = "Address Line 2";
-            // 
-            // txtAddStoreAddress2
-            // 
-            this.txtAddStoreAddress2.Location = new System.Drawing.Point(807, 34);
-            this.txtAddStoreAddress2.Multiline = true;
-            this.txtAddStoreAddress2.Name = "txtAddStoreAddress2";
-            this.txtAddStoreAddress2.Size = new System.Drawing.Size(175, 62);
-            this.txtAddStoreAddress2.TabIndex = 26;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(559, 18);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(77, 13);
-            this.label58.TabIndex = 25;
-            this.label58.Text = "Address Line 1";
-            // 
-            // txtAddStoreAddress1
-            // 
-            this.txtAddStoreAddress1.Location = new System.Drawing.Point(562, 34);
-            this.txtAddStoreAddress1.Multiline = true;
-            this.txtAddStoreAddress1.Name = "txtAddStoreAddress1";
-            this.txtAddStoreAddress1.Size = new System.Drawing.Size(175, 62);
-            this.txtAddStoreAddress1.TabIndex = 24;
-            // 
-            // btnAddStoreAddStore
-            // 
-            this.btnAddStoreAddStore.Location = new System.Drawing.Point(58, 191);
-            this.btnAddStoreAddStore.Name = "btnAddStoreAddStore";
-            this.btnAddStoreAddStore.Size = new System.Drawing.Size(175, 23);
-            this.btnAddStoreAddStore.TabIndex = 23;
-            this.btnAddStoreAddStore.Text = "Add Store";
-            this.btnAddStoreAddStore.UseVisualStyleBackColor = true;
-            this.btnAddStoreAddStore.Click += new System.EventHandler(this.btnAddStoreAddStore_Click);
-            // 
-            // cmbAddStoreCountry
-            // 
-            this.cmbAddStoreCountry.FormattingEnabled = true;
-            this.cmbAddStoreCountry.Location = new System.Drawing.Point(807, 193);
-            this.cmbAddStoreCountry.Name = "cmbAddStoreCountry";
-            this.cmbAddStoreCountry.Size = new System.Drawing.Size(175, 21);
-            this.cmbAddStoreCountry.TabIndex = 22;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(804, 178);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(43, 13);
-            this.label60.TabIndex = 21;
-            this.label60.Text = "Country";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(559, 178);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(24, 13);
-            this.label62.TabIndex = 19;
-            this.label62.Text = "City";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(55, 40);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(49, 13);
-            this.label64.TabIndex = 17;
-            this.label64.Text = "Manager";
-            // 
-            // cmbAddStoreManager
-            // 
-            this.cmbAddStoreManager.FormattingEnabled = true;
-            this.cmbAddStoreManager.Location = new System.Drawing.Point(58, 55);
-            this.cmbAddStoreManager.Name = "cmbAddStoreManager";
-            this.cmbAddStoreManager.Size = new System.Drawing.Size(228, 21);
-            this.cmbAddStoreManager.TabIndex = 18;
-            // 
-            // grpUpdateStore
-            // 
-            this.grpUpdateStore.Controls.Add(this.txtUpdateStorePhone);
-            this.grpUpdateStore.Controls.Add(this.label59);
-            this.grpUpdateStore.Controls.Add(this.txtUpdateStorePostalCode);
-            this.grpUpdateStore.Controls.Add(this.label61);
-            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreDistrict);
-            this.grpUpdateStore.Controls.Add(this.label63);
-            this.grpUpdateStore.Controls.Add(this.btnUpdateStoreCancel);
-            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreCity);
-            this.grpUpdateStore.Controls.Add(this.label65);
-            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreAddress2);
-            this.grpUpdateStore.Controls.Add(this.label66);
-            this.grpUpdateStore.Controls.Add(this.txtUpdateStoreAddress1);
-            this.grpUpdateStore.Controls.Add(this.btnUpdateStoreUpdateStore);
-            this.grpUpdateStore.Controls.Add(this.cmbUpdateStoreCountry);
-            this.grpUpdateStore.Controls.Add(this.label67);
-            this.grpUpdateStore.Controls.Add(this.label68);
-            this.grpUpdateStore.Controls.Add(this.cmbUpdateStoreManager);
-            this.grpUpdateStore.Controls.Add(this.label69);
-            this.grpUpdateStore.Location = new System.Drawing.Point(276, 427);
-            this.grpUpdateStore.Name = "grpUpdateStore";
-            this.grpUpdateStore.Size = new System.Drawing.Size(1007, 243);
-            this.grpUpdateStore.TabIndex = 51;
-            this.grpUpdateStore.TabStop = false;
-            this.grpUpdateStore.Text = "Update Store";
-            // 
-            // txtUpdateStorePhone
-            // 
-            this.txtUpdateStorePhone.Location = new System.Drawing.Point(58, 112);
-            this.txtUpdateStorePhone.Name = "txtUpdateStorePhone";
-            this.txtUpdateStorePhone.Size = new System.Drawing.Size(228, 20);
-            this.txtUpdateStorePhone.TabIndex = 62;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(55, 96);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(58, 13);
-            this.label59.TabIndex = 61;
-            this.label59.Text = "Telephone";
-            // 
-            // txtUpdateStorePostalCode
-            // 
-            this.txtUpdateStorePostalCode.Location = new System.Drawing.Point(807, 135);
-            this.txtUpdateStorePostalCode.Name = "txtUpdateStorePostalCode";
-            this.txtUpdateStorePostalCode.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateStorePostalCode.TabIndex = 60;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(804, 119);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(64, 13);
-            this.label61.TabIndex = 59;
-            this.label61.Text = "Postal Code";
-            // 
-            // txtUpdateStoreDistrict
-            // 
-            this.txtUpdateStoreDistrict.Location = new System.Drawing.Point(562, 135);
-            this.txtUpdateStoreDistrict.Name = "txtUpdateStoreDistrict";
-            this.txtUpdateStoreDistrict.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateStoreDistrict.TabIndex = 58;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(559, 119);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(39, 13);
-            this.label63.TabIndex = 57;
-            this.label63.Text = "District";
-            // 
-            // btnUpdateStoreCancel
-            // 
-            this.btnUpdateStoreCancel.Location = new System.Drawing.Point(303, 191);
-            this.btnUpdateStoreCancel.Name = "btnUpdateStoreCancel";
-            this.btnUpdateStoreCancel.Size = new System.Drawing.Size(175, 23);
-            this.btnUpdateStoreCancel.TabIndex = 29;
-            this.btnUpdateStoreCancel.Text = "Cancel";
-            this.btnUpdateStoreCancel.UseVisualStyleBackColor = true;
-            this.btnUpdateStoreCancel.Click += new System.EventHandler(this.btnUpdateStoreCancel_Click);
-            // 
-            // txtUpdateStoreCity
-            // 
-            this.txtUpdateStoreCity.Location = new System.Drawing.Point(562, 194);
-            this.txtUpdateStoreCity.Name = "txtUpdateStoreCity";
-            this.txtUpdateStoreCity.Size = new System.Drawing.Size(175, 20);
-            this.txtUpdateStoreCity.TabIndex = 28;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(804, 18);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(77, 13);
-            this.label65.TabIndex = 27;
-            this.label65.Text = "Address Line 2";
-            // 
-            // txtUpdateStoreAddress2
-            // 
-            this.txtUpdateStoreAddress2.Location = new System.Drawing.Point(807, 34);
-            this.txtUpdateStoreAddress2.Multiline = true;
-            this.txtUpdateStoreAddress2.Name = "txtUpdateStoreAddress2";
-            this.txtUpdateStoreAddress2.Size = new System.Drawing.Size(175, 62);
-            this.txtUpdateStoreAddress2.TabIndex = 26;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(559, 18);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(77, 13);
-            this.label66.TabIndex = 25;
-            this.label66.Text = "Address Line 1";
-            // 
-            // txtUpdateStoreAddress1
-            // 
-            this.txtUpdateStoreAddress1.Location = new System.Drawing.Point(562, 34);
-            this.txtUpdateStoreAddress1.Multiline = true;
-            this.txtUpdateStoreAddress1.Name = "txtUpdateStoreAddress1";
-            this.txtUpdateStoreAddress1.Size = new System.Drawing.Size(175, 62);
-            this.txtUpdateStoreAddress1.TabIndex = 24;
-            // 
-            // btnUpdateStoreUpdateStore
-            // 
-            this.btnUpdateStoreUpdateStore.Location = new System.Drawing.Point(58, 191);
-            this.btnUpdateStoreUpdateStore.Name = "btnUpdateStoreUpdateStore";
-            this.btnUpdateStoreUpdateStore.Size = new System.Drawing.Size(175, 23);
-            this.btnUpdateStoreUpdateStore.TabIndex = 23;
-            this.btnUpdateStoreUpdateStore.Text = "Update Store";
-            this.btnUpdateStoreUpdateStore.UseVisualStyleBackColor = true;
-            this.btnUpdateStoreUpdateStore.Click += new System.EventHandler(this.btnUpdateStoreUpdateStore_Click);
-            // 
-            // cmbUpdateStoreCountry
-            // 
-            this.cmbUpdateStoreCountry.FormattingEnabled = true;
-            this.cmbUpdateStoreCountry.Location = new System.Drawing.Point(807, 193);
-            this.cmbUpdateStoreCountry.Name = "cmbUpdateStoreCountry";
-            this.cmbUpdateStoreCountry.Size = new System.Drawing.Size(175, 21);
-            this.cmbUpdateStoreCountry.TabIndex = 22;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(804, 178);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(43, 13);
-            this.label67.TabIndex = 21;
-            this.label67.Text = "Country";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(559, 178);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(24, 13);
-            this.label68.TabIndex = 19;
-            this.label68.Text = "City";
-            // 
-            // cmbUpdateStoreManager
-            // 
-            this.cmbUpdateStoreManager.FormattingEnabled = true;
-            this.cmbUpdateStoreManager.Location = new System.Drawing.Point(58, 55);
-            this.cmbUpdateStoreManager.Name = "cmbUpdateStoreManager";
-            this.cmbUpdateStoreManager.Size = new System.Drawing.Size(228, 21);
-            this.cmbUpdateStoreManager.TabIndex = 18;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(55, 40);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(49, 13);
-            this.label69.TabIndex = 17;
-            this.label69.Text = "Manager";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2132,16 +2308,16 @@
             this.tabBastion.ResumeLayout(false);
             this.tpgManagement.ResumeLayout(false);
             this.tpgManagement.PerformLayout();
+            this.grpAddStore.ResumeLayout(false);
+            this.grpAddStore.PerformLayout();
+            this.grpUpdateStore.ResumeLayout(false);
+            this.grpUpdateStore.PerformLayout();
             this.grpAddEmployee.ResumeLayout(false);
             this.grpAddEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.grpUpdateEmployee.ResumeLayout(false);
             this.grpUpdateEmployee.PerformLayout();
-            this.grpAddStore.ResumeLayout(false);
-            this.grpAddStore.PerformLayout();
-            this.grpUpdateStore.ResumeLayout(false);
-            this.grpUpdateStore.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2288,7 +2464,6 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtAddCustomerDistrict;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Button btnDeleteStore;
         private System.Windows.Forms.TextBox txtUpdateEmployeePhone;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox txtUpdateEmployeePostalCode;
@@ -2339,6 +2514,21 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.ComboBox cmbUpdateStoreManager;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.ComboBox cmbEmployeeSearchOrderBy;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.ComboBox cmbEmployeeSearchOrder;
+        private System.Windows.Forms.ComboBox cmbCustomerSearchOrder;
+        private System.Windows.Forms.ComboBox cmbCustomerSearchOrderBy;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.ComboBox cmbStoreSearchOrder;
+        private System.Windows.Forms.ComboBox cmbStoreSearchOrderBy;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label78;
     }
 }
 
