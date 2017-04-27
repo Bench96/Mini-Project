@@ -16,13 +16,11 @@ namespace Bastion
     {
         Models.GameRentalsEntities db = new Models.GameRentalsEntities();
         List<Models.Game> gameQuery;
-        List<Models.Rental> rentalQuery;
 
         public frmMain()
         {
             InitializeComponent();
 
-            //Initialize games grid
             gameList.AutoGenerateColumns = false;
             DataGridViewTextBoxColumn title = new DataGridViewTextBoxColumn();
             title.HeaderText = "Title";
@@ -42,39 +40,11 @@ namespace Bastion
             gameQuery = db.Games.ToList();
             populateGameGrid(gameQuery);
 
-            addGameGroup.Hide();
-            editGameGroup.Hide();
-
             btnUpdateGame.Enabled = false;
             btnDeleteGame.Enabled = false;
 
-            //Initialize rentals grid
-            rentalsList.AutoGenerateColumns = false;
-            DataGridViewTextBoxColumn rentalDate = new DataGridViewTextBoxColumn();
-            rentalDate.HeaderText = "Rental Date";
-            DataGridViewTextBoxColumn inventory = new DataGridViewTextBoxColumn();
-            inventory.HeaderText = "Inventory";
-            DataGridViewTextBoxColumn customer = new DataGridViewTextBoxColumn();
-            customer.HeaderText = "Customer";
-            DataGridViewTextBoxColumn returnDate = new DataGridViewTextBoxColumn();
-            returnDate.HeaderText = "Return Date";
-            DataGridViewTextBoxColumn staff = new DataGridViewTextBoxColumn();
-            staff.HeaderText = "Staff";
-            DataGridViewTextBoxColumn payment = new DataGridViewTextBoxColumn();
-            payment.HeaderText = "Payment";
-
-            rentalsList.Columns.AddRange(rentalDate, inventory, customer, returnDate, staff, payment);
-
-            rentalQuery = db.Rentals.ToList();
-            populateRentalsGrid(rentalQuery);
-
-            addRentalGroup.Hide();
-            editRentalGroup.Hide();
-
-            deleteRentalBtn.Enabled = false;
-            updateRentalBtn.Enabled = false;
-
-            //Initialize customer grid
+            addGameGroup.Hide();
+            editGameGroup.Hide();
             grpAddCustomer.Hide();
             grpUpdateCustomer.Hide();
         }
@@ -252,87 +222,6 @@ namespace Bastion
             }
         }
 
-        //***************************************Rentals Section********************************************//
-
-        private void populateRentalsGrid(List<Models.Rental> rental)
-        {
-            for (int i = 0; i < rental.Count; i++)
-            {
-                rentalsList.Rows.Add();
-                rentalsList[0, i].Value = rental[i].RentalDate;
-                rentalsList[1, i].Value = rental[i].Inventory.Game.Title;
-                rentalsList[2, i].Value = rental[i].Customer.FirstName + " " + rental[i].Customer.LastName;
-                rentalsList[3, i].Value = rental[i].RentalDate;
-                rentalsList[4, i].Value = rental[i].Staff.FirstName + " " + rental[i].Staff.LastName;
-            }
-        }
-
-        private void addRentalBtn_Click(object sender, EventArgs e)
-        {
-            addRentalGroup.Show();
-            rentalsList.Hide();
-
-            addRentalSelectInventory.DataSource = db.Games.Select(u => u.Title).ToList();
-            addRentalSelectCustomer.DataSource = db.Customers.Select(u => u.FirstName + " " + u.LastName).ToList();
-            addRentalSelectStaff.DataSource = db.Staffs.Select(u => u.FirstName + " " + u.LastName).ToList();
-        }
-
-        private void searchInventoryBtn_Click(object sender, EventArgs e)
-        {
-            if (addRentalSearchInventory.Text != "")
-            {
-                addRentalSelectInventory.DataSource = db.Games.Where(u => u.Title.ToLower().Contains(addRentalSearchInventory.Text.ToLower())).Select(u => u.Title).ToList();
-            }
-        }
-
-        private void searchCustomerBtn_Click(object sender, EventArgs e)
-        {
-            if (addRentalSearchCustomer.Text != "")
-            {
-                addRentalSelectCustomer.DataSource = db.Customers.Where(u => u.FirstName.ToLower().Contains(addRentalSearchCustomer.Text) || u.LastName.ToLower().Contains(addRentalSearchCustomer.Text)).Select(u => u.FirstName + " " + u.LastName).ToList();
-            }
-        }
-
-        private void searchStaffBtn_Click(object sender, EventArgs e)
-        {
-            if (addRentalSearchStaff.Text != "")
-            {
-                addRentalSelectStaff.DataSource = db.Staffs.Where(u => u.FirstName.ToLower().Contains(addRentalSearchStaff.Text) || u.LastName.ToLower().Contains(addRentalSearchStaff.Text)).Select(u => u.FirstName + " " + u.LastName).ToList();
-            }
-        }
-
-        //save rental
-        private void saveAddRental_Click(object sender, EventArgs e)
-        {
-            if (addRentalDate.Text == "" || addRentalsReturnDate.Text == "")
-            {
-                MessageBox.Show("Please fill in all the fields");
-            }
-            else
-            {
-                Models.Rental rental = new Models.Rental();
-                rental.RentalDate = addRentalDate.Value;
-                rental.RentalDate = addRentalsReturnDate.Value;
-                //rental.InventoryID = db.Inventories.Where(u => u.Game.Title == addRentalSelectInventory.Text).Select(u => u.InventoryID).FirstOrDefault();
-                rental.Inventory = db.Inventories.Where(u => u.Game.Title == addRentalSelectInventory.Text).FirstOrDefault();
-                rental.Customer = db.Customers.Where(u => u.FirstName + " " + u.LastName == addRentalSelectCustomer.Text).FirstOrDefault();
-                rental.Staff = db.Staffs.Where(u => u.FirstName + " " + u.LastName == addRentalSelectStaff.Text).FirstOrDefault();
-
-                db.Rentals.Add(rental);
-                db.SaveChanges();
-
-                MessageBox.Show("The rental has been saved");
-
-                rentalsList.Rows.Clear();
-                rentalQuery = db.Rentals.ToList();
-                populateRentalsGrid(rentalQuery);
-
-                addRentalGroup.Hide();
-                rentalsList.Show();
-            }
-        }
-
-
 
         //***************************************Customer Section********************************************//
 
@@ -405,5 +294,7 @@ namespace Bastion
                 dgvCustomer.Show();
             }
         }
+
+        
     }
 }
