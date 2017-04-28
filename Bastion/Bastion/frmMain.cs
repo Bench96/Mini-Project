@@ -16,6 +16,7 @@ namespace Bastion
     {
         Models.GameRentalsEntities db = new Models.GameRentalsEntities();
         List<Models.Game> gameQuery;
+        List<Models.Rental> rentalQuery;
 
         public frmMain()
         {
@@ -118,14 +119,33 @@ namespace Bastion
         private void gameSearchBTN_Click(object sender, EventArgs e)
         {
             string searchQuery = gameSearchTextBox.Text;
+            string searchIndex = searchBy.Text;
 
-            if(searchQuery != null)
+            if (searchIndex == "")
             {
-                gameList.Rows.Clear();
-                gameQuery = db.Games.Where(u => u.Title.ToLower().Contains(searchQuery.ToLower())).ToList();
-                populateGameGrid(gameQuery);
+                MessageBox.Show("Please select a search crieteria");
+            }
+            else if(searchQuery == "")
+            {
+                MessageBox.Show("Please enter a search term");
+            }
+            else 
+            {
+                if(searchIndex == "Title")
+                {
+                    gameList.Rows.Clear();
+                    gameQuery = db.Games.Where(u => u.Title.ToLower().Contains(searchQuery.ToLower())).ToList();
+                    populateGameGrid(gameQuery);
 
-                if(gameQuery.Count == 1)
+                }
+                else if(searchIndex == "Release Year")
+                {
+                    gameList.Rows.Clear();
+                    gameQuery = db.Games.Where(u => u.ReleaseYear.ToString().ToLower().Contains(searchQuery.ToLower())).ToList();
+                    populateGameGrid(gameQuery);
+                }
+
+                if (gameQuery.Count == 1)
                 {
                     btnUpdateGame.Enabled = true;
                     btnDeleteGame.Enabled = true;
@@ -153,12 +173,14 @@ namespace Bastion
             gameDeveloperComboBox.DataSource = db.Developers.Select(u => u.Name).ToList();
             gameGenreComboBox.DataSource = db.Genres.Select(u => u.Name).ToList();
             gamePublisherComboBox.DataSource = db.Publishers.Select(u => u.Name).ToList();
+            gameStoreComboBox.DataSource = db.Stores.Select(u => u.StoreID).ToList();
+
         }
 
         //Add game
         private void addGameBTN_Click(object sender, EventArgs e)
         {
-            if(gameTitleTextBox.Text == "" || gameReleaseYearTextBox.Text == "" || gameRentalRateTextBox.Text == "")
+            if (gameTitleTextBox.Text == "" || gameReleaseYearTextBox.Text == "" || gameRentalRateTextBox.Text == "")
             {
                 MessageBox.Show("Please complete all the fields");
             }
@@ -181,9 +203,15 @@ namespace Bastion
                 Models.Publisher publisher = new Models.Publisher();
                 publisher.Name = gamePublisherComboBox.Text;
                 game.Publishers.Add(publisher);
+
+                Models.Inventory inventory = new Models.Inventory();
+                inventory.StoreID = Convert.ToInt32(gameStoreComboBox.Text);
+                game.Inventories.Add(inventory);
+
                 //add game to db
                 db.Games.Add(game);
 
+                
                 db.SaveChanges();
 
                 MessageBox.Show("The game has been saved!");
@@ -194,10 +222,9 @@ namespace Bastion
 
                 gameList.Show();
                 addGameGroup.Hide();
-            }   
+            }
         }
 
-        //view update game
         private void btnUpdateGame_Click(object sender, EventArgs e)
         {
             if (gameQuery != null && gameQuery.Count == 1)
@@ -245,8 +272,19 @@ namespace Bastion
 
             if (dialogue == DialogResult.Yes)
             {
-                //Models.Inventory inv = db.Inventories.Where(u => u.GameID == gameQuery[0].GameID).FirstOrDefault();
-                //db.Inventories.Remove(inv);
+                foreach (Models.Inventory inv in gameQuery[0].Inventories.ToList())
+                {
+                    foreach(Models.Rental rental in inv.Rentals.ToList())
+                    {
+                        foreach(Models.Payment payment in rental.Payments.ToList())
+                        {
+                            db.Payments.Remove(payment);
+                        }
+                        db.Rentals.Remove(rental);
+                    }
+                    db.Inventories.Remove(inv);
+                }
+
                 db.Games.Remove(gameQuery[0]);
                 db.SaveChanges();
 
@@ -258,67 +296,7 @@ namespace Bastion
             }
         }
 
-        //view update game
-        private void btnUpdateGame_Click(object sender, EventArgs e)
-        {
-            if (gameQuery != null && gameQuery.Count == 1)
-            {
-                editGameTitle.Text = gameQuery[0].Title;
-                editGameReleaseYear.Text = gameQuery[0].ReleaseYear.ToString();
-                editGameRentalRate.Text = gameQuery[0].RentalRrate.ToString();
 
-                editGameGroup.Show();
-                gameList.Hide();
-            }
-        }
-
-        //update game
-        private void updateGame_Click(object sender, EventArgs e)
-        {
-            if (editGameTitle.Text == "" || editGameReleaseYear.Text == "" || editGameRentalRate.Text == "")
-            {
-                MessageBox.Show("Please complete all the fields");
-            }
-            else
-            {
-                gameQuery[0].Title = editGameTitle.Text;
-                gameQuery[0].ReleaseYear = Convert.ToDecimal(editGameReleaseYear.Text);
-                gameQuery[0].RentalRrate = Convert.ToDecimal(editGameRentalRate.Text);
-
-                db.Entry(gameQuery[0]).State = EntityState.Modified;
-                db.SaveChanges();
-
-                MessageBox.Show("The game has been updated!");
-
-                gameList.Rows.Clear();
-                gameQuery = db.Games.ToList();
-                populateGameGrid(gameQuery);
-
-                editGameGroup.Hide();
-                gameList.Show();
-
-            }
-        }
-
-        private void btnDeleteGame_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogue = MessageBox.Show("Are you sure you want to delete this game?", "Delete Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dialogue == DialogResult.Yes)
-            {
-                //Models.Inventory inv = db.Inventories.Where(u => u.GameID == gameQuery[0].GameID).FirstOrDefault();
-                //db.Inventories.Remove(inv);
-                db.Games.Remove(gameQuery[0]);
-                db.SaveChanges();
-
-                MessageBox.Show("The game has been deleted");
-
-                gameList.Rows.Clear();
-                gameQuery = db.Games.ToList();
-                populateGameGrid(gameQuery);
-            }
-        }
-        
         //***************************************Rentals Section********************************************//
 
         private void populateRentalsGrid(List<Models.Rental> rental)
@@ -1382,5 +1360,7 @@ namespace Bastion
             grpUpdateStore.Hide();
             dgvStores.Show();
         }
+
+        
     }
 }

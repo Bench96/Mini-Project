@@ -97,7 +97,63 @@
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.tpgRentals = new System.Windows.Forms.TabPage();
+            this.editRentalGroup = new System.Windows.Forms.GroupBox();
+            this.editRentalRentalDate = new System.Windows.Forms.DateTimePicker();
+            this.editRentalDate = new System.Windows.Forms.DateTimePicker();
+            this.button5 = new System.Windows.Forms.Button();
+            this.editRentalSearchStaff = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label86 = new System.Windows.Forms.Label();
+            this.editRentalSearchCustomer = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.editRentalSearchInventory = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label88 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.editRentalSelectStaff = new System.Windows.Forms.ComboBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.editRentalSelectCustomer = new System.Windows.Forms.ComboBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.editRentalSelectInventory = new System.Windows.Forms.ComboBox();
+            this.label102 = new System.Windows.Forms.Label();
+            this.addRentalGroup = new System.Windows.Forms.GroupBox();
+            this.addRentalsReturnDate = new System.Windows.Forms.DateTimePicker();
+            this.addRentalDate = new System.Windows.Forms.DateTimePicker();
+            this.searchStaffBtn = new System.Windows.Forms.Button();
+            this.addRentalSearchStaff = new System.Windows.Forms.TextBox();
+            this.label99 = new System.Windows.Forms.Label();
+            this.searchCustomerBtn = new System.Windows.Forms.Button();
+            this.label98 = new System.Windows.Forms.Label();
+            this.addRentalSearchCustomer = new System.Windows.Forms.TextBox();
+            this.label97 = new System.Windows.Forms.Label();
+            this.addRentalSearchInventory = new System.Windows.Forms.TextBox();
+            this.searchInventoryBtn = new System.Windows.Forms.Button();
+            this.label91 = new System.Windows.Forms.Label();
+            this.saveAddRental = new System.Windows.Forms.Button();
+            this.addRentalSelectStaff = new System.Windows.Forms.ComboBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.addRentalSelectCustomer = new System.Windows.Forms.ComboBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.addRentalSelectInventory = new System.Windows.Forms.ComboBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.addRentalBtn = new System.Windows.Forms.Button();
+            this.rentalsList = new System.Windows.Forms.DataGridView();
             this.tpgGames = new System.Windows.Forms.TabPage();
+            this.label95 = new System.Windows.Forms.Label();
+            this.searchBy = new System.Windows.Forms.ComboBox();
+            this.editGameGroup = new System.Windows.Forms.GroupBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.editGameTitle = new System.Windows.Forms.TextBox();
+            this.editGameReleaseYear = new System.Windows.Forms.TextBox();
+            this.editGameRentalRate = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
             this.clearSearchResultsBTN = new System.Windows.Forms.Button();
             this.gameSearchTextBox = new System.Windows.Forms.TextBox();
             this.gameSearchBTN = new System.Windows.Forms.Button();
@@ -105,6 +161,8 @@
             this.btnUpdateGame = new System.Windows.Forms.Button();
             this.btnAddGame = new System.Windows.Forms.Button();
             this.addGameGroup = new System.Windows.Forms.GroupBox();
+            this.gameStoreComboBox = new System.Windows.Forms.ComboBox();
+            this.label80 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.addGameBTN = new System.Windows.Forms.Button();
             this.gameTitleTextBox = new System.Windows.Forms.TextBox();
@@ -239,7 +297,12 @@
             this.grpAddCustomer.SuspendLayout();
             this.grpUpdateCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
+            this.tpgRentals.SuspendLayout();
+            this.editRentalGroup.SuspendLayout();
+            this.addRentalGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentalsList)).BeginInit();
             this.tpgGames.SuspendLayout();
+            this.editGameGroup.SuspendLayout();
             this.addGameGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).BeginInit();
             this.tabBastion.SuspendLayout();
@@ -901,6 +964,12 @@
             // 
             // tpgRentals
             // 
+            this.tpgRentals.Controls.Add(this.editRentalGroup);
+            this.tpgRentals.Controls.Add(this.addRentalGroup);
+            this.tpgRentals.Controls.Add(this.button2);
+            this.tpgRentals.Controls.Add(this.button3);
+            this.tpgRentals.Controls.Add(this.addRentalBtn);
+            this.tpgRentals.Controls.Add(this.rentalsList);
             this.tpgRentals.ImageIndex = 1;
             this.tpgRentals.Location = new System.Drawing.Point(4, 49);
             this.tpgRentals.Name = "tpgRentals";
@@ -910,8 +979,438 @@
             this.tpgRentals.Text = "Rentals";
             this.tpgRentals.UseVisualStyleBackColor = true;
             // 
+            // editRentalGroup
+            // 
+            this.editRentalGroup.Controls.Add(this.editRentalRentalDate);
+            this.editRentalGroup.Controls.Add(this.editRentalDate);
+            this.editRentalGroup.Controls.Add(this.button5);
+            this.editRentalGroup.Controls.Add(this.editRentalSearchStaff);
+            this.editRentalGroup.Controls.Add(this.label85);
+            this.editRentalGroup.Controls.Add(this.button9);
+            this.editRentalGroup.Controls.Add(this.label86);
+            this.editRentalGroup.Controls.Add(this.editRentalSearchCustomer);
+            this.editRentalGroup.Controls.Add(this.label87);
+            this.editRentalGroup.Controls.Add(this.editRentalSearchInventory);
+            this.editRentalGroup.Controls.Add(this.button10);
+            this.editRentalGroup.Controls.Add(this.label88);
+            this.editRentalGroup.Controls.Add(this.button11);
+            this.editRentalGroup.Controls.Add(this.editRentalSelectStaff);
+            this.editRentalGroup.Controls.Add(this.label89);
+            this.editRentalGroup.Controls.Add(this.editRentalSelectCustomer);
+            this.editRentalGroup.Controls.Add(this.label90);
+            this.editRentalGroup.Controls.Add(this.label100);
+            this.editRentalGroup.Controls.Add(this.editRentalSelectInventory);
+            this.editRentalGroup.Controls.Add(this.label102);
+            this.editRentalGroup.Location = new System.Drawing.Point(619, 32);
+            this.editRentalGroup.Name = "editRentalGroup";
+            this.editRentalGroup.Size = new System.Drawing.Size(303, 556);
+            this.editRentalGroup.TabIndex = 27;
+            this.editRentalGroup.TabStop = false;
+            this.editRentalGroup.Text = "Edit Rental";
+            // 
+            // editRentalRentalDate
+            // 
+            this.editRentalRentalDate.Location = new System.Drawing.Point(58, 93);
+            this.editRentalRentalDate.Name = "editRentalRentalDate";
+            this.editRentalRentalDate.Size = new System.Drawing.Size(200, 20);
+            this.editRentalRentalDate.TabIndex = 34;
+            // 
+            // editRentalDate
+            // 
+            this.editRentalDate.Location = new System.Drawing.Point(58, 35);
+            this.editRentalDate.Name = "editRentalDate";
+            this.editRentalDate.Size = new System.Drawing.Size(200, 20);
+            this.editRentalDate.TabIndex = 33;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(185, 378);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "Search ";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // editRentalSearchStaff
+            // 
+            this.editRentalSearchStaff.Location = new System.Drawing.Point(58, 381);
+            this.editRentalSearchStaff.Name = "editRentalSearchStaff";
+            this.editRentalSearchStaff.Size = new System.Drawing.Size(100, 20);
+            this.editRentalSearchStaff.TabIndex = 31;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(55, 366);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(66, 13);
+            this.label85.TabIndex = 30;
+            this.label85.Text = "Search Staff";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(185, 265);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 29;
+            this.button9.Text = "Search ";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(55, 311);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(84, 13);
+            this.label86.TabIndex = 28;
+            this.label86.Text = "Select Customer";
+            // 
+            // editRentalSearchCustomer
+            // 
+            this.editRentalSearchCustomer.Location = new System.Drawing.Point(58, 268);
+            this.editRentalSearchCustomer.Name = "editRentalSearchCustomer";
+            this.editRentalSearchCustomer.Size = new System.Drawing.Size(100, 20);
+            this.editRentalSearchCustomer.TabIndex = 27;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(55, 194);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(84, 13);
+            this.label87.TabIndex = 26;
+            this.label87.Text = "Select Inventory";
+            // 
+            // editRentalSearchInventory
+            // 
+            this.editRentalSearchInventory.Location = new System.Drawing.Point(58, 156);
+            this.editRentalSearchInventory.Name = "editRentalSearchInventory";
+            this.editRentalSearchInventory.Size = new System.Drawing.Size(100, 20);
+            this.editRentalSearchInventory.TabIndex = 25;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(185, 153);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 24;
+            this.button10.Text = "Search ";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(55, 18);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(64, 13);
+            this.label88.TabIndex = 14;
+            this.label88.Text = "Rental Date";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(58, 478);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 23;
+            this.button11.Text = "Edit Rental";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // editRentalSelectStaff
+            // 
+            this.editRentalSelectStaff.FormattingEnabled = true;
+            this.editRentalSelectStaff.Location = new System.Drawing.Point(58, 436);
+            this.editRentalSelectStaff.Name = "editRentalSelectStaff";
+            this.editRentalSelectStaff.Size = new System.Drawing.Size(175, 21);
+            this.editRentalSelectStaff.TabIndex = 22;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(55, 420);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(62, 13);
+            this.label89.TabIndex = 21;
+            this.label89.Text = "Select Staff";
+            // 
+            // editRentalSelectCustomer
+            // 
+            this.editRentalSelectCustomer.FormattingEnabled = true;
+            this.editRentalSelectCustomer.Location = new System.Drawing.Point(58, 327);
+            this.editRentalSelectCustomer.Name = "editRentalSelectCustomer";
+            this.editRentalSelectCustomer.Size = new System.Drawing.Size(175, 21);
+            this.editRentalSelectCustomer.TabIndex = 20;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(55, 74);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(65, 13);
+            this.label90.TabIndex = 15;
+            this.label90.Text = "Return Date";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(55, 253);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(88, 13);
+            this.label100.TabIndex = 19;
+            this.label100.Text = "Search Customer";
+            // 
+            // editRentalSelectInventory
+            // 
+            this.editRentalSelectInventory.FormattingEnabled = true;
+            this.editRentalSelectInventory.Location = new System.Drawing.Point(58, 210);
+            this.editRentalSelectInventory.Name = "editRentalSelectInventory";
+            this.editRentalSelectInventory.Size = new System.Drawing.Size(175, 21);
+            this.editRentalSelectInventory.TabIndex = 18;
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(55, 138);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(88, 13);
+            this.label102.TabIndex = 17;
+            this.label102.Text = "Search Inventory";
+            // 
+            // addRentalGroup
+            // 
+            this.addRentalGroup.Controls.Add(this.addRentalsReturnDate);
+            this.addRentalGroup.Controls.Add(this.addRentalDate);
+            this.addRentalGroup.Controls.Add(this.searchStaffBtn);
+            this.addRentalGroup.Controls.Add(this.addRentalSearchStaff);
+            this.addRentalGroup.Controls.Add(this.label99);
+            this.addRentalGroup.Controls.Add(this.searchCustomerBtn);
+            this.addRentalGroup.Controls.Add(this.label98);
+            this.addRentalGroup.Controls.Add(this.addRentalSearchCustomer);
+            this.addRentalGroup.Controls.Add(this.label97);
+            this.addRentalGroup.Controls.Add(this.addRentalSearchInventory);
+            this.addRentalGroup.Controls.Add(this.searchInventoryBtn);
+            this.addRentalGroup.Controls.Add(this.label91);
+            this.addRentalGroup.Controls.Add(this.saveAddRental);
+            this.addRentalGroup.Controls.Add(this.addRentalSelectStaff);
+            this.addRentalGroup.Controls.Add(this.label92);
+            this.addRentalGroup.Controls.Add(this.addRentalSelectCustomer);
+            this.addRentalGroup.Controls.Add(this.label93);
+            this.addRentalGroup.Controls.Add(this.label94);
+            this.addRentalGroup.Controls.Add(this.addRentalSelectInventory);
+            this.addRentalGroup.Controls.Add(this.label96);
+            this.addRentalGroup.Location = new System.Drawing.Point(298, 32);
+            this.addRentalGroup.Name = "addRentalGroup";
+            this.addRentalGroup.Size = new System.Drawing.Size(303, 556);
+            this.addRentalGroup.TabIndex = 26;
+            this.addRentalGroup.TabStop = false;
+            this.addRentalGroup.Text = "Add Rental";
+            // 
+            // addRentalsReturnDate
+            // 
+            this.addRentalsReturnDate.Location = new System.Drawing.Point(58, 93);
+            this.addRentalsReturnDate.Name = "addRentalsReturnDate";
+            this.addRentalsReturnDate.Size = new System.Drawing.Size(200, 20);
+            this.addRentalsReturnDate.TabIndex = 34;
+            // 
+            // addRentalDate
+            // 
+            this.addRentalDate.Location = new System.Drawing.Point(58, 35);
+            this.addRentalDate.Name = "addRentalDate";
+            this.addRentalDate.Size = new System.Drawing.Size(200, 20);
+            this.addRentalDate.TabIndex = 33;
+            // 
+            // searchStaffBtn
+            // 
+            this.searchStaffBtn.Location = new System.Drawing.Point(185, 378);
+            this.searchStaffBtn.Name = "searchStaffBtn";
+            this.searchStaffBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchStaffBtn.TabIndex = 32;
+            this.searchStaffBtn.Text = "Search ";
+            this.searchStaffBtn.UseVisualStyleBackColor = true;
+            // 
+            // addRentalSearchStaff
+            // 
+            this.addRentalSearchStaff.Location = new System.Drawing.Point(58, 381);
+            this.addRentalSearchStaff.Name = "addRentalSearchStaff";
+            this.addRentalSearchStaff.Size = new System.Drawing.Size(100, 20);
+            this.addRentalSearchStaff.TabIndex = 31;
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(55, 366);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(66, 13);
+            this.label99.TabIndex = 30;
+            this.label99.Text = "Search Staff";
+            // 
+            // searchCustomerBtn
+            // 
+            this.searchCustomerBtn.AutoSize = true;
+            this.searchCustomerBtn.Location = new System.Drawing.Point(185, 265);
+            this.searchCustomerBtn.Name = "searchCustomerBtn";
+            this.searchCustomerBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchCustomerBtn.TabIndex = 29;
+            this.searchCustomerBtn.Text = "Search ";
+            this.searchCustomerBtn.UseVisualStyleBackColor = true;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(55, 311);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(84, 13);
+            this.label98.TabIndex = 28;
+            this.label98.Text = "Select Customer";
+            // 
+            // addRentalSearchCustomer
+            // 
+            this.addRentalSearchCustomer.Location = new System.Drawing.Point(58, 268);
+            this.addRentalSearchCustomer.Name = "addRentalSearchCustomer";
+            this.addRentalSearchCustomer.Size = new System.Drawing.Size(100, 20);
+            this.addRentalSearchCustomer.TabIndex = 27;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(55, 194);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(84, 13);
+            this.label97.TabIndex = 26;
+            this.label97.Text = "Select Inventory";
+            // 
+            // addRentalSearchInventory
+            // 
+            this.addRentalSearchInventory.Location = new System.Drawing.Point(58, 156);
+            this.addRentalSearchInventory.Name = "addRentalSearchInventory";
+            this.addRentalSearchInventory.Size = new System.Drawing.Size(100, 20);
+            this.addRentalSearchInventory.TabIndex = 25;
+            // 
+            // searchInventoryBtn
+            // 
+            this.searchInventoryBtn.Location = new System.Drawing.Point(185, 153);
+            this.searchInventoryBtn.Name = "searchInventoryBtn";
+            this.searchInventoryBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchInventoryBtn.TabIndex = 24;
+            this.searchInventoryBtn.Text = "Search ";
+            this.searchInventoryBtn.UseVisualStyleBackColor = true;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(55, 18);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(64, 13);
+            this.label91.TabIndex = 14;
+            this.label91.Text = "Rental Date";
+            // 
+            // saveAddRental
+            // 
+            this.saveAddRental.Location = new System.Drawing.Point(58, 478);
+            this.saveAddRental.Name = "saveAddRental";
+            this.saveAddRental.Size = new System.Drawing.Size(75, 23);
+            this.saveAddRental.TabIndex = 23;
+            this.saveAddRental.Text = "Add Rental";
+            this.saveAddRental.UseVisualStyleBackColor = true;
+            // 
+            // addRentalSelectStaff
+            // 
+            this.addRentalSelectStaff.FormattingEnabled = true;
+            this.addRentalSelectStaff.Location = new System.Drawing.Point(58, 436);
+            this.addRentalSelectStaff.Name = "addRentalSelectStaff";
+            this.addRentalSelectStaff.Size = new System.Drawing.Size(175, 21);
+            this.addRentalSelectStaff.TabIndex = 22;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(55, 420);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(62, 13);
+            this.label92.TabIndex = 21;
+            this.label92.Text = "Select Staff";
+            // 
+            // addRentalSelectCustomer
+            // 
+            this.addRentalSelectCustomer.FormattingEnabled = true;
+            this.addRentalSelectCustomer.Location = new System.Drawing.Point(58, 327);
+            this.addRentalSelectCustomer.Name = "addRentalSelectCustomer";
+            this.addRentalSelectCustomer.Size = new System.Drawing.Size(175, 21);
+            this.addRentalSelectCustomer.TabIndex = 20;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(55, 74);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(65, 13);
+            this.label93.TabIndex = 15;
+            this.label93.Text = "Return Date";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(55, 253);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(88, 13);
+            this.label94.TabIndex = 19;
+            this.label94.Text = "Search Customer";
+            // 
+            // addRentalSelectInventory
+            // 
+            this.addRentalSelectInventory.FormattingEnabled = true;
+            this.addRentalSelectInventory.Location = new System.Drawing.Point(58, 210);
+            this.addRentalSelectInventory.Name = "addRentalSelectInventory";
+            this.addRentalSelectInventory.Size = new System.Drawing.Size(175, 21);
+            this.addRentalSelectInventory.TabIndex = 18;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(55, 138);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(88, 13);
+            this.label96.TabIndex = 17;
+            this.label96.Text = "Search Inventory";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(23, 207);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(253, 50);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Delete Rental";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(23, 151);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(253, 50);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Update Rental";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // addRentalBtn
+            // 
+            this.addRentalBtn.Location = new System.Drawing.Point(23, 95);
+            this.addRentalBtn.Name = "addRentalBtn";
+            this.addRentalBtn.Size = new System.Drawing.Size(253, 50);
+            this.addRentalBtn.TabIndex = 4;
+            this.addRentalBtn.Text = "Add Rental";
+            this.addRentalBtn.UseVisualStyleBackColor = true;
+            // 
+            // rentalsList
+            // 
+            this.rentalsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rentalsList.Location = new System.Drawing.Point(298, 95);
+            this.rentalsList.Name = "rentalsList";
+            this.rentalsList.Size = new System.Drawing.Size(606, 346);
+            this.rentalsList.TabIndex = 0;
+            // 
             // tpgGames
             // 
+            this.tpgGames.Controls.Add(this.label95);
+            this.tpgGames.Controls.Add(this.searchBy);
             this.tpgGames.Controls.Add(this.editGameGroup);
             this.tpgGames.Controls.Add(this.clearSearchResultsBTN);
             this.tpgGames.Controls.Add(this.gameSearchTextBox);
@@ -929,6 +1428,100 @@
             this.tpgGames.TabIndex = 0;
             this.tpgGames.Text = "Games";
             this.tpgGames.UseVisualStyleBackColor = true;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(9, 38);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(56, 13);
+            this.label95.TabIndex = 27;
+            this.label95.Text = "Search By";
+            // 
+            // searchBy
+            // 
+            this.searchBy.FormattingEnabled = true;
+            this.searchBy.Items.AddRange(new object[] {
+            "Title",
+            "Release Year"});
+            this.searchBy.Location = new System.Drawing.Point(71, 30);
+            this.searchBy.Name = "searchBy";
+            this.searchBy.Size = new System.Drawing.Size(121, 21);
+            this.searchBy.TabIndex = 26;
+            // 
+            // editGameGroup
+            // 
+            this.editGameGroup.Controls.Add(this.label79);
+            this.editGameGroup.Controls.Add(this.button1);
+            this.editGameGroup.Controls.Add(this.editGameTitle);
+            this.editGameGroup.Controls.Add(this.editGameReleaseYear);
+            this.editGameGroup.Controls.Add(this.editGameRentalRate);
+            this.editGameGroup.Controls.Add(this.label81);
+            this.editGameGroup.Controls.Add(this.label83);
+            this.editGameGroup.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.editGameGroup.Location = new System.Drawing.Point(610, 77);
+            this.editGameGroup.Name = "editGameGroup";
+            this.editGameGroup.Size = new System.Drawing.Size(303, 409);
+            this.editGameGroup.TabIndex = 25;
+            this.editGameGroup.TabStop = false;
+            this.editGameGroup.Text = "Edit Game";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(55, 18);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(27, 13);
+            this.label79.TabIndex = 14;
+            this.label79.Text = "Title";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(58, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Edit Game";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // editGameTitle
+            // 
+            this.editGameTitle.Location = new System.Drawing.Point(58, 34);
+            this.editGameTitle.Name = "editGameTitle";
+            this.editGameTitle.Size = new System.Drawing.Size(175, 20);
+            this.editGameTitle.TabIndex = 8;
+            // 
+            // editGameReleaseYear
+            // 
+            this.editGameReleaseYear.Location = new System.Drawing.Point(58, 90);
+            this.editGameReleaseYear.Name = "editGameReleaseYear";
+            this.editGameReleaseYear.Size = new System.Drawing.Size(175, 20);
+            this.editGameReleaseYear.TabIndex = 11;
+            // 
+            // editGameRentalRate
+            // 
+            this.editGameRentalRate.Location = new System.Drawing.Point(58, 146);
+            this.editGameRentalRate.Name = "editGameRentalRate";
+            this.editGameRentalRate.Size = new System.Drawing.Size(175, 20);
+            this.editGameRentalRate.TabIndex = 13;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(55, 74);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(71, 13);
+            this.label81.TabIndex = 15;
+            this.label81.Text = "Release Year";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(55, 130);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(64, 13);
+            this.label83.TabIndex = 16;
+            this.label83.Text = "Rental Rate";
             // 
             // clearSearchResultsBTN
             // 
@@ -989,6 +1582,8 @@
             // 
             // addGameGroup
             // 
+            this.addGameGroup.Controls.Add(this.gameStoreComboBox);
+            this.addGameGroup.Controls.Add(this.label80);
             this.addGameGroup.Controls.Add(this.label1);
             this.addGameGroup.Controls.Add(this.addGameBTN);
             this.addGameGroup.Controls.Add(this.gameTitleTextBox);
@@ -1004,10 +1599,27 @@
             this.addGameGroup.Controls.Add(this.label4);
             this.addGameGroup.Location = new System.Drawing.Point(301, 77);
             this.addGameGroup.Name = "addGameGroup";
-            this.addGameGroup.Size = new System.Drawing.Size(303, 409);
+            this.addGameGroup.Size = new System.Drawing.Size(303, 508);
             this.addGameGroup.TabIndex = 24;
             this.addGameGroup.TabStop = false;
             this.addGameGroup.Text = "Add Game";
+            // 
+            // gameStoreComboBox
+            // 
+            this.gameStoreComboBox.FormattingEnabled = true;
+            this.gameStoreComboBox.Location = new System.Drawing.Point(58, 377);
+            this.gameStoreComboBox.Name = "gameStoreComboBox";
+            this.gameStoreComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gameStoreComboBox.TabIndex = 26;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(55, 360);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(32, 13);
+            this.label80.TabIndex = 25;
+            this.label80.Text = "Store";
             // 
             // label1
             // 
@@ -1020,7 +1632,7 @@
             // 
             // addGameBTN
             // 
-            this.addGameBTN.Location = new System.Drawing.Point(58, 355);
+            this.addGameBTN.Location = new System.Drawing.Point(58, 411);
             this.addGameBTN.Name = "addGameBTN";
             this.addGameBTN.Size = new System.Drawing.Size(75, 23);
             this.addGameBTN.TabIndex = 23;
@@ -2292,8 +2904,16 @@
             this.grpUpdateCustomer.ResumeLayout(false);
             this.grpUpdateCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
+            this.tpgRentals.ResumeLayout(false);
+            this.editRentalGroup.ResumeLayout(false);
+            this.editRentalGroup.PerformLayout();
+            this.addRentalGroup.ResumeLayout(false);
+            this.addRentalGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentalsList)).EndInit();
             this.tpgGames.ResumeLayout(false);
             this.tpgGames.PerformLayout();
+            this.editGameGroup.ResumeLayout(false);
+            this.editGameGroup.PerformLayout();
             this.addGameGroup.ResumeLayout(false);
             this.addGameGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).EndInit();
@@ -2520,6 +3140,64 @@
         private System.Windows.Forms.ComboBox cmbStoreSearchOrderBy;
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.GroupBox editGameGroup;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox editGameTitle;
+        private System.Windows.Forms.TextBox editGameReleaseYear;
+        private System.Windows.Forms.TextBox editGameRentalRate;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addRentalBtn;
+        private System.Windows.Forms.DataGridView rentalsList;
+        private System.Windows.Forms.GroupBox addRentalGroup;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Button saveAddRental;
+        private System.Windows.Forms.ComboBox addRentalSelectStaff;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.ComboBox addRentalSelectCustomer;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.ComboBox addRentalSelectInventory;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.TextBox addRentalSearchInventory;
+        private System.Windows.Forms.Button searchInventoryBtn;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.TextBox addRentalSearchCustomer;
+        private System.Windows.Forms.Button searchCustomerBtn;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Button searchStaffBtn;
+        private System.Windows.Forms.TextBox addRentalSearchStaff;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.DateTimePicker addRentalsReturnDate;
+        private System.Windows.Forms.DateTimePicker addRentalDate;
+        private System.Windows.Forms.GroupBox editRentalGroup;
+        private System.Windows.Forms.DateTimePicker editRentalRentalDate;
+        private System.Windows.Forms.DateTimePicker editRentalDate;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox editRentalSearchStaff;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox editRentalSearchCustomer;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox editRentalSearchInventory;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.ComboBox editRentalSelectStaff;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.ComboBox editRentalSelectCustomer;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.ComboBox editRentalSelectInventory;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.ComboBox searchBy;
+        private System.Windows.Forms.ComboBox gameStoreComboBox;
+        private System.Windows.Forms.Label label80;
     }
 }
 
