@@ -17,6 +17,8 @@ namespace Bastion
         Models.GameRentalsEntities db = new Models.GameRentalsEntities();
         List<Models.Game> gameQuery;
         List<Models.Rental> rentalQuery;
+        Models.Game game;
+        Models.Rental rental;
 
         public frmMain()
         {
@@ -24,6 +26,8 @@ namespace Bastion
 
             //Initialize games grid
             gameList.AutoGenerateColumns = false;
+            DataGridViewTextBoxColumn GameID = new DataGridViewTextBoxColumn();
+            GameID.HeaderText = "ID";
             DataGridViewTextBoxColumn title = new DataGridViewTextBoxColumn();
             title.HeaderText = "Title";
             DataGridViewTextBoxColumn releaseYear = new DataGridViewTextBoxColumn();
@@ -37,7 +41,7 @@ namespace Bastion
             DataGridViewTextBoxColumn publishers = new DataGridViewTextBoxColumn();
             publishers.HeaderText = "Publishers";
 
-            gameList.Columns.AddRange(title, releaseYear, rentalRate, developers, genres, publishers);
+            gameList.Columns.AddRange(GameID, title, releaseYear, rentalRate, developers, genres, publishers);
 
             gameQuery = db.Games.ToList();
             populateGameGrid(gameQuery);
@@ -45,11 +49,10 @@ namespace Bastion
             addGameGroup.Hide();
             editGameGroup.Hide();
 
-            btnUpdateGame.Enabled = false;
-            btnDeleteGame.Enabled = false;
-
             //Initialize rentals grid
             rentalsList.AutoGenerateColumns = false;
+            DataGridViewTextBoxColumn ID = new DataGridViewTextBoxColumn();
+            ID.HeaderText = "ID";
             DataGridViewTextBoxColumn rentalDate = new DataGridViewTextBoxColumn();
             rentalDate.HeaderText = "Rental Date";
             DataGridViewTextBoxColumn inventory = new DataGridViewTextBoxColumn();
@@ -60,16 +63,14 @@ namespace Bastion
             returnDate.HeaderText = "Return Date";
             DataGridViewTextBoxColumn staff = new DataGridViewTextBoxColumn();
             staff.HeaderText = "Staff";
-            DataGridViewTextBoxColumn payment = new DataGridViewTextBoxColumn();
-            payment.HeaderText = "Payment";
 
-            rentalsList.Columns.AddRange(rentalDate, inventory, customer, returnDate, staff, payment);
+            rentalsList.Columns.AddRange(ID, rentalDate, inventory, customer, returnDate, staff);
 
             rentalQuery = db.Rentals.ToList();
             populateRentalsGrid(rentalQuery);
 
             addRentalGroup.Hide();
-            editRentalGroup.Hide();
+            //editRentalGroup.Hide();
 
             // Customer tab init
             grpAddCustomer.Hide();
@@ -94,23 +95,24 @@ namespace Bastion
             for (int i = 0; i < games.Count; i++)
             {
                 gameList.Rows.Add();
-                gameList[0, i].Value = games[i].Title;
-                gameList[1, i].Value = games[i].ReleaseYear;
-                gameList[2, i].Value = games[i].RentalRrate;
+                gameList[0, i].Value = games[i].GameID;
+                gameList[1, i].Value = games[i].Title;
+                gameList[2, i].Value = games[i].ReleaseYear;
+                gameList[3, i].Value = games[i].RentalRrate;
 
                 foreach (Models.Developer dev in games[i].Developers)
                 {
-                    gameList[3, i].Value += dev.Name + ", ";
+                    gameList[4, i].Value += dev.Name + ", ";
                 }
 
                 foreach (Models.Genre genre in games[i].Genres)
                 {
-                    gameList[4, i].Value += genre.Name + ", ";
+                    gameList[5, i].Value += genre.Name + ", ";
                 }
 
                 foreach (Models.Publisher publisher in games[i].Publishers)
                 {
-                    gameList[5, i].Value += publisher.Name + ", ";
+                    gameList[6, i].Value += publisher.Name + ", ";
                 }
             }
         }
@@ -145,11 +147,6 @@ namespace Bastion
                     populateGameGrid(gameQuery);
                 }
 
-                if (gameQuery.Count == 1)
-                {
-                    btnUpdateGame.Enabled = true;
-                    btnDeleteGame.Enabled = true;
-                }
             }
         }
 
@@ -158,9 +155,6 @@ namespace Bastion
             gameList.Rows.Clear();
             gameQuery = db.Games.ToList();
             populateGameGrid(gameQuery);
-
-            btnUpdateGame.Enabled = false;
-            btnDeleteGame.Enabled = false;
         }
 
         //View add game form
@@ -227,15 +221,13 @@ namespace Bastion
 
         private void btnUpdateGame_Click(object sender, EventArgs e)
         {
-            if (gameQuery != null && gameQuery.Count == 1)
-            {
-                editGameTitle.Text = gameQuery[0].Title;
-                editGameReleaseYear.Text = gameQuery[0].ReleaseYear.ToString();
-                editGameRentalRate.Text = gameQuery[0].RentalRrate.ToString();
+            game = db.Games.Find((int)gameList.SelectedRows[0].Cells[0].Value);
+            editGameTitle.Text = game.Title;
+            editGameReleaseYear.Text = game.ReleaseYear.ToString();
+            editGameRentalRate.Text = game.RentalRrate.ToString();
 
-                editGameGroup.Show();
-                gameList.Hide();
-            }
+            editGameGroup.Show();
+            gameList.Hide();
         }
 
         //update game
@@ -247,11 +239,11 @@ namespace Bastion
             }
             else
             {
-                gameQuery[0].Title = editGameTitle.Text;
-                gameQuery[0].ReleaseYear = Convert.ToDecimal(editGameReleaseYear.Text);
-                gameQuery[0].RentalRrate = Convert.ToDecimal(editGameRentalRate.Text);
+                game.Title = editGameTitle.Text;
+                game.ReleaseYear = Convert.ToDecimal(editGameReleaseYear.Text);
+                game.RentalRrate = Convert.ToDecimal(editGameRentalRate.Text);
 
-                db.Entry(gameQuery[0]).State = EntityState.Modified;
+                db.Entry(game).State = EntityState.Modified;
                 db.SaveChanges();
 
                 MessageBox.Show("The game has been updated!");
@@ -272,7 +264,9 @@ namespace Bastion
 
             if (dialogue == DialogResult.Yes)
             {
-                foreach (Models.Inventory inv in gameQuery[0].Inventories.ToList())
+                game = db.Games.Find((int)gameList.SelectedRows[0].Cells[0].Value);
+
+                foreach (Models.Inventory inv in game.Inventories.ToList())
                 {
                     foreach(Models.Rental rental in inv.Rentals.ToList())
                     {
@@ -285,7 +279,7 @@ namespace Bastion
                     db.Inventories.Remove(inv);
                 }
 
-                db.Games.Remove(gameQuery[0]);
+                db.Games.Remove(game);
                 db.SaveChanges();
 
                 MessageBox.Show("The game has been deleted");
@@ -293,24 +287,82 @@ namespace Bastion
                 gameList.Rows.Clear();
                 gameQuery = db.Games.ToList();
                 populateGameGrid(gameQuery);
+
+                rentalsList.Rows.Clear();
+                rentalQuery = db.Rentals.ToList();
+                populateRentalsGrid(rentalQuery);
             }
         }
 
+        private void gamesBack_Click(object sender, EventArgs e)
+        {
+            gameList.Show();
+            editGameGroup.Hide();
+        }
+
+        private void addGameBack_Click(object sender, EventArgs e)
+        {
+            gameList.Show();
+            addGameGroup.Hide();  
+        }
 
         //***************************************Rentals Section********************************************//
 
-        private void populateRentalsGrid(List<Models.Rental> rental)
+        private void populateRentalsGrid(List<Models.Rental> rentalQ)
         {
-            for (int i = 0; i < rental.Count; i++)
+            rentalsList.Rows.Clear();
+            for (int i = 0; i < rentalQ.Count; i++)
             {
                 rentalsList.Rows.Add();
-                rentalsList[0, i].Value = rental[i].RentalDate;
-                rentalsList[1, i].Value = rental[i].Inventory.Game.Title;
-                rentalsList[2, i].Value = rental[i].Customer.FirstName + " " + rental[i].Customer.LastName;
-                rentalsList[3, i].Value = rental[i].RentalDate;
-                rentalsList[4, i].Value = rental[i].Staff.FirstName + " " + rental[i].Staff.LastName;
+                rentalsList[0, i].Value = rentalQ[i].RentalID;
+                rentalsList[1, i].Value = rentalQ[i].RentalDate;
+                rentalsList[2, i].Value = rentalQ[i].Inventory.Game.Title;
+                rentalsList[3, i].Value = rentalQ[i].Customer.FirstName + " " + rentalQ[i].Customer.LastName;
+                rentalsList[4, i].Value = rentalQ[i].RentalDate;
+                rentalsList[5, i].Value = rentalQ[i].Staff.FirstName + " " + rentalQ[i].Staff.LastName;
             }
         }
+
+        private void rentalSearchBtn_Click(object sender, EventArgs e)
+        {
+            var searchIndex = rentalSearchBy.Text;
+            var searchTerm = rentalSearchTerm.Text;
+
+            if(searchIndex == "")
+            {
+                MessageBox.Show("Please select a search criteria");
+            }
+            else if(searchTerm == "")
+            {
+                MessageBox.Show("Please enter a search term");
+            }
+            else
+            {
+                if (searchIndex == "Inventory")
+                {
+                    rentalQuery = db.Rentals.Where(u => u.Inventory.Game.Title.ToLower().Contains(searchTerm.ToLower())).ToList();
+                }
+                else if (searchIndex == "Customer")
+                {
+                    rentalQuery = db.Rentals.Where(u => u.Customer.FirstName.ToLower().Contains(searchTerm.ToLower())).ToList();
+                }
+                else if(searchIndex == "Staff")
+                {
+                    rentalQuery = db.Rentals.Where(u => u.Staff.FirstName.ToLower().Contains(searchTerm.ToLower())).ToList();
+                }
+
+                populateRentalsGrid(rentalQuery);
+
+            }
+        }
+
+        private void rentalsClearSearch_Click(object sender, EventArgs e)
+        {
+           
+            rentalQuery = db.Rentals.ToList();
+            populateRentalsGrid(rentalQuery);
+        }
+
 
         private void addRentalBtn_Click(object sender, EventArgs e)
         {
@@ -346,24 +398,38 @@ namespace Bastion
             }
         }
 
+
         //save rental
+
         private void saveAddRental_Click(object sender, EventArgs e)
         {
-            if (addRentalDate.Text == "" || addRentalsReturnDate.Text == "")
+            if (addRentalDate.Text == ""
+                || addRentalsReturnDate.Text == ""
+                || addRentalSearchCustomer.Text == ""
+                || addRentalSelectInventory.Text == ""
+                || addRentalSelectStaff.Text == "")
             {
                 MessageBox.Show("Please fill in all the fields");
             }
             else
             {
-                Models.Rental rental = new Models.Rental();
+                rental = new Models.Rental();
                 rental.RentalDate = addRentalDate.Value;
-                rental.RentalDate = addRentalsReturnDate.Value;
+                rental.ReturnDate = addRentalsReturnDate.Value;
                 //rental.InventoryID = db.Inventories.Where(u => u.Game.Title == addRentalSelectInventory.Text).Select(u => u.InventoryID).FirstOrDefault();
                 rental.Inventory = db.Inventories.Where(u => u.Game.Title == addRentalSelectInventory.Text).FirstOrDefault();
                 rental.Customer = db.Customers.Where(u => u.FirstName + " " + u.LastName == addRentalSelectCustomer.Text).FirstOrDefault();
                 rental.Staff = db.Staffs.Where(u => u.FirstName + " " + u.LastName == addRentalSelectStaff.Text).FirstOrDefault();
 
                 db.Rentals.Add(rental);
+
+                Models.Payment payment = new Models.Payment();
+                payment.Amount = rental.Inventory.Game.RentalRrate;
+                payment.Customer = rental.Customer;
+                payment.Staff = rental.Staff;
+                payment.PaymentDate = rental.RentalDate;
+
+                db.Payments.Add(payment);
                 db.SaveChanges();
 
                 MessageBox.Show("The rental has been saved");
@@ -376,7 +442,34 @@ namespace Bastion
                 rentalsList.Show();
             }
         }
-        
+
+        private void deleteRentalBtn_Click(object sender, EventArgs e)
+        {
+            Models.Rental rental = db.Rentals.Find((int)rentalsList.SelectedRows[0].Cells[0].Value);
+            DialogResult dialogue = MessageBox.Show("Are you sure you want to delete this rental?", "Delete Rental", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogue == DialogResult.Yes)
+            {
+                foreach (Models.Payment payment in rental.Payments)
+                {
+                    db.Payments.Remove(payment);
+                }
+                db.Rentals.Remove(rental);
+                db.SaveChanges();
+                MessageBox.Show("The rental has been successfully deleted");
+
+                rentalQuery = db.Rentals.ToList();
+                populateRentalsGrid(rentalQuery);
+            }
+
+        }
+
+        private void addRentalBack_Click(object sender, EventArgs e)
+        {
+            rentalsList.Show();
+            addRentalGroup.Hide();
+        }
+
 
         //***************************************Customer Section********************************************//
 

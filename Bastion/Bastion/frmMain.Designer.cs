@@ -97,27 +97,11 @@
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.tpgRentals = new System.Windows.Forms.TabPage();
-            this.editRentalGroup = new System.Windows.Forms.GroupBox();
-            this.editRentalRentalDate = new System.Windows.Forms.DateTimePicker();
-            this.editRentalDate = new System.Windows.Forms.DateTimePicker();
-            this.button5 = new System.Windows.Forms.Button();
-            this.editRentalSearchStaff = new System.Windows.Forms.TextBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.label86 = new System.Windows.Forms.Label();
-            this.editRentalSearchCustomer = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.editRentalSearchInventory = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label88 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.editRentalSelectStaff = new System.Windows.Forms.ComboBox();
-            this.label89 = new System.Windows.Forms.Label();
-            this.editRentalSelectCustomer = new System.Windows.Forms.ComboBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label100 = new System.Windows.Forms.Label();
-            this.editRentalSelectInventory = new System.Windows.Forms.ComboBox();
-            this.label102 = new System.Windows.Forms.Label();
+            this.rentalsClearSearch = new System.Windows.Forms.Button();
+            this.rentalSearchBtn = new System.Windows.Forms.Button();
+            this.label82 = new System.Windows.Forms.Label();
+            this.rentalSearchBy = new System.Windows.Forms.ComboBox();
+            this.rentalSearchTerm = new System.Windows.Forms.TextBox();
             this.addRentalGroup = new System.Windows.Forms.GroupBox();
             this.addRentalsReturnDate = new System.Windows.Forms.DateTimePicker();
             this.addRentalDate = new System.Windows.Forms.DateTimePicker();
@@ -139,8 +123,7 @@
             this.label94 = new System.Windows.Forms.Label();
             this.addRentalSelectInventory = new System.Windows.Forms.ComboBox();
             this.label96 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.deleteRentalBtn = new System.Windows.Forms.Button();
             this.addRentalBtn = new System.Windows.Forms.Button();
             this.rentalsList = new System.Windows.Forms.DataGridView();
             this.tpgGames = new System.Windows.Forms.TabPage();
@@ -148,7 +131,7 @@
             this.searchBy = new System.Windows.Forms.ComboBox();
             this.editGameGroup = new System.Windows.Forms.GroupBox();
             this.label79 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.updateGame = new System.Windows.Forms.Button();
             this.editGameTitle = new System.Windows.Forms.TextBox();
             this.editGameReleaseYear = new System.Windows.Forms.TextBox();
             this.editGameRentalRate = new System.Windows.Forms.TextBox();
@@ -227,31 +210,6 @@
             this.label68 = new System.Windows.Forms.Label();
             this.cmbUpdateStoreManager = new System.Windows.Forms.ComboBox();
             this.label69 = new System.Windows.Forms.Label();
-            this.grpAddEmployee = new System.Windows.Forms.GroupBox();
-            this.txtAddEmployeePhone = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtAddEmployeePostalCode = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.txtAddEmployeeDistrict = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.btnAddEmployeeCancel = new System.Windows.Forms.Button();
-            this.txtAddEmployeeCity = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtAddEmployeeAddress2 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtAddEmployeeAddress1 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.btnAddEmployeeAddEmployee = new System.Windows.Forms.Button();
-            this.txtAddEmployeeFName = new System.Windows.Forms.TextBox();
-            this.cmbAddEmployeeCountry = new System.Windows.Forms.ComboBox();
-            this.txtAddEmployeeLName = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtAddEmployeeEmail = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.cmbAddEmployeeStore = new System.Windows.Forms.ComboBox();
-            this.label33 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.btnSearchStoreClear = new System.Windows.Forms.Button();
@@ -293,12 +251,41 @@
             this.label40 = new System.Windows.Forms.Label();
             this.cmbUpdateEmployeeStore = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
+            this.grpAddEmployee = new System.Windows.Forms.GroupBox();
+            this.txtAddEmployeePhone = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtAddEmployeePostalCode = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.txtAddEmployeeDistrict = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.btnAddEmployeeCancel = new System.Windows.Forms.Button();
+            this.txtAddEmployeeCity = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtAddEmployeeAddress2 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtAddEmployeeAddress1 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.btnAddEmployeeAddEmployee = new System.Windows.Forms.Button();
+            this.txtAddEmployeeFName = new System.Windows.Forms.TextBox();
+            this.cmbAddEmployeeCountry = new System.Windows.Forms.ComboBox();
+            this.txtAddEmployeeLName = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtAddEmployeeEmail = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.cmbAddEmployeeStore = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.gamesBack = new System.Windows.Forms.Button();
+            this.addGameBack = new System.Windows.Forms.Button();
+            this.addRentalBack = new System.Windows.Forms.Button();
+            this.label84 = new System.Windows.Forms.Label();
+            this.Games = new System.Windows.Forms.Label();
             this.tpgCustomers.SuspendLayout();
             this.grpAddCustomer.SuspendLayout();
             this.grpUpdateCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tpgRentals.SuspendLayout();
-            this.editRentalGroup.SuspendLayout();
             this.addRentalGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentalsList)).BeginInit();
             this.tpgGames.SuspendLayout();
@@ -309,10 +296,10 @@
             this.tpgManagement.SuspendLayout();
             this.grpAddStore.SuspendLayout();
             this.grpUpdateStore.SuspendLayout();
-            this.grpAddEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.grpUpdateEmployee.SuspendLayout();
+            this.grpAddEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabImages
@@ -964,10 +951,14 @@
             // 
             // tpgRentals
             // 
-            this.tpgRentals.Controls.Add(this.editRentalGroup);
+            this.tpgRentals.Controls.Add(this.label84);
+            this.tpgRentals.Controls.Add(this.rentalsClearSearch);
+            this.tpgRentals.Controls.Add(this.rentalSearchBtn);
+            this.tpgRentals.Controls.Add(this.label82);
+            this.tpgRentals.Controls.Add(this.rentalSearchBy);
+            this.tpgRentals.Controls.Add(this.rentalSearchTerm);
             this.tpgRentals.Controls.Add(this.addRentalGroup);
-            this.tpgRentals.Controls.Add(this.button2);
-            this.tpgRentals.Controls.Add(this.button3);
+            this.tpgRentals.Controls.Add(this.deleteRentalBtn);
             this.tpgRentals.Controls.Add(this.addRentalBtn);
             this.tpgRentals.Controls.Add(this.rentalsList);
             this.tpgRentals.ImageIndex = 1;
@@ -979,204 +970,57 @@
             this.tpgRentals.Text = "Rentals";
             this.tpgRentals.UseVisualStyleBackColor = true;
             // 
-            // editRentalGroup
+            // rentalsClearSearch
             // 
-            this.editRentalGroup.Controls.Add(this.editRentalRentalDate);
-            this.editRentalGroup.Controls.Add(this.editRentalDate);
-            this.editRentalGroup.Controls.Add(this.button5);
-            this.editRentalGroup.Controls.Add(this.editRentalSearchStaff);
-            this.editRentalGroup.Controls.Add(this.label85);
-            this.editRentalGroup.Controls.Add(this.button9);
-            this.editRentalGroup.Controls.Add(this.label86);
-            this.editRentalGroup.Controls.Add(this.editRentalSearchCustomer);
-            this.editRentalGroup.Controls.Add(this.label87);
-            this.editRentalGroup.Controls.Add(this.editRentalSearchInventory);
-            this.editRentalGroup.Controls.Add(this.button10);
-            this.editRentalGroup.Controls.Add(this.label88);
-            this.editRentalGroup.Controls.Add(this.button11);
-            this.editRentalGroup.Controls.Add(this.editRentalSelectStaff);
-            this.editRentalGroup.Controls.Add(this.label89);
-            this.editRentalGroup.Controls.Add(this.editRentalSelectCustomer);
-            this.editRentalGroup.Controls.Add(this.label90);
-            this.editRentalGroup.Controls.Add(this.label100);
-            this.editRentalGroup.Controls.Add(this.editRentalSelectInventory);
-            this.editRentalGroup.Controls.Add(this.label102);
-            this.editRentalGroup.Location = new System.Drawing.Point(619, 32);
-            this.editRentalGroup.Name = "editRentalGroup";
-            this.editRentalGroup.Size = new System.Drawing.Size(303, 556);
-            this.editRentalGroup.TabIndex = 27;
-            this.editRentalGroup.TabStop = false;
-            this.editRentalGroup.Text = "Edit Rental";
+            this.rentalsClearSearch.Location = new System.Drawing.Point(786, 42);
+            this.rentalsClearSearch.Name = "rentalsClearSearch";
+            this.rentalsClearSearch.Size = new System.Drawing.Size(118, 23);
+            this.rentalsClearSearch.TabIndex = 33;
+            this.rentalsClearSearch.Text = "Clear Search Results";
+            this.rentalsClearSearch.UseVisualStyleBackColor = true;
+            this.rentalsClearSearch.Click += new System.EventHandler(this.rentalsClearSearch_Click);
             // 
-            // editRentalRentalDate
+            // rentalSearchBtn
             // 
-            this.editRentalRentalDate.Location = new System.Drawing.Point(58, 93);
-            this.editRentalRentalDate.Name = "editRentalRentalDate";
-            this.editRentalRentalDate.Size = new System.Drawing.Size(200, 20);
-            this.editRentalRentalDate.TabIndex = 34;
+            this.rentalSearchBtn.Location = new System.Drawing.Point(677, 40);
+            this.rentalSearchBtn.Name = "rentalSearchBtn";
+            this.rentalSearchBtn.Size = new System.Drawing.Size(75, 23);
+            this.rentalSearchBtn.TabIndex = 32;
+            this.rentalSearchBtn.Text = "Search";
+            this.rentalSearchBtn.UseVisualStyleBackColor = true;
+            this.rentalSearchBtn.Click += new System.EventHandler(this.rentalSearchBtn_Click);
             // 
-            // editRentalDate
+            // label82
             // 
-            this.editRentalDate.Location = new System.Drawing.Point(58, 35);
-            this.editRentalDate.Name = "editRentalDate";
-            this.editRentalDate.Size = new System.Drawing.Size(200, 20);
-            this.editRentalDate.TabIndex = 33;
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(295, 44);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(56, 13);
+            this.label82.TabIndex = 30;
+            this.label82.Text = "Search By";
             // 
-            // button5
+            // rentalSearchBy
             // 
-            this.button5.Location = new System.Drawing.Point(185, 378);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "Search ";
-            this.button5.UseVisualStyleBackColor = true;
+            this.rentalSearchBy.FormattingEnabled = true;
+            this.rentalSearchBy.Items.AddRange(new object[] {
+            "Inventory",
+            "Customer",
+            "Staff"});
+            this.rentalSearchBy.Location = new System.Drawing.Point(366, 41);
+            this.rentalSearchBy.Name = "rentalSearchBy";
+            this.rentalSearchBy.Size = new System.Drawing.Size(121, 21);
+            this.rentalSearchBy.TabIndex = 29;
             // 
-            // editRentalSearchStaff
+            // rentalSearchTerm
             // 
-            this.editRentalSearchStaff.Location = new System.Drawing.Point(58, 381);
-            this.editRentalSearchStaff.Name = "editRentalSearchStaff";
-            this.editRentalSearchStaff.Size = new System.Drawing.Size(100, 20);
-            this.editRentalSearchStaff.TabIndex = 31;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(55, 366);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(66, 13);
-            this.label85.TabIndex = 30;
-            this.label85.Text = "Search Staff";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(185, 265);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 29;
-            this.button9.Text = "Search ";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(55, 311);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(84, 13);
-            this.label86.TabIndex = 28;
-            this.label86.Text = "Select Customer";
-            // 
-            // editRentalSearchCustomer
-            // 
-            this.editRentalSearchCustomer.Location = new System.Drawing.Point(58, 268);
-            this.editRentalSearchCustomer.Name = "editRentalSearchCustomer";
-            this.editRentalSearchCustomer.Size = new System.Drawing.Size(100, 20);
-            this.editRentalSearchCustomer.TabIndex = 27;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(55, 194);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(84, 13);
-            this.label87.TabIndex = 26;
-            this.label87.Text = "Select Inventory";
-            // 
-            // editRentalSearchInventory
-            // 
-            this.editRentalSearchInventory.Location = new System.Drawing.Point(58, 156);
-            this.editRentalSearchInventory.Name = "editRentalSearchInventory";
-            this.editRentalSearchInventory.Size = new System.Drawing.Size(100, 20);
-            this.editRentalSearchInventory.TabIndex = 25;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(185, 153);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 24;
-            this.button10.Text = "Search ";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(55, 18);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(64, 13);
-            this.label88.TabIndex = 14;
-            this.label88.Text = "Rental Date";
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(58, 478);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "Edit Rental";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // editRentalSelectStaff
-            // 
-            this.editRentalSelectStaff.FormattingEnabled = true;
-            this.editRentalSelectStaff.Location = new System.Drawing.Point(58, 436);
-            this.editRentalSelectStaff.Name = "editRentalSelectStaff";
-            this.editRentalSelectStaff.Size = new System.Drawing.Size(175, 21);
-            this.editRentalSelectStaff.TabIndex = 22;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(55, 420);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(62, 13);
-            this.label89.TabIndex = 21;
-            this.label89.Text = "Select Staff";
-            // 
-            // editRentalSelectCustomer
-            // 
-            this.editRentalSelectCustomer.FormattingEnabled = true;
-            this.editRentalSelectCustomer.Location = new System.Drawing.Point(58, 327);
-            this.editRentalSelectCustomer.Name = "editRentalSelectCustomer";
-            this.editRentalSelectCustomer.Size = new System.Drawing.Size(175, 21);
-            this.editRentalSelectCustomer.TabIndex = 20;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(55, 74);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(65, 13);
-            this.label90.TabIndex = 15;
-            this.label90.Text = "Return Date";
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(55, 253);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(88, 13);
-            this.label100.TabIndex = 19;
-            this.label100.Text = "Search Customer";
-            // 
-            // editRentalSelectInventory
-            // 
-            this.editRentalSelectInventory.FormattingEnabled = true;
-            this.editRentalSelectInventory.Location = new System.Drawing.Point(58, 210);
-            this.editRentalSelectInventory.Name = "editRentalSelectInventory";
-            this.editRentalSelectInventory.Size = new System.Drawing.Size(175, 21);
-            this.editRentalSelectInventory.TabIndex = 18;
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(55, 138);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(88, 13);
-            this.label102.TabIndex = 17;
-            this.label102.Text = "Search Inventory";
+            this.rentalSearchTerm.Location = new System.Drawing.Point(550, 42);
+            this.rentalSearchTerm.Name = "rentalSearchTerm";
+            this.rentalSearchTerm.Size = new System.Drawing.Size(121, 20);
+            this.rentalSearchTerm.TabIndex = 28;
             // 
             // addRentalGroup
             // 
+            this.addRentalGroup.Controls.Add(this.addRentalBack);
             this.addRentalGroup.Controls.Add(this.addRentalsReturnDate);
             this.addRentalGroup.Controls.Add(this.addRentalDate);
             this.addRentalGroup.Controls.Add(this.searchStaffBtn);
@@ -1197,9 +1041,9 @@
             this.addRentalGroup.Controls.Add(this.label94);
             this.addRentalGroup.Controls.Add(this.addRentalSelectInventory);
             this.addRentalGroup.Controls.Add(this.label96);
-            this.addRentalGroup.Location = new System.Drawing.Point(298, 32);
+            this.addRentalGroup.Location = new System.Drawing.Point(298, 95);
             this.addRentalGroup.Name = "addRentalGroup";
-            this.addRentalGroup.Size = new System.Drawing.Size(303, 556);
+            this.addRentalGroup.Size = new System.Drawing.Size(606, 525);
             this.addRentalGroup.TabIndex = 26;
             this.addRentalGroup.TabStop = false;
             this.addRentalGroup.Text = "Add Rental";
@@ -1208,30 +1052,31 @@
             // 
             this.addRentalsReturnDate.Location = new System.Drawing.Point(58, 93);
             this.addRentalsReturnDate.Name = "addRentalsReturnDate";
-            this.addRentalsReturnDate.Size = new System.Drawing.Size(200, 20);
+            this.addRentalsReturnDate.Size = new System.Drawing.Size(290, 20);
             this.addRentalsReturnDate.TabIndex = 34;
             // 
             // addRentalDate
             // 
             this.addRentalDate.Location = new System.Drawing.Point(58, 35);
             this.addRentalDate.Name = "addRentalDate";
-            this.addRentalDate.Size = new System.Drawing.Size(200, 20);
+            this.addRentalDate.Size = new System.Drawing.Size(290, 20);
             this.addRentalDate.TabIndex = 33;
             // 
             // searchStaffBtn
             // 
-            this.searchStaffBtn.Location = new System.Drawing.Point(185, 378);
+            this.searchStaffBtn.Location = new System.Drawing.Point(273, 378);
             this.searchStaffBtn.Name = "searchStaffBtn";
             this.searchStaffBtn.Size = new System.Drawing.Size(75, 23);
             this.searchStaffBtn.TabIndex = 32;
             this.searchStaffBtn.Text = "Search ";
             this.searchStaffBtn.UseVisualStyleBackColor = true;
+            this.searchStaffBtn.Click += new System.EventHandler(this.searchStaffBtn_Click);
             // 
             // addRentalSearchStaff
             // 
             this.addRentalSearchStaff.Location = new System.Drawing.Point(58, 381);
             this.addRentalSearchStaff.Name = "addRentalSearchStaff";
-            this.addRentalSearchStaff.Size = new System.Drawing.Size(100, 20);
+            this.addRentalSearchStaff.Size = new System.Drawing.Size(202, 20);
             this.addRentalSearchStaff.TabIndex = 31;
             // 
             // label99
@@ -1246,12 +1091,13 @@
             // searchCustomerBtn
             // 
             this.searchCustomerBtn.AutoSize = true;
-            this.searchCustomerBtn.Location = new System.Drawing.Point(185, 265);
+            this.searchCustomerBtn.Location = new System.Drawing.Point(273, 266);
             this.searchCustomerBtn.Name = "searchCustomerBtn";
             this.searchCustomerBtn.Size = new System.Drawing.Size(75, 23);
             this.searchCustomerBtn.TabIndex = 29;
             this.searchCustomerBtn.Text = "Search ";
             this.searchCustomerBtn.UseVisualStyleBackColor = true;
+            this.searchCustomerBtn.Click += new System.EventHandler(this.searchCustomerBtn_Click);
             // 
             // label98
             // 
@@ -1266,7 +1112,7 @@
             // 
             this.addRentalSearchCustomer.Location = new System.Drawing.Point(58, 268);
             this.addRentalSearchCustomer.Name = "addRentalSearchCustomer";
-            this.addRentalSearchCustomer.Size = new System.Drawing.Size(100, 20);
+            this.addRentalSearchCustomer.Size = new System.Drawing.Size(202, 20);
             this.addRentalSearchCustomer.TabIndex = 27;
             // 
             // label97
@@ -1282,17 +1128,18 @@
             // 
             this.addRentalSearchInventory.Location = new System.Drawing.Point(58, 156);
             this.addRentalSearchInventory.Name = "addRentalSearchInventory";
-            this.addRentalSearchInventory.Size = new System.Drawing.Size(100, 20);
+            this.addRentalSearchInventory.Size = new System.Drawing.Size(202, 20);
             this.addRentalSearchInventory.TabIndex = 25;
             // 
             // searchInventoryBtn
             // 
-            this.searchInventoryBtn.Location = new System.Drawing.Point(185, 153);
+            this.searchInventoryBtn.Location = new System.Drawing.Point(273, 153);
             this.searchInventoryBtn.Name = "searchInventoryBtn";
             this.searchInventoryBtn.Size = new System.Drawing.Size(75, 23);
             this.searchInventoryBtn.TabIndex = 24;
             this.searchInventoryBtn.Text = "Search ";
             this.searchInventoryBtn.UseVisualStyleBackColor = true;
+            this.searchInventoryBtn.Click += new System.EventHandler(this.searchInventoryBtn_Click);
             // 
             // label91
             // 
@@ -1311,13 +1158,14 @@
             this.saveAddRental.TabIndex = 23;
             this.saveAddRental.Text = "Add Rental";
             this.saveAddRental.UseVisualStyleBackColor = true;
+            this.saveAddRental.Click += new System.EventHandler(this.saveAddRental_Click);
             // 
             // addRentalSelectStaff
             // 
             this.addRentalSelectStaff.FormattingEnabled = true;
             this.addRentalSelectStaff.Location = new System.Drawing.Point(58, 436);
             this.addRentalSelectStaff.Name = "addRentalSelectStaff";
-            this.addRentalSelectStaff.Size = new System.Drawing.Size(175, 21);
+            this.addRentalSelectStaff.Size = new System.Drawing.Size(202, 21);
             this.addRentalSelectStaff.TabIndex = 22;
             // 
             // label92
@@ -1334,7 +1182,7 @@
             this.addRentalSelectCustomer.FormattingEnabled = true;
             this.addRentalSelectCustomer.Location = new System.Drawing.Point(58, 327);
             this.addRentalSelectCustomer.Name = "addRentalSelectCustomer";
-            this.addRentalSelectCustomer.Size = new System.Drawing.Size(175, 21);
+            this.addRentalSelectCustomer.Size = new System.Drawing.Size(202, 21);
             this.addRentalSelectCustomer.TabIndex = 20;
             // 
             // label93
@@ -1360,7 +1208,7 @@
             this.addRentalSelectInventory.FormattingEnabled = true;
             this.addRentalSelectInventory.Location = new System.Drawing.Point(58, 210);
             this.addRentalSelectInventory.Name = "addRentalSelectInventory";
-            this.addRentalSelectInventory.Size = new System.Drawing.Size(175, 21);
+            this.addRentalSelectInventory.Size = new System.Drawing.Size(202, 21);
             this.addRentalSelectInventory.TabIndex = 18;
             // 
             // label96
@@ -1372,53 +1220,48 @@
             this.label96.TabIndex = 17;
             this.label96.Text = "Search Inventory";
             // 
-            // button2
+            // deleteRentalBtn
             // 
-            this.button2.Location = new System.Drawing.Point(23, 207);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(253, 50);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Delete Rental";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(23, 151);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(253, 50);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Update Rental";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteRentalBtn.Location = new System.Drawing.Point(23, 207);
+            this.deleteRentalBtn.Name = "deleteRentalBtn";
+            this.deleteRentalBtn.Size = new System.Drawing.Size(253, 50);
+            this.deleteRentalBtn.TabIndex = 6;
+            this.deleteRentalBtn.Text = "Delete Rental";
+            this.deleteRentalBtn.UseVisualStyleBackColor = true;
+            this.deleteRentalBtn.Click += new System.EventHandler(this.deleteRentalBtn_Click);
             // 
             // addRentalBtn
             // 
-            this.addRentalBtn.Location = new System.Drawing.Point(23, 95);
+            this.addRentalBtn.Location = new System.Drawing.Point(23, 133);
             this.addRentalBtn.Name = "addRentalBtn";
             this.addRentalBtn.Size = new System.Drawing.Size(253, 50);
             this.addRentalBtn.TabIndex = 4;
             this.addRentalBtn.Text = "Add Rental";
             this.addRentalBtn.UseVisualStyleBackColor = true;
+            this.addRentalBtn.Click += new System.EventHandler(this.addRentalBtn_Click);
             // 
             // rentalsList
             // 
             this.rentalsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rentalsList.Location = new System.Drawing.Point(298, 95);
             this.rentalsList.Name = "rentalsList";
+            this.rentalsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.rentalsList.Size = new System.Drawing.Size(606, 346);
             this.rentalsList.TabIndex = 0;
             // 
             // tpgGames
             // 
+            this.tpgGames.Controls.Add(this.Games);
+            this.tpgGames.Controls.Add(this.addGameGroup);
+            this.tpgGames.Controls.Add(this.editGameGroup);
             this.tpgGames.Controls.Add(this.label95);
             this.tpgGames.Controls.Add(this.searchBy);
-            this.tpgGames.Controls.Add(this.editGameGroup);
             this.tpgGames.Controls.Add(this.clearSearchResultsBTN);
             this.tpgGames.Controls.Add(this.gameSearchTextBox);
             this.tpgGames.Controls.Add(this.gameSearchBTN);
             this.tpgGames.Controls.Add(this.btnDeleteGame);
             this.tpgGames.Controls.Add(this.btnUpdateGame);
             this.tpgGames.Controls.Add(this.btnAddGame);
-            this.tpgGames.Controls.Add(this.addGameGroup);
             this.tpgGames.Controls.Add(this.gameList);
             this.tpgGames.ImageIndex = 0;
             this.tpgGames.Location = new System.Drawing.Point(4, 49);
@@ -1432,7 +1275,7 @@
             // label95
             // 
             this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(9, 38);
+            this.label95.Location = new System.Drawing.Point(298, 37);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(56, 13);
             this.label95.TabIndex = 27;
@@ -1444,24 +1287,25 @@
             this.searchBy.Items.AddRange(new object[] {
             "Title",
             "Release Year"});
-            this.searchBy.Location = new System.Drawing.Point(71, 30);
+            this.searchBy.Location = new System.Drawing.Point(360, 29);
             this.searchBy.Name = "searchBy";
             this.searchBy.Size = new System.Drawing.Size(121, 21);
             this.searchBy.TabIndex = 26;
             // 
             // editGameGroup
             // 
+            this.editGameGroup.Controls.Add(this.gamesBack);
             this.editGameGroup.Controls.Add(this.label79);
-            this.editGameGroup.Controls.Add(this.button1);
+            this.editGameGroup.Controls.Add(this.updateGame);
             this.editGameGroup.Controls.Add(this.editGameTitle);
             this.editGameGroup.Controls.Add(this.editGameReleaseYear);
             this.editGameGroup.Controls.Add(this.editGameRentalRate);
             this.editGameGroup.Controls.Add(this.label81);
             this.editGameGroup.Controls.Add(this.label83);
             this.editGameGroup.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.editGameGroup.Location = new System.Drawing.Point(610, 77);
+            this.editGameGroup.Location = new System.Drawing.Point(301, 77);
             this.editGameGroup.Name = "editGameGroup";
-            this.editGameGroup.Size = new System.Drawing.Size(303, 409);
+            this.editGameGroup.Size = new System.Drawing.Size(612, 409);
             this.editGameGroup.TabIndex = 25;
             this.editGameGroup.TabStop = false;
             this.editGameGroup.Text = "Edit Game";
@@ -1475,34 +1319,35 @@
             this.label79.TabIndex = 14;
             this.label79.Text = "Title";
             // 
-            // button1
+            // updateGame
             // 
-            this.button1.Location = new System.Drawing.Point(58, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Edit Game";
-            this.button1.UseVisualStyleBackColor = true;
+            this.updateGame.Location = new System.Drawing.Point(58, 187);
+            this.updateGame.Name = "updateGame";
+            this.updateGame.Size = new System.Drawing.Size(75, 23);
+            this.updateGame.TabIndex = 23;
+            this.updateGame.Text = "Edit Game";
+            this.updateGame.UseVisualStyleBackColor = true;
+            this.updateGame.Click += new System.EventHandler(this.updateGame_Click);
             // 
             // editGameTitle
             // 
             this.editGameTitle.Location = new System.Drawing.Point(58, 34);
             this.editGameTitle.Name = "editGameTitle";
-            this.editGameTitle.Size = new System.Drawing.Size(175, 20);
+            this.editGameTitle.Size = new System.Drawing.Size(245, 20);
             this.editGameTitle.TabIndex = 8;
             // 
             // editGameReleaseYear
             // 
             this.editGameReleaseYear.Location = new System.Drawing.Point(58, 90);
             this.editGameReleaseYear.Name = "editGameReleaseYear";
-            this.editGameReleaseYear.Size = new System.Drawing.Size(175, 20);
+            this.editGameReleaseYear.Size = new System.Drawing.Size(245, 20);
             this.editGameReleaseYear.TabIndex = 11;
             // 
             // editGameRentalRate
             // 
             this.editGameRentalRate.Location = new System.Drawing.Point(58, 146);
             this.editGameRentalRate.Name = "editGameRentalRate";
-            this.editGameRentalRate.Size = new System.Drawing.Size(175, 20);
+            this.editGameRentalRate.Size = new System.Drawing.Size(245, 20);
             this.editGameRentalRate.TabIndex = 13;
             // 
             // label81
@@ -1525,7 +1370,7 @@
             // 
             // clearSearchResultsBTN
             // 
-            this.clearSearchResultsBTN.Location = new System.Drawing.Point(604, 28);
+            this.clearSearchResultsBTN.Location = new System.Drawing.Point(811, 27);
             this.clearSearchResultsBTN.Name = "clearSearchResultsBTN";
             this.clearSearchResultsBTN.Size = new System.Drawing.Size(132, 23);
             this.clearSearchResultsBTN.TabIndex = 7;
@@ -1535,14 +1380,14 @@
             // 
             // gameSearchTextBox
             // 
-            this.gameSearchTextBox.Location = new System.Drawing.Point(276, 31);
+            this.gameSearchTextBox.Location = new System.Drawing.Point(513, 29);
             this.gameSearchTextBox.Name = "gameSearchTextBox";
             this.gameSearchTextBox.Size = new System.Drawing.Size(175, 20);
             this.gameSearchTextBox.TabIndex = 6;
             // 
             // gameSearchBTN
             // 
-            this.gameSearchBTN.Location = new System.Drawing.Point(486, 28);
+            this.gameSearchBTN.Location = new System.Drawing.Point(694, 26);
             this.gameSearchBTN.Name = "gameSearchBTN";
             this.gameSearchBTN.Size = new System.Drawing.Size(76, 23);
             this.gameSearchBTN.TabIndex = 5;
@@ -1582,6 +1427,7 @@
             // 
             // addGameGroup
             // 
+            this.addGameGroup.Controls.Add(this.addGameBack);
             this.addGameGroup.Controls.Add(this.gameStoreComboBox);
             this.addGameGroup.Controls.Add(this.label80);
             this.addGameGroup.Controls.Add(this.label1);
@@ -1599,7 +1445,7 @@
             this.addGameGroup.Controls.Add(this.label4);
             this.addGameGroup.Location = new System.Drawing.Point(301, 77);
             this.addGameGroup.Name = "addGameGroup";
-            this.addGameGroup.Size = new System.Drawing.Size(303, 508);
+            this.addGameGroup.Size = new System.Drawing.Size(612, 508);
             this.addGameGroup.TabIndex = 24;
             this.addGameGroup.TabStop = false;
             this.addGameGroup.Text = "Add Game";
@@ -1609,7 +1455,7 @@
             this.gameStoreComboBox.FormattingEnabled = true;
             this.gameStoreComboBox.Location = new System.Drawing.Point(58, 377);
             this.gameStoreComboBox.Name = "gameStoreComboBox";
-            this.gameStoreComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gameStoreComboBox.Size = new System.Drawing.Size(245, 21);
             this.gameStoreComboBox.TabIndex = 26;
             // 
             // label80
@@ -1644,7 +1490,7 @@
             // 
             this.gameTitleTextBox.Location = new System.Drawing.Point(58, 34);
             this.gameTitleTextBox.Name = "gameTitleTextBox";
-            this.gameTitleTextBox.Size = new System.Drawing.Size(175, 20);
+            this.gameTitleTextBox.Size = new System.Drawing.Size(245, 20);
             this.gameTitleTextBox.TabIndex = 8;
             // 
             // gamePublisherComboBox
@@ -1652,14 +1498,14 @@
             this.gamePublisherComboBox.FormattingEnabled = true;
             this.gamePublisherComboBox.Location = new System.Drawing.Point(58, 317);
             this.gamePublisherComboBox.Name = "gamePublisherComboBox";
-            this.gamePublisherComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gamePublisherComboBox.Size = new System.Drawing.Size(245, 21);
             this.gamePublisherComboBox.TabIndex = 22;
             // 
             // gameReleaseYearTextBox
             // 
             this.gameReleaseYearTextBox.Location = new System.Drawing.Point(58, 90);
             this.gameReleaseYearTextBox.Name = "gameReleaseYearTextBox";
-            this.gameReleaseYearTextBox.Size = new System.Drawing.Size(175, 20);
+            this.gameReleaseYearTextBox.Size = new System.Drawing.Size(245, 20);
             this.gameReleaseYearTextBox.TabIndex = 11;
             // 
             // label6
@@ -1675,7 +1521,7 @@
             // 
             this.gameRentalRateTextBox.Location = new System.Drawing.Point(58, 146);
             this.gameRentalRateTextBox.Name = "gameRentalRateTextBox";
-            this.gameRentalRateTextBox.Size = new System.Drawing.Size(175, 20);
+            this.gameRentalRateTextBox.Size = new System.Drawing.Size(245, 20);
             this.gameRentalRateTextBox.TabIndex = 13;
             // 
             // gameGenreComboBox
@@ -1683,7 +1529,7 @@
             this.gameGenreComboBox.FormattingEnabled = true;
             this.gameGenreComboBox.Location = new System.Drawing.Point(58, 258);
             this.gameGenreComboBox.Name = "gameGenreComboBox";
-            this.gameGenreComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gameGenreComboBox.Size = new System.Drawing.Size(245, 21);
             this.gameGenreComboBox.TabIndex = 20;
             // 
             // label2
@@ -1718,7 +1564,7 @@
             this.gameDeveloperComboBox.FormattingEnabled = true;
             this.gameDeveloperComboBox.Location = new System.Drawing.Point(58, 202);
             this.gameDeveloperComboBox.Name = "gameDeveloperComboBox";
-            this.gameDeveloperComboBox.Size = new System.Drawing.Size(175, 21);
+            this.gameDeveloperComboBox.Size = new System.Drawing.Size(245, 21);
             this.gameDeveloperComboBox.TabIndex = 18;
             // 
             // label4
@@ -1735,6 +1581,7 @@
             this.gameList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gameList.Location = new System.Drawing.Point(276, 77);
             this.gameList.Name = "gameList";
+            this.gameList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gameList.Size = new System.Drawing.Size(1028, 357);
             this.gameList.TabIndex = 0;
             // 
@@ -1767,7 +1614,6 @@
             this.tpgManagement.Controls.Add(this.label70);
             this.tpgManagement.Controls.Add(this.grpAddStore);
             this.tpgManagement.Controls.Add(this.grpUpdateStore);
-            this.tpgManagement.Controls.Add(this.grpAddEmployee);
             this.tpgManagement.Controls.Add(this.label24);
             this.tpgManagement.Controls.Add(this.label23);
             this.tpgManagement.Controls.Add(this.btnSearchStoreClear);
@@ -1784,6 +1630,7 @@
             this.tpgManagement.Controls.Add(this.btnAddEmployee);
             this.tpgManagement.Controls.Add(this.dgvEmployees);
             this.tpgManagement.Controls.Add(this.grpUpdateEmployee);
+            this.tpgManagement.Controls.Add(this.grpAddEmployee);
             this.tpgManagement.ImageIndex = 3;
             this.tpgManagement.Location = new System.Drawing.Point(4, 49);
             this.tpgManagement.Name = "tpgManagement";
@@ -2253,239 +2100,6 @@
             this.label69.TabIndex = 17;
             this.label69.Text = "Manager";
             // 
-            // grpAddEmployee
-            // 
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeePhone);
-            this.grpAddEmployee.Controls.Add(this.label53);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeePostalCode);
-            this.grpAddEmployee.Controls.Add(this.label51);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeDistrict);
-            this.grpAddEmployee.Controls.Add(this.label52);
-            this.grpAddEmployee.Controls.Add(this.btnAddEmployeeCancel);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeCity);
-            this.grpAddEmployee.Controls.Add(this.label26);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeAddress2);
-            this.grpAddEmployee.Controls.Add(this.label27);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeAddress1);
-            this.grpAddEmployee.Controls.Add(this.label28);
-            this.grpAddEmployee.Controls.Add(this.btnAddEmployeeAddEmployee);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeFName);
-            this.grpAddEmployee.Controls.Add(this.cmbAddEmployeeCountry);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeLName);
-            this.grpAddEmployee.Controls.Add(this.label29);
-            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeEmail);
-            this.grpAddEmployee.Controls.Add(this.label30);
-            this.grpAddEmployee.Controls.Add(this.label31);
-            this.grpAddEmployee.Controls.Add(this.label32);
-            this.grpAddEmployee.Controls.Add(this.cmbAddEmployeeStore);
-            this.grpAddEmployee.Controls.Add(this.label33);
-            this.grpAddEmployee.Location = new System.Drawing.Point(276, 78);
-            this.grpAddEmployee.Name = "grpAddEmployee";
-            this.grpAddEmployee.Size = new System.Drawing.Size(1007, 243);
-            this.grpAddEmployee.TabIndex = 47;
-            this.grpAddEmployee.TabStop = false;
-            this.grpAddEmployee.Text = "Add Employee";
-            // 
-            // txtAddEmployeePhone
-            // 
-            this.txtAddEmployeePhone.Location = new System.Drawing.Point(303, 91);
-            this.txtAddEmployeePhone.Name = "txtAddEmployeePhone";
-            this.txtAddEmployeePhone.Size = new System.Drawing.Size(175, 20);
-            this.txtAddEmployeePhone.TabIndex = 62;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(300, 75);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(38, 13);
-            this.label53.TabIndex = 61;
-            this.label53.Text = "Phone";
-            // 
-            // txtAddEmployeePostalCode
-            // 
-            this.txtAddEmployeePostalCode.Location = new System.Drawing.Point(807, 147);
-            this.txtAddEmployeePostalCode.Name = "txtAddEmployeePostalCode";
-            this.txtAddEmployeePostalCode.Size = new System.Drawing.Size(175, 20);
-            this.txtAddEmployeePostalCode.TabIndex = 60;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(804, 131);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(64, 13);
-            this.label51.TabIndex = 59;
-            this.label51.Text = "Postal Code";
-            // 
-            // txtAddEmployeeDistrict
-            // 
-            this.txtAddEmployeeDistrict.Location = new System.Drawing.Point(562, 147);
-            this.txtAddEmployeeDistrict.Name = "txtAddEmployeeDistrict";
-            this.txtAddEmployeeDistrict.Size = new System.Drawing.Size(175, 20);
-            this.txtAddEmployeeDistrict.TabIndex = 58;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(559, 131);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(39, 13);
-            this.label52.TabIndex = 57;
-            this.label52.Text = "District";
-            // 
-            // btnAddEmployeeCancel
-            // 
-            this.btnAddEmployeeCancel.Location = new System.Drawing.Point(303, 203);
-            this.btnAddEmployeeCancel.Name = "btnAddEmployeeCancel";
-            this.btnAddEmployeeCancel.Size = new System.Drawing.Size(175, 23);
-            this.btnAddEmployeeCancel.TabIndex = 29;
-            this.btnAddEmployeeCancel.Text = "Cancel";
-            this.btnAddEmployeeCancel.UseVisualStyleBackColor = true;
-            this.btnAddEmployeeCancel.Click += new System.EventHandler(this.btnAddEmployeeCancel_Click);
-            // 
-            // txtAddEmployeeCity
-            // 
-            this.txtAddEmployeeCity.Location = new System.Drawing.Point(562, 206);
-            this.txtAddEmployeeCity.Name = "txtAddEmployeeCity";
-            this.txtAddEmployeeCity.Size = new System.Drawing.Size(175, 20);
-            this.txtAddEmployeeCity.TabIndex = 28;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(804, 18);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(77, 13);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "Address Line 2";
-            // 
-            // txtAddEmployeeAddress2
-            // 
-            this.txtAddEmployeeAddress2.Location = new System.Drawing.Point(807, 34);
-            this.txtAddEmployeeAddress2.Multiline = true;
-            this.txtAddEmployeeAddress2.Name = "txtAddEmployeeAddress2";
-            this.txtAddEmployeeAddress2.Size = new System.Drawing.Size(175, 77);
-            this.txtAddEmployeeAddress2.TabIndex = 26;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(559, 18);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(77, 13);
-            this.label27.TabIndex = 25;
-            this.label27.Text = "Address Line 1";
-            // 
-            // txtAddEmployeeAddress1
-            // 
-            this.txtAddEmployeeAddress1.Location = new System.Drawing.Point(562, 34);
-            this.txtAddEmployeeAddress1.Multiline = true;
-            this.txtAddEmployeeAddress1.Name = "txtAddEmployeeAddress1";
-            this.txtAddEmployeeAddress1.Size = new System.Drawing.Size(175, 77);
-            this.txtAddEmployeeAddress1.TabIndex = 24;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(55, 18);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(57, 13);
-            this.label28.TabIndex = 14;
-            this.label28.Text = "First Name";
-            // 
-            // btnAddEmployeeAddEmployee
-            // 
-            this.btnAddEmployeeAddEmployee.Location = new System.Drawing.Point(58, 203);
-            this.btnAddEmployeeAddEmployee.Name = "btnAddEmployeeAddEmployee";
-            this.btnAddEmployeeAddEmployee.Size = new System.Drawing.Size(175, 23);
-            this.btnAddEmployeeAddEmployee.TabIndex = 23;
-            this.btnAddEmployeeAddEmployee.Text = "Add Employee";
-            this.btnAddEmployeeAddEmployee.UseVisualStyleBackColor = true;
-            this.btnAddEmployeeAddEmployee.Click += new System.EventHandler(this.btnAddEmployeeAddEmployee_Click);
-            // 
-            // txtAddEmployeeFName
-            // 
-            this.txtAddEmployeeFName.Location = new System.Drawing.Point(58, 34);
-            this.txtAddEmployeeFName.Name = "txtAddEmployeeFName";
-            this.txtAddEmployeeFName.Size = new System.Drawing.Size(175, 20);
-            this.txtAddEmployeeFName.TabIndex = 8;
-            // 
-            // cmbAddEmployeeCountry
-            // 
-            this.cmbAddEmployeeCountry.FormattingEnabled = true;
-            this.cmbAddEmployeeCountry.Location = new System.Drawing.Point(807, 205);
-            this.cmbAddEmployeeCountry.Name = "cmbAddEmployeeCountry";
-            this.cmbAddEmployeeCountry.Size = new System.Drawing.Size(175, 21);
-            this.cmbAddEmployeeCountry.TabIndex = 22;
-            // 
-            // txtAddEmployeeLName
-            // 
-            this.txtAddEmployeeLName.Location = new System.Drawing.Point(303, 34);
-            this.txtAddEmployeeLName.Name = "txtAddEmployeeLName";
-            this.txtAddEmployeeLName.Size = new System.Drawing.Size(175, 20);
-            this.txtAddEmployeeLName.TabIndex = 11;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(804, 190);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(43, 13);
-            this.label29.TabIndex = 21;
-            this.label29.Text = "Country";
-            // 
-            // txtAddEmployeeEmail
-            // 
-            this.txtAddEmployeeEmail.Location = new System.Drawing.Point(58, 91);
-            this.txtAddEmployeeEmail.Name = "txtAddEmployeeEmail";
-            this.txtAddEmployeeEmail.Size = new System.Drawing.Size(175, 20);
-            this.txtAddEmployeeEmail.TabIndex = 13;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(300, 18);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(58, 13);
-            this.label30.TabIndex = 15;
-            this.label30.Text = "Last Name";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(559, 190);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(24, 13);
-            this.label31.TabIndex = 19;
-            this.label31.Text = "City";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(55, 75);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(73, 13);
-            this.label32.TabIndex = 16;
-            this.label32.Text = "Email Address";
-            // 
-            // cmbAddEmployeeStore
-            // 
-            this.cmbAddEmployeeStore.FormattingEnabled = true;
-            this.cmbAddEmployeeStore.Location = new System.Drawing.Point(58, 146);
-            this.cmbAddEmployeeStore.Name = "cmbAddEmployeeStore";
-            this.cmbAddEmployeeStore.Size = new System.Drawing.Size(420, 21);
-            this.cmbAddEmployeeStore.TabIndex = 18;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(55, 131);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(32, 13);
-            this.label33.TabIndex = 17;
-            this.label33.Text = "Store";
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -2887,6 +2501,289 @@
             this.label41.TabIndex = 17;
             this.label41.Text = "Store";
             // 
+            // grpAddEmployee
+            // 
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeePhone);
+            this.grpAddEmployee.Controls.Add(this.label53);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeePostalCode);
+            this.grpAddEmployee.Controls.Add(this.label51);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeDistrict);
+            this.grpAddEmployee.Controls.Add(this.label52);
+            this.grpAddEmployee.Controls.Add(this.btnAddEmployeeCancel);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeCity);
+            this.grpAddEmployee.Controls.Add(this.label26);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeAddress2);
+            this.grpAddEmployee.Controls.Add(this.label27);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeAddress1);
+            this.grpAddEmployee.Controls.Add(this.label28);
+            this.grpAddEmployee.Controls.Add(this.btnAddEmployeeAddEmployee);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeFName);
+            this.grpAddEmployee.Controls.Add(this.cmbAddEmployeeCountry);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeLName);
+            this.grpAddEmployee.Controls.Add(this.label29);
+            this.grpAddEmployee.Controls.Add(this.txtAddEmployeeEmail);
+            this.grpAddEmployee.Controls.Add(this.label30);
+            this.grpAddEmployee.Controls.Add(this.label31);
+            this.grpAddEmployee.Controls.Add(this.label32);
+            this.grpAddEmployee.Controls.Add(this.cmbAddEmployeeStore);
+            this.grpAddEmployee.Controls.Add(this.label33);
+            this.grpAddEmployee.Location = new System.Drawing.Point(276, 78);
+            this.grpAddEmployee.Name = "grpAddEmployee";
+            this.grpAddEmployee.Size = new System.Drawing.Size(1007, 243);
+            this.grpAddEmployee.TabIndex = 47;
+            this.grpAddEmployee.TabStop = false;
+            this.grpAddEmployee.Text = "Add Employee";
+            // 
+            // txtAddEmployeePhone
+            // 
+            this.txtAddEmployeePhone.Location = new System.Drawing.Point(303, 91);
+            this.txtAddEmployeePhone.Name = "txtAddEmployeePhone";
+            this.txtAddEmployeePhone.Size = new System.Drawing.Size(175, 20);
+            this.txtAddEmployeePhone.TabIndex = 62;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(300, 75);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(38, 13);
+            this.label53.TabIndex = 61;
+            this.label53.Text = "Phone";
+            // 
+            // txtAddEmployeePostalCode
+            // 
+            this.txtAddEmployeePostalCode.Location = new System.Drawing.Point(807, 147);
+            this.txtAddEmployeePostalCode.Name = "txtAddEmployeePostalCode";
+            this.txtAddEmployeePostalCode.Size = new System.Drawing.Size(175, 20);
+            this.txtAddEmployeePostalCode.TabIndex = 60;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(804, 131);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(64, 13);
+            this.label51.TabIndex = 59;
+            this.label51.Text = "Postal Code";
+            // 
+            // txtAddEmployeeDistrict
+            // 
+            this.txtAddEmployeeDistrict.Location = new System.Drawing.Point(562, 147);
+            this.txtAddEmployeeDistrict.Name = "txtAddEmployeeDistrict";
+            this.txtAddEmployeeDistrict.Size = new System.Drawing.Size(175, 20);
+            this.txtAddEmployeeDistrict.TabIndex = 58;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(559, 131);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(39, 13);
+            this.label52.TabIndex = 57;
+            this.label52.Text = "District";
+            // 
+            // btnAddEmployeeCancel
+            // 
+            this.btnAddEmployeeCancel.Location = new System.Drawing.Point(303, 203);
+            this.btnAddEmployeeCancel.Name = "btnAddEmployeeCancel";
+            this.btnAddEmployeeCancel.Size = new System.Drawing.Size(175, 23);
+            this.btnAddEmployeeCancel.TabIndex = 29;
+            this.btnAddEmployeeCancel.Text = "Cancel";
+            this.btnAddEmployeeCancel.UseVisualStyleBackColor = true;
+            this.btnAddEmployeeCancel.Click += new System.EventHandler(this.btnAddEmployeeCancel_Click);
+            // 
+            // txtAddEmployeeCity
+            // 
+            this.txtAddEmployeeCity.Location = new System.Drawing.Point(562, 206);
+            this.txtAddEmployeeCity.Name = "txtAddEmployeeCity";
+            this.txtAddEmployeeCity.Size = new System.Drawing.Size(175, 20);
+            this.txtAddEmployeeCity.TabIndex = 28;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(804, 18);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(77, 13);
+            this.label26.TabIndex = 27;
+            this.label26.Text = "Address Line 2";
+            // 
+            // txtAddEmployeeAddress2
+            // 
+            this.txtAddEmployeeAddress2.Location = new System.Drawing.Point(807, 34);
+            this.txtAddEmployeeAddress2.Multiline = true;
+            this.txtAddEmployeeAddress2.Name = "txtAddEmployeeAddress2";
+            this.txtAddEmployeeAddress2.Size = new System.Drawing.Size(175, 77);
+            this.txtAddEmployeeAddress2.TabIndex = 26;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(559, 18);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(77, 13);
+            this.label27.TabIndex = 25;
+            this.label27.Text = "Address Line 1";
+            // 
+            // txtAddEmployeeAddress1
+            // 
+            this.txtAddEmployeeAddress1.Location = new System.Drawing.Point(562, 34);
+            this.txtAddEmployeeAddress1.Multiline = true;
+            this.txtAddEmployeeAddress1.Name = "txtAddEmployeeAddress1";
+            this.txtAddEmployeeAddress1.Size = new System.Drawing.Size(175, 77);
+            this.txtAddEmployeeAddress1.TabIndex = 24;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(55, 18);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(57, 13);
+            this.label28.TabIndex = 14;
+            this.label28.Text = "First Name";
+            // 
+            // btnAddEmployeeAddEmployee
+            // 
+            this.btnAddEmployeeAddEmployee.Location = new System.Drawing.Point(58, 203);
+            this.btnAddEmployeeAddEmployee.Name = "btnAddEmployeeAddEmployee";
+            this.btnAddEmployeeAddEmployee.Size = new System.Drawing.Size(175, 23);
+            this.btnAddEmployeeAddEmployee.TabIndex = 23;
+            this.btnAddEmployeeAddEmployee.Text = "Add Employee";
+            this.btnAddEmployeeAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployeeAddEmployee.Click += new System.EventHandler(this.btnAddEmployeeAddEmployee_Click);
+            // 
+            // txtAddEmployeeFName
+            // 
+            this.txtAddEmployeeFName.Location = new System.Drawing.Point(58, 34);
+            this.txtAddEmployeeFName.Name = "txtAddEmployeeFName";
+            this.txtAddEmployeeFName.Size = new System.Drawing.Size(175, 20);
+            this.txtAddEmployeeFName.TabIndex = 8;
+            // 
+            // cmbAddEmployeeCountry
+            // 
+            this.cmbAddEmployeeCountry.FormattingEnabled = true;
+            this.cmbAddEmployeeCountry.Location = new System.Drawing.Point(807, 205);
+            this.cmbAddEmployeeCountry.Name = "cmbAddEmployeeCountry";
+            this.cmbAddEmployeeCountry.Size = new System.Drawing.Size(175, 21);
+            this.cmbAddEmployeeCountry.TabIndex = 22;
+            // 
+            // txtAddEmployeeLName
+            // 
+            this.txtAddEmployeeLName.Location = new System.Drawing.Point(303, 34);
+            this.txtAddEmployeeLName.Name = "txtAddEmployeeLName";
+            this.txtAddEmployeeLName.Size = new System.Drawing.Size(175, 20);
+            this.txtAddEmployeeLName.TabIndex = 11;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(804, 190);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(43, 13);
+            this.label29.TabIndex = 21;
+            this.label29.Text = "Country";
+            // 
+            // txtAddEmployeeEmail
+            // 
+            this.txtAddEmployeeEmail.Location = new System.Drawing.Point(58, 91);
+            this.txtAddEmployeeEmail.Name = "txtAddEmployeeEmail";
+            this.txtAddEmployeeEmail.Size = new System.Drawing.Size(175, 20);
+            this.txtAddEmployeeEmail.TabIndex = 13;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(300, 18);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(58, 13);
+            this.label30.TabIndex = 15;
+            this.label30.Text = "Last Name";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(559, 190);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(24, 13);
+            this.label31.TabIndex = 19;
+            this.label31.Text = "City";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(55, 75);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(73, 13);
+            this.label32.TabIndex = 16;
+            this.label32.Text = "Email Address";
+            // 
+            // cmbAddEmployeeStore
+            // 
+            this.cmbAddEmployeeStore.FormattingEnabled = true;
+            this.cmbAddEmployeeStore.Location = new System.Drawing.Point(58, 146);
+            this.cmbAddEmployeeStore.Name = "cmbAddEmployeeStore";
+            this.cmbAddEmployeeStore.Size = new System.Drawing.Size(420, 21);
+            this.cmbAddEmployeeStore.TabIndex = 18;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(55, 131);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(32, 13);
+            this.label33.TabIndex = 17;
+            this.label33.Text = "Store";
+            // 
+            // gamesBack
+            // 
+            this.gamesBack.Location = new System.Drawing.Point(185, 186);
+            this.gamesBack.Name = "gamesBack";
+            this.gamesBack.Size = new System.Drawing.Size(75, 23);
+            this.gamesBack.TabIndex = 24;
+            this.gamesBack.Text = "Back";
+            this.gamesBack.UseVisualStyleBackColor = true;
+            this.gamesBack.Click += new System.EventHandler(this.gamesBack_Click);
+            // 
+            // addGameBack
+            // 
+            this.addGameBack.Location = new System.Drawing.Point(228, 411);
+            this.addGameBack.Name = "addGameBack";
+            this.addGameBack.Size = new System.Drawing.Size(75, 23);
+            this.addGameBack.TabIndex = 27;
+            this.addGameBack.Text = "Back";
+            this.addGameBack.UseVisualStyleBackColor = true;
+            this.addGameBack.Click += new System.EventHandler(this.addGameBack_Click);
+            // 
+            // addRentalBack
+            // 
+            this.addRentalBack.Location = new System.Drawing.Point(273, 478);
+            this.addRentalBack.Name = "addRentalBack";
+            this.addRentalBack.Size = new System.Drawing.Size(75, 23);
+            this.addRentalBack.TabIndex = 35;
+            this.addRentalBack.Text = "Back";
+            this.addRentalBack.UseVisualStyleBackColor = true;
+            this.addRentalBack.Click += new System.EventHandler(this.addRentalBack_Click);
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(18, 31);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(93, 26);
+            this.label84.TabIndex = 34;
+            this.label84.Text = "Rentals";
+            // 
+            // Games
+            // 
+            this.Games.AutoSize = true;
+            this.Games.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Games.Location = new System.Drawing.Point(3, 22);
+            this.Games.Name = "Games";
+            this.Games.Size = new System.Drawing.Size(88, 26);
+            this.Games.TabIndex = 28;
+            this.Games.Text = "Games";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2905,8 +2802,7 @@
             this.grpUpdateCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.tpgRentals.ResumeLayout(false);
-            this.editRentalGroup.ResumeLayout(false);
-            this.editRentalGroup.PerformLayout();
+            this.tpgRentals.PerformLayout();
             this.addRentalGroup.ResumeLayout(false);
             this.addRentalGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentalsList)).EndInit();
@@ -2924,12 +2820,12 @@
             this.grpAddStore.PerformLayout();
             this.grpUpdateStore.ResumeLayout(false);
             this.grpUpdateStore.PerformLayout();
-            this.grpAddEmployee.ResumeLayout(false);
-            this.grpAddEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.grpUpdateEmployee.ResumeLayout(false);
             this.grpUpdateEmployee.PerformLayout();
+            this.grpAddEmployee.ResumeLayout(false);
+            this.grpAddEmployee.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3142,14 +3038,13 @@
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.GroupBox editGameGroup;
         private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateGame;
         private System.Windows.Forms.TextBox editGameTitle;
         private System.Windows.Forms.TextBox editGameReleaseYear;
         private System.Windows.Forms.TextBox editGameRentalRate;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button deleteRentalBtn;
         private System.Windows.Forms.Button addRentalBtn;
         private System.Windows.Forms.DataGridView rentalsList;
         private System.Windows.Forms.GroupBox addRentalGroup;
@@ -3173,31 +3068,20 @@
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.DateTimePicker addRentalsReturnDate;
         private System.Windows.Forms.DateTimePicker addRentalDate;
-        private System.Windows.Forms.GroupBox editRentalGroup;
-        private System.Windows.Forms.DateTimePicker editRentalRentalDate;
-        private System.Windows.Forms.DateTimePicker editRentalDate;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox editRentalSearchStaff;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.TextBox editRentalSearchCustomer;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.TextBox editRentalSearchInventory;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.ComboBox editRentalSelectStaff;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.ComboBox editRentalSelectCustomer;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.ComboBox editRentalSelectInventory;
-        private System.Windows.Forms.Label label102;
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.ComboBox searchBy;
         private System.Windows.Forms.ComboBox gameStoreComboBox;
         private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Button rentalSearchBtn;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.ComboBox rentalSearchBy;
+        private System.Windows.Forms.TextBox rentalSearchTerm;
+        private System.Windows.Forms.Button rentalsClearSearch;
+        private System.Windows.Forms.Button gamesBack;
+        private System.Windows.Forms.Button addGameBack;
+        private System.Windows.Forms.Button addRentalBack;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label Games;
     }
 }
 
